@@ -1,6 +1,6 @@
 remote_theme : brianmaierjr/long-haul
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: MING STUDY HOME
+description: 충격받아서 기본기를 다지기 위해 만든 곳
 
 url: "http://lee-sunmin.github.io"
 baseurl: ""
@@ -21,9 +21,9 @@ navigation:
     url: /contact
 
 social:
-  github: brianmaierjr
-  twitter: brianmaierjr
-  facebook: brianmaierjr
-  email: brimaidesigns@gmail.com
+  github: lee-sunmin
+  twitter: lee-sunmin
+  facebook: lee-sunmin
+  email: lee.sunmin1303@gmail.com
 
 google_analytics: "UA-58263416-1"
