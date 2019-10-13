@@ -5,9 +5,13 @@ title: Seonmin Lee
 
 <div class="post">
 	<h1 class="pageTitle">About Seonmin</h1>
-	<img src="{{ '/assets/img/sm.jpeg' | prepend: site.baseurl }}" alt="">
-	<p class="intro">Long Haul is a minimal, long form <a href="http://jekyllrb.com">Jekyll</a> Theme. It can be used as is or customized to your hearts desire.</p>
-	<p>Long Haul was created in honor of all the hard working touring bicycles that have traversed the globe time and time again. Take it for a spin.</p>
+	<!-- <img src="{{ '/assets/img/sm.jpeg' | prepend: site.baseurl }}" alt=""> -->
+    <!-- <a> 사용해서 하이퍼링크 추가 가능 -->
+	<!-- <p class="intro">Long Haul is a minimal, long form <a href="http://jekyllrb.com">Jekyll</a> Theme. It can be used as is or customized to your hearts desire.</p> -->
+	<p>GitHub - "https://github.com/lee-sunmin"</p>
+    <p>LinkedIn - "https://www.linkedin.com/in/sun-min-lee-767709116/"</p>
+    <p>Mail - lee.sunmin1303@gmail.com</p>
+    
 	<h2>Features</h2>
 	<ul>
 		<li>Built with SASS + GULP + BROWSERSYNC + AUTOPREFIXER</li>
