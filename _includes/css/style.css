@@ -678,7 +678,9 @@
  body {
    font-family: "PT Serif", Georgia, Times, serif;
    line-height: 1.75;
-   font-size: 112.5%;
+   /* 수정 */
+   /* font-size: 112.5%; */
+   font-size: 95%;
    color: #111;
    overflow-x: hidden;
    margin: 0; }
@@ -866,7 +868,9 @@
    margin: 3rem 0; }
    .post figure figcaption {
      text-align: center;
-     font-size: .9em;
+     /* 수정 */
+     font-size: .3em;
+     /* font-size: .9em; */
      font-style: italic;
      color: #5e5e5e; }
    .post figure img {
@@ -882,10 +886,7 @@
  
  .post .dropcap {
    color: seagreen;
-   margin-right: .45rem;
-   /* test용으로 추가. */
-   font-size: .9em;
-}
+   margin-right: .45rem; }
  
  .post .featuredImage {
    position: relative;
