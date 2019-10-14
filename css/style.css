@@ -246,11 +246,11 @@
  /**
   * Restore the focus styles unset by the previous rule.
   */
- button:-moz-focusring,
+ /* button:-moz-focusring,
  [type="button"]:-moz-focusring,
  [type="reset"]:-moz-focusring,
  [type="submit"]:-moz-focusring {
-   outline: 1px dotted ButtonText; }
+   outline: 1px dotted ButtonText; } */
  
  /**
   * 1. Correct the text wrapping in Edge and IE.
@@ -802,7 +802,7 @@
  ***************/
  .header {
    background-color: seagreen;
-   background-image: url("../img/touring.jpg");
+   /* background-image: url("../img/touring.jpg"); */
    background-size: cover;
    background-position: center center;
    color: white;
