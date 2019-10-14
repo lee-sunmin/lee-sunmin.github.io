@@ -698,7 +698,8 @@
  
  .container {
    max-width: 610px;
-   padding: 0 20px; }
+   /* padding: 0 20px; */
+   padding: 0 10px; }
  
  /***************
  LINK STYLING
@@ -863,7 +864,8 @@
    font-weight: 300; }
  
  .post figure {
-   margin: 3rem 0; }
+  /* margin: 3rem 0; */
+   margin: 1rem 0; }
    .post figure figcaption {
      text-align: center;
      font-size: .9em;
@@ -1105,11 +1107,14 @@
    .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post p, .post ul, .post ol, .post dl, .post .pageTitle {
      width: 75%;
      float: none;
-     margin: 0 auto 2rem; }
+     /* margin: 0 auto 2rem; */
+     margin: 0 auto 1rem; }
    .post h1, .post .h1, .post h2, .post .h2, .post h3, .post .h3, .post h4, .post .h4, .post h5, .post .h5, .post h6, .post .h6 {
-     margin: 1rem auto; }
+    /* margin: 1rem auto;  */
+    margin: 0.5rem auto; }
    .post .pageTitle {
-     margin: 2rem auto 1em; }
+    /* margin: 2rem auto 1em; */
+     margin: 1rem auto 0.5em; }
    .post .featuredImage {
      position: relative;
      margin-top: 2rem; }
