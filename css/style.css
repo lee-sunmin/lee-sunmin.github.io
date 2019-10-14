@@ -1037,8 +1037,8 @@
        transform-origin: bottom left; }
    .container {
      max-width: 800px;
-     margin-left: auto;
-     margin-right: auto;
+     margin-left: .45rem;
+     margin-right: .45rem;
      padding: 0;
      overflow: hidden; }
    /***************
