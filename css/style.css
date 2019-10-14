@@ -34,9 +34,7 @@
   * `article` contexts in Chrome, Firefox, and Safari.
   */
  h1 {
-    font-size: 1em;
-    /* 수정 */
-   /* font-size: 2em; */
+   font-size: 2em;
    margin: 0.67em 0; }
  
  /* Grouping content
@@ -146,9 +144,7 @@
   * Add the correct font size in all browsers.
   */
  small {
-   /* font-size: 80%; */
-   /* 수정 */
-   font-size: 30%; }
+   font-size: 80%; }
  
  /**
   * Prevent `sub` and `sup` elements from affecting the line height in
@@ -156,9 +152,7 @@
   */
  sub,
  sup {
-     /* 수정 */
-    font-size: 30%;
-   /* font-size: 75%; */
+   font-size: 75%;
    line-height: 0;
    position: relative;
    vertical-align: baseline; }
@@ -252,11 +246,11 @@
  /**
   * Restore the focus styles unset by the previous rule.
   */
-  button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText; }
+ button:-moz-focusring,
+ [type="button"]:-moz-focusring,
+ [type="reset"]:-moz-focusring,
+ [type="submit"]:-moz-focusring {
+   outline: 1px dotted ButtonText; }
  
  /**
   * 1. Correct the text wrapping in Edge and IE.
@@ -411,20 +405,17 @@
    font-family: "Open Sans", Helvetica, Arial, sans-serif; }
  
  h1, .h1 {
-    font-size: 1.25em;
-   /* font-size: 2em; */
+   font-size: 2em;
    line-height: 1.25; }
  
  @media (min-width: 43.75em) {
    h1, .h1 {
-    font-size: 1.25em;
-     /* font-size: 2.5em; */
+     font-size: 2.5em;
      line-height: 1.125; } }
  
  @media (min-width: 56.25em) {
    h1, .h1 {
-    font-size: 1.25em;
-     /* font-size: 3em; */
+     font-size: 3em;
      line-height: 1.05; } }
  
  h2, .h2 {
@@ -433,14 +424,12 @@
  
  @media (min-width: 43.75em) {
    h2, .h2 {
-    font-size: 1.25em;
-     /* font-size: 2em; */
+     font-size: 2em;
      line-height: 1.25; } }
  
  @media (min-width: 56.25em) {
    h2, .h2 {
-    font-size: 1.25em;
-     /* font-size: 2.25em; */
+     font-size: 2.25em;
      line-height: 1.25; } }
  
  h3, .h3 {
@@ -449,14 +438,12 @@
  
  @media (min-width: 43.75em) {
    h3, .h3 {
-    font-size: 1.25em;
-     /* font-size: 1.5em; */
+     font-size: 1.5em;
      line-height: 1.25; } }
  
  @media (min-width: 56.25em) {
    h3, .h3 {
-    font-size: 1.25em;
-     /* font-size: 1.75em; */
+     font-size: 1.75em;
      line-height: 1.25; } }
  
  h4, .h4 {
@@ -474,8 +461,7 @@
  
  @media (min-width: 43.75em) {
    blockquote {
-     /* font-size: 1.5em; */
-     font-size: 1.25em;
+    font-size: 1.25em;
      line-height: 1.45833333; } }
  
  /***************
@@ -692,9 +678,7 @@
  body {
    font-family: "PT Serif", Georgia, Times, serif;
    line-height: 1.75;
-   /* 수정 */
-   /* font-size: 112.5%; */
-   font-size: 50%;
+   font-size: 112.5%;
    color: #111;
    overflow-x: hidden;
    margin: 0; }
@@ -817,7 +801,7 @@
  ***************/
  .header {
    background-color: seagreen;
-   /* background-image: url("../img/m.jpeg"); */
+   background-image: url("../img/touring.jpg");
    background-size: cover;
    background-position: center center;
    color: white;
@@ -849,7 +833,6 @@
  
  .post blockquote {
    clear: both;
-   font-size: 1em;
    margin: 2.5em 0;
    padding: 0;
    line-height: 1.8;
@@ -883,9 +866,7 @@
    margin: 3rem 0; }
    .post figure figcaption {
      text-align: center;
-     /* 수정 */
-     font-size: 1.25em;
-     /* font-size: .9em; */
+     font-size: .9em;
      font-style: italic;
      color: #5e5e5e; }
    .post figure img {
@@ -924,8 +905,7 @@
      position: relative;
      font-family: "Open Sans", Helvetica, Arial, sans-serif;
      font-weight: 800;
-     font-size: 1.25em;
-     /* font-size: .9em; */
+     font-size: .9em;
      text-transform: uppercase;
      text-align: center; }
      .postNav .prev img, .postNav .next img {
@@ -1082,8 +1062,7 @@
        transform: translateY(-50%);
        max-width: 800px; }
      .header h1 {
-        font-size: 1.25em;
-       /* font-size: 3em; */
+       font-size: 3em;
        line-height: 1;
        letter-spacing: -3px;
        padding-left: 0; }
