@@ -11,9 +11,9 @@
  html {
    line-height: 1.15;
    /* 1 */
-   -ms-text-size-adjust: 100%;
+   -ms-text-size-adjust: 80%;
    /* 2 */
-   -webkit-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 80%;
    /* 2 */ }
  
  /* Sections
@@ -34,7 +34,7 @@
   * `article` contexts in Chrome, Firefox, and Safari.
   */
  h1 {
-   font-size: 2em;
+   font-size: 1.5em;
    margin: 0.67em 0; }
  
  /* Grouping content
@@ -144,7 +144,7 @@
   * Add the correct font size in all browsers.
   */
  small {
-   font-size: 80%; }
+   font-size: 60%; }
  
  /**
   * Prevent `sub` and `sup` elements from affecting the line height in
@@ -152,7 +152,7 @@
   */
  sub,
  sup {
-   font-size: 75%;
+   font-size: 60%;
    line-height: 0;
    position: relative;
    vertical-align: baseline; }
@@ -415,7 +415,7 @@
  
  @media (min-width: 56.25em) {
    h1, .h1 {
-     font-size: 3em;
+     font-size: 1.5em;
      line-height: 1.05; } }
  
  h2, .h2 {
@@ -459,10 +459,10 @@
    line-height: 1.25;
    padding: 0; }
  
- /* @media (min-width: 43.75em) {
+ @media (min-width: 43.75em) {
    blockquote {
     font-size: 1.25em;
-    line-height: 1.45833333; } } */
+    line-height: 1.45833333; } }
  
  /***************
  TRANSITION
@@ -678,7 +678,8 @@
  body {
    font-family: "PT Serif", Georgia, Times, serif;
    line-height: 1.75;
-   font-size: 112.5%;
+   font-size: 50%;
+   /* font-size: 112.5%; */
    color: #111;
    overflow-x: hidden;
    margin: 0; }
