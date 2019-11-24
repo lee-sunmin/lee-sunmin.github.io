@@ -610,7 +610,7 @@
    word-wrap: normal;
    /* horizontal scrolling */
    border-radius: 3px;
-   padding: 20px;
+   /* padding: 20px; */
    background: #343642;
    color: #C1C2C3; }
  
@@ -845,8 +845,8 @@
      background: seagreen;
      display: block;
      height: 2px;
-     width: 150px;
-     left: calc(50% - 75px); }
+     width: 400px;
+     left: calc(50% - 200px); }
    .post blockquote:after {
      content: "";
      position: absolute;
@@ -854,8 +854,8 @@
      background: seagreen;
      display: block;
      height: 2px;
-     width: 150px;
-     left: calc(50% - 75px); }
+     width: 400px;
+     left: calc(50% - 200px); }
  
  .post .meta {
    text-align: center;
