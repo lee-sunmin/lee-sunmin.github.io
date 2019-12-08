@@ -57,6 +57,42 @@ char a[11]="한글테스트"; // 한글은 2byte 차지, 5*2 + 1(널문자)
 ~~~
 
 
+## SCE(Short-circuit Evaluation-Lazy Evaluation)  
+
+" 가장 빠르게 연산을 진행하기 위한 계산방식 "  
+
+이게 뭐지? 하는 사람은 아래 코드의 출력값을 생각해보면 쉽게 이해가 갈 것이다.  
+
+~~~ java
+int num1=0, num2=0;
+boolean result;
+
+result = ((num1+=10)<10) && ((num2+=10)<10);
+
+System.out.println(result);
+System.out.println("num1 : "+num1);
+System.out.println("num2 : "+num2);
+~~~
+
+결과!
+~~~ 
+false
+num1 : 10
+num2 : 0
+~~~
+
+num2의 결과 값을 맞춘 사람이라면 바로 이해했을 것이다.  
+~~~ java
+result = ((num1+=10)<10) && ((num2+=10)<10);
+~~~
+&& 왼쪽에 있는 연산자가 false 라면 오른쪽에 있는 연산자는 진행 할 필요가 없다.  
+따라서 연산속도 향상을 위해 && 연산자의 오른편을 실행하지 않는다!  
+
+(+) 따라서 개발 시에 여러 개의 조건문이 들어가는 경우,  
+제일 확률이 높게 걸리는 조건을 제일 앞에 두기도 함 ^^  
+
+
+
 
 
 references

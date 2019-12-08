@@ -85,3 +85,7 @@ byte 와 short 형 변수들은 int 형 상수 기반의 초기화를 허용하�
 byte num1 = 20;
 short num2 = 50;
 ~~~
+
+
+references  
+난 정말 JAVA를 공부한 적이 없다구요
