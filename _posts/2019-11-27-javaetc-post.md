@@ -113,7 +113,10 @@ for(int i = 1; i < 10; i++){
 }
 ~~~
 
+## javac
 
+**javac(java compiler)**  
+ Java 파일(소스파일)에 저장되어 있는 소스코드를 가상머신이 이해 할 수 있는 '자바 바이트 코드(자바 컴파일의 결과로 생성되는 코드)'로 변환시켜 주는 것을 의미함.
 
 references
 https://whatisthenext.tistory.com/103
