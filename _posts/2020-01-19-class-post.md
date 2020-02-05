@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[자바 기본] 자바 class와 객체"
+title:  "[자바 기본] 자바 class와 Object, 참조변수"
 date:   2020-01-19
 description: 자바 class와 object 에 대한 간단 정리
 ---
@@ -20,7 +20,29 @@ description: 자바 class와 object 에 대한 간단 정리
 ~~~ java
 FruitSeller seller = new FruitSeller();
 ~~~
-위 코드에서 seller와 같은 변수를 가리켜 **'참조변수'** 라고 한다.
+위 코드에서 seller와 같은 변수를 가리켜 **'참조변수'** 라고 한다.  
+참조변수에 대한 설명은 아래에서 계속 하기로 한다.  
+
+### Object class?  
+최근 class와 object의 차이를 묻는 질문에서 object(객체)를 object class로 착각해서 대답하는 바람에 낭패를 본 적이 있다.  
+따라서 정리하는김에 object class도 같이 정리해보자 ~  
+
+Object class는 모든 클래스의 부모이다.  
+모든 클래스는 Object class를 암시적으로 상속받고 있다.  
+그런 점에서 Object는 모든 클래스의 조상이라고 할 수 있는데, 그 이유는 모든 클래스가 공통으로 포함하고 있어야 하는 기능을 제공하기 위해서다.  
+
+[API 문서 - Object class의 메소드 목록]  
+![2123](https://user-images.githubusercontent.com/17976251/73885152-a64e2200-48aa-11ea-9175-612ae49e90b7.png)
+이미지 출처 : https://www.opentutorials.org/module/2495/14150  
+
+위의 그림은 Object 클래스가 가지고 있는 메소드를 보여준다.  
+다시 말해서 자바의 객체는 위의 메소드들을 반드시 가지고 있다고 할 수 있다.  
+특히, 객체를 문자로 포현하는 toString()의 경우 많은 분들이 봤을 것이라 생각한다.  
+
+
+
+
+
 
 ## 참조변수
 
@@ -79,4 +101,7 @@ public void buyApple(FruitSeller seller, int money)
 
 
 References  
+Object class  
+https://www.opentutorials.org/module/2495/14150  
 난 정말 JAVA를 공부한 적이 없다구요!  
+
