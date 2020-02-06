@@ -28,8 +28,12 @@ FruitSeller seller = new FruitSeller();
 따라서 정리하는김에 object class도 같이 정리해보자 ~  
 
 Object class는 모든 클래스의 부모이다.  
-모든 클래스는 Object class를 암시적으로 상속받고 있다.  
-그런 점에서 Object는 모든 클래스의 조상이라고 할 수 있는데, 그 이유는 모든 클래스가 공통으로 포함하고 있어야 하는 기능을 제공하기 위해서다.  
+모든 클래스는 Object class를 상속한다.  
+클래스를 정의할 때 다른 어떤 클래스도 상속하지 않으면 해당 클래스는 java.lang 패키지에 묶여있는 Object 클래스를 상속하게 된다.  
+
+그런 점에서 Object는 모든 클래스의 조상이라고 할 수 있는데, 그 이유는 모든 클래스가 공통으로 포함하고 있어야 하는 기능을 제공하기 위해서다. 
+(자바의 모든 인스턴스에 공통된 기준을 적용하기 위함)  
+ 
 
 [API 문서 - Object class의 메소드 목록]  
 ![2123](https://user-images.githubusercontent.com/17976251/73885152-a64e2200-48aa-11ea-9175-612ae49e90b7.png)

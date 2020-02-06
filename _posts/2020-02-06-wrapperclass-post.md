@@ -16,7 +16,7 @@ description:
 [Unboxing] =>  
 래퍼클래스(Integer, Double, Character) 
 
-<img width="621" alt="스크린샷 2020-02-06 오전 6 21 04" src="https://user-images.githubusercontent.com/17976251/73884343-05129c00-48a9-11ea-8240-97427c096b0d.png">
+<img width="621" alt="스크린샷 2020-02-06 오전 6 21 04" src="https://user-images.githubusercontent.com/17976251/73884343-05129c00-48a9-11ea-8240-97427c096b0d.png">  
 이미지 출처 : https://qkrrudtjr954.github.io/java/2017/11/03/wrapper-class.html  
 
 자료형을 선언하는 것 뿐만 아니라 클래스가 제공하는 메소드를 활용하여 일반 자료형보다 폭넓은 활용을 보일 수 있지만 일반 자료형보다 더 많은 메모리 공간을 차지하게 된다.  

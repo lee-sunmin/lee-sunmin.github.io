@@ -27,8 +27,16 @@ APPLE_PRICE=2000;
 ## final method ?  
 해당 메소드를 *오버라이드하거나 숨길 수 없다.*  
 
-## final class ?  
+~~~ java
+class YourClass
+{
+    final void yourFunc(int n) {...}
+}
+~~~
+이렇게 메소드가 final로 선언되면 <span style="color:red">"이 메소드의 오버라이딩을 허용하지 않겠다."</span>라는 의미가 담기게 된다.  
+따라서 YourClass는 상속이 가능하되 yourFunc는 오버라이딩이 불가하다.
 
+## final class ?  
 (추가)  
 private 메소드와 final 클래스의 모든 메소드는 명시하지 않아도 final 처럼 동작한다.  
 -> 오버라이드 할 수 없음을 의미한다.  
@@ -40,6 +48,7 @@ public class yourclass extends myclass { } // error !!!
 ~~~
 
 final class는 final 지시어를 통해 *상속하지 못하도록 정의*한다.
+즉, <span style="color:red">"이 클래스를 상속하는 것을 허용하지 않겠다" </span>라는 의미가 담기게 된다.  
 
 자바의 대표적인 final class 로는 string이 있다.  
 string을 final로 정의함으로써 얻을 수 있는 이점으로는 "immutable" 이 있다.  
