@@ -79,6 +79,8 @@ abstract 키워드를 붙인 method 내에는 내용이 없다.
 
 
 
-
 References  
 난 정말 JAVA를 공부한 적이 없다구요! (17-1)  
+  
+인터페이스(interface)와 추상 클래스(abstract class)  
+https://loustler.io/languages/oop_interface_and_abstract_class/  
