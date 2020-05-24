@@ -62,6 +62,16 @@ class ImmutableString
 즉!!!!!  
 > 자바는 인스턴스 생성의 수를 줄이기 위해서 동일한 문자열 데이터로 구성되는 String 인스턴스의 생성을 하나로 제한한다. 그리고 이를 통한 문제의 발생을 막기 위해서 String 인스턴스의 데이터 변경은 허용하지 않고 있다.  
 
+### 자바에서는 문자열을 복사한다는 표현을 쉽게 찾아보기 어렵다.
+
+String을 새로 생성함과 동시에 복사하는 것이 목적이라면, 아래와 같이 코드를 작성해야 한다. - 별도의 인스턴스에 저장하기 위해 새로운 String 인스턴스 생성하는 방법.
+~~~ java
+String str1 = "Best String";
+String str2 = new String(str1);
+~~~  
+  
+  
+
 #### String = " " vs new String(" ") 의 차이  
 ![img](https://user-images.githubusercontent.com/17976251/82747120-2607ea00-9dd1-11ea-9284-3ed539b7b1d2.png)  
 [두 가지 방법으로 String]  
@@ -102,16 +112,8 @@ true
 ~~~  
 
 첫 번째 결과가 왜 false가 나오는지 궁금하다. 다음에 추가 할 예정 :)  
-
-
-### 자바에서는 문자열을 복사한다는 표현을 쉽게 찾아보기 어렵다.
-
-String을 새로 생성함과 동시에 복사하는 것이 목적이라면, 아래와 같이 코드를 작성해야 한다. - 별도의 인스턴스에 저장하기 위해 새로운 String 인스턴스 생성하는 방법.
-~~~ java
-String str1 = "Best String";
-String str2 = new String(str1);
-~~~
-
+  
+  
 ## StringBuilder
 <span style="color:green">"가변"</span>    
 문자열의 저장 및 변경을 위한 메모리 공간(버퍼)을 내부에 지니고 있으며 이 메모리 공간은 크기가 자동으로 조절된다는 특징이 있다.  
