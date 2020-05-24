@@ -62,6 +62,48 @@ class ImmutableString
 즉!!!!!  
 > 자바는 인스턴스 생성의 수를 줄이기 위해서 동일한 문자열 데이터로 구성되는 String 인스턴스의 생성을 하나로 제한한다. 그리고 이를 통한 문제의 발생을 막기 위해서 String 인스턴스의 데이터 변경은 허용하지 않고 있다.  
 
+#### String = " " vs new String(" ") 의 차이  
+![img](https://user-images.githubusercontent.com/17976251/82747120-2607ea00-9dd1-11ea-9284-3ed539b7b1d2.png)  
+[두 가지 방법으로 String]  
+
+자바의 문자열은 java.lang 패키지의 String 클래스의 인스턴스로 관리됨.  
+1)String="aa" 를 하면 문자열 리터럴은 String 객체로 자동 생성되지만,  
+2)String 클래스의 다양한 생성자를 이용해서 직접 String 객체를 생성하고 사용 할 수 있다.  
+ex)String s3 = new String("Cat");  
+
+즉, 첫 번째는 문자열 리터럴 생성 방식, 두 번째는 생성자인 new 연산자를 이용한 문자열 생성 방식인데, 겉으로 보았을 때의 문법 차이도 있지만 실제 메모리에 할당되는 영역에도 차이가 있다.(위 이미지 참고)  
+
+#### ???  
+~~~ java
+		String a = "abc";
+		a += "def";
+
+		String b = "abcdef";
+		String c = "abcdef";
+
+		System.out.println(a);
+		System.out.println(b);
+
+		if (a == b)
+			System.out.println("true");
+		else
+			System.out.println("false");
+
+		if (b == c)
+			System.out.println("true");
+		else
+			System.out.println("false");
+~~~
+
+[결과]  
+~~~
+false
+true
+~~~  
+
+첫 번째 결과가 왜 false가 나오는지 궁금하다. 다음에 추가 할 예정 :)  
+
+
 ### 자바에서는 문자열을 복사한다는 표현을 쉽게 찾아보기 어렵다.
 
 String을 새로 생성함과 동시에 복사하는 것이 목적이라면, 아래와 같이 코드를 작성해야 한다. - 별도의 인스턴스에 저장하기 위해 새로운 String 인스턴스 생성하는 방법.
@@ -127,3 +169,7 @@ public StringBuilder(String str) // str.length()+16개의 문자 저장 버퍼 �
 
 References  
 난 정말 JAVA를 공부한 적이 없다구요!
+
+[[JAVA] String = " " vs new String(" ") 의 차이  
+https://ict-nroo.tistory.com/18 [개발자의 기록습관]
+
