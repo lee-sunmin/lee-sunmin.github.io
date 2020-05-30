@@ -6,9 +6,9 @@ var store = [{
         "teaser": null
       },{
         "title": "[자바 기본] 자바 Static 에 대해서 알아보자!",
-        "excerpt":"자바 - Static 이란 ? 자바를 사용하면서도 기본적인 내용을 놓치는 경우가 많았다. 최근 자바 Static 이 무엇인가? 에 대한 질문을 받았는데 이런 기본 문법도 모르는 사실에 충격을 먹고 여기에 간단히라도 정리해 보려고 한다. 개인 공부를 위한 공간 Static 변수 변수나 함수 앞에 붙여서 사용하는 것이 기본. public class HousePark {...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/static-post/",
+        "excerpt":"자바 - Static 이란 ? 자바를 사용하면서도 기본적인 내용을 놓치는 경우가 많았다. 최근 자바 Static 이 무엇인가? 에 대한 질문을 받았는데 이런 기본 문법도 모르는 사실에 충격을 먹고 여기에 간단히라도 정리해 보려고 한다. 개인 공부를 위한 공간 Static 변수 변수나 함수 앞에 붙여서 사용하는 것이 기본. public class HousePark {...","categories": ["Java"],
+        "tags": ["java","static"],
+        "url": "http://localhost:4000/java/static-post/",
         "teaser": null
       },{
         "title": "[자바] 자바 메서드 참조(method reference)",

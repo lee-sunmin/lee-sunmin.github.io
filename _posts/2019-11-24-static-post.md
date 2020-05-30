@@ -1,8 +1,10 @@
 ---
-layout: post
-title:  "[자바 기본] 자바 Static 에 대해서 알아보자!"
-date:   2019-10-13
-description: 자바 기본 문법 중 Static 에 대한 간단 정리
+title: "[자바 기본] 자바 Static 에 대해서 알아보자!"
+categories:
+  - Java
+tags:
+  - java
+  - static
 ---
 
 <!-- <p class="intro"><span class="dropcap">C</span>urabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur.</p> -->
