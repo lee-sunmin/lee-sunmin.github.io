@@ -97,7 +97,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Studying junior programmer"
   location         : "Somewhere :P"
-  email            : "lee.sunmin1303@gmail.com"
+  #email            : "lee.sunmin1303@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
