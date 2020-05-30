@@ -1,0 +1,77 @@
+<h4 id="상수도-메모리-공간에-저장-된다고">상수도 메모리 공간에 저장 된다고?</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">5</span><span class="o">;</span>
+</code></pre></div></div>
+<p>위와 같은 코드에서 1과 5의 합을 계산하기 위해서는 상수 1,5가 메모리 공간에 저장되어야 한다.</p>
+
+<h4 id="상수도-자로형을-기반으로-저장이-된다">상수도 자로형을 기반으로 저장이 된다.</h4>
+
+<p>상수의 메모리 저장을너무나 당연하게 생각하는 경향이 있는데,<br />
+위 코드에서 1과 5는 자료형인 byte, short, int, long 중 하나로 저장되어야 하며,
+2.4나 7.5와 같은 값은 실수 자료형인 float, double 중 하나의 형태로 표현 및 저장되어야 한다.</p>
+
+<p>하지만!</p>
+<blockquote>
+  <p>기본적으로 모든 정수형 상수는 int 형으로 표현 및 저장된다.</p>
+</blockquote>
+
+<blockquote>
+  <p>기본적으로 모든 실수형 상수는 double 형으로 표현 및 저장한다.</p>
+</blockquote>
+
+<p>따라서, 앞의 1과 5는 4바이트씩 할당되어 저장되고, 2.7과 7.5는 8바이트씩 할당되어 저장된다.</p>
+
+<h4 id="그럼-10000000000-은-어떻게-표현해-">그럼 10000000000 은 어떻게 표현해 ?</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10000000000</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>위 코드는 int 형의 표현 범위를 넘어서기 때문에 에러 발생!</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10000000000</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>위 코드는 long 형이고, 10000000000 값이 표현 되니까 당연히 가능하겠지?<br />
+NO! 에러 발생!</p>
+
+<p>왜????????????????????????????????????????</p>
+
+<p>정수형 상수는 무조건 int 형으로 표현된다고 했잖아<br />
+따라서 큰 수 역시 int 형으로 표현이 가능한지를 먼저 판단해본다!<br />
+이 값을 저장할 변수가 long형인지 아닌지는 그 다음의 문제 일 뿐 !!!@@</p>
+
+<p>*따라서 이러한 경우에는 큰 수를 int 형이 아닌 long 형으로 표현해 달라고 명시적으로 선언을 해야 함</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">10000000000L</span><span class="o">;</span> <span class="c1">// 소문자 l 도 가능 </span>
+</code></pre></div></div>
+
+<h4 id="다음-문제도-살펴보자">다음 문제도 살펴보자</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">num2</span> <span class="o">=</span> <span class="mf">12.45</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>12.45는 double 형으로 표현이 가능하니까 당연히 가능하겠지.</p>
+
+<p>NO! 에러 발생!</p>
+
+<p>왜????????????????????????????????????<br />
+아니 12.45는 float형 변수에도 저장이 가능한 값이잖아??</p>
+
+<p><em>자바 컴파일러는 값의 크기를 기준으로 판단하지 않고, 값의 표현에 사용되는 바이트 크기를 기준으로 판단한다.<br />
+따라서 8바이트 double형 상수의 값을 4바이트 float형 변수에 저장하는 문장에서는 컴파일 에러가 발생한다!! 값이 손상 될 수 있기 때문에 *^^</em></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">num2</span> <span class="o">=</span> <span class="mf">12.45</span><span class="no">F</span>
+</code></pre></div></div>
+
+<h4 id="참고-btye와-short형-상수의-표현을-위한-접미사는-없음">[참고] btye와 short형 상수의 표현을 위한 접미사는 없음</h4>
+
+<p>자바는 정수에 대한 산술 연산을 int 형 기반으로 처리하는데,
+byte 와 short 형 변수들은 int 형 상수 기반의 초기화를 허용하기 때문에 필요없음.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// OK ~! </span>
+<span class="kt">byte</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+<span class="kt">short</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">50</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>references<br />
+난 정말 JAVA를 공부한 적이 없다구요</p>

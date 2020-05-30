@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-30T15:28:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Site Title</title><subtitle>An amazing website.</subtitle><author><name>Your Name</name></author><entry><title type="html">[통신] TCP VS UDP</title><link href="http://localhost:4000/tcpudp-post/" rel="alternate" type="text/html" title="[통신] TCP VS UDP" /><published>2020-05-26T00:00:00+09:00</published><updated>2020-05-26T00:00:00+09:00</updated><id>http://localhost:4000/tcpudp-post</id><content type="html" xml:base="http://localhost:4000/tcpudp-post/">&lt;h3 id=&quot;tcp--udp-&quot;&gt;TCP / UDP ?&lt;/h3&gt;
+
+&lt;p&gt;전송계층에서 사용하는 프로토콜로써, 목적지 장비까지 전송한 패킷을 상위의 특정 응용 프로토콜에게 전달하는 것에 목적이 있음&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전송계층이란? 송신자와 수신자를 연결하는 통신 서비스를 제공하는 계층으로, 쉽게 말해 데이터의 전달을 담당함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;전송방식: TCP, UDP&lt;/p&gt;
+
+&lt;h3 id=&quot;tcptransmission-control-protocol&quot;&gt;TCP(Transmission Control Protocol)?&lt;/h3&gt;
+
+&lt;p&gt;: 연결형 서비스를 지원하는 전송 계층 프로토콜&lt;/p&gt;
+
+&lt;p&gt;호스트간 &lt;strong&gt;신뢰성 있는 데이터 전달과 흐름제어&lt;/strong&gt;&lt;br /&gt;
+인터넷상에서 &lt;em&gt;데이터를 메시지의 형태로 보내기 위해 IP와 함께 사용&lt;/em&gt;하는 프로토콜&lt;/p&gt;
+
+&lt;p&gt;일반적으로 TCP와 IP를 함께 사용하는데, IP가 데이터의 배달을 처리한다면 TCP는 패킷을 추적 및 관리한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;tcp-특징&quot;&gt;TCP 특징&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;연결형 서비스로 가상 회선 방식(처음 패킷으로 최적의 경로를 고정하고 경로가 고정되면 그 다음은 패킷으로 나누어 고속으로 전송하는 기술)을 제공한다.&lt;/li&gt;
+  &lt;li&gt;데이터의 경계를 구분하지 않는다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;데이터의 전송 순서 보장한다.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;UDP보다 전송속도가 느리다.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;신뢰성있는 데이터를 전송한다.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;udp--user-datagram-protocol-&quot;&gt;UDP ( User Datagram Protocol )&lt;/h3&gt;
+
+&lt;p&gt;: &lt;em&gt;비연결형 서비스를 지원하는 전송계층 프로토콜&lt;/em&gt;&lt;br /&gt;
+인터넷상에서 서로 정보를 주고받을 때 정보를 보낸다는 신호나 받는다는 신호 절차를 거치지 않고, &lt;strong&gt;&lt;em&gt;보내는 쪽에서 일방적으로 데이터를 전달&lt;/em&gt;&lt;/strong&gt;하는 통신 프로토콜&lt;/p&gt;
+
+&lt;p&gt;데이터를 데이터그램(독립적인 관계를 지니는 패킷) 단위로 처리&lt;/p&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+&lt;h3 id=&quot;udp-특징&quot;&gt;UDP 특징&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;비연결형 서비스로 데이터그램 방식을 제공한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;정보를 주고 받을때 정보를 보내거나 받는다는 신호절차를 거치지 않는다.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;신뢰성 없는 데이터를 전송한다.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;데이터의 경계를 구분한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;TCP보다 전송속도가 빠르다.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;결론-차이점&quot;&gt;결론 (차이점)&lt;/h3&gt;
+
+&lt;p&gt;: TCP는 연속성보다 신뢰성있는 전송이 중요할 때에 사용하는 프로토콜이며,&lt;br /&gt;
+UDP는 TCP보다 속도가 빠르며 네트워크 부하가 적다는 장점이 있지만 신뢰성있는 데이터 전송을 보장하지는 않는다.&lt;/p&gt;
+
+&lt;p&gt;그렇기 때문에 신뢰성보다는 연속성(어떠한 상태가 계속 유지되는 것)이 중요한 실시간 서비스(streaming)같은 곳에 자주 사용됨&lt;/p&gt;
+
+&lt;p&gt;References&lt;br /&gt;
+https://choseongho93.tistory.com/3 [⊂코딩 5분전⊃]&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">TCP / UDP ?</summary></entry><entry><title type="html">DAO VS DTO(VO)</title><link href="http://localhost:4000/dtovsdao-post/" rel="alternate" type="text/html" title="DAO VS DTO(VO)" /><published>2020-05-26T00:00:00+09:00</published><updated>2020-05-26T00:00:00+09:00</updated><id>http://localhost:4000/dtovsdao-post</id><content type="html" xml:base="http://localhost:4000/dtovsdao-post/">&lt;h3 id=&quot;dao&quot;&gt;DAO&lt;/h3&gt;
+&lt;p&gt;DAO : Data Access Object
+Database data 접근을 위한 객체&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">DAO DAO : Data Access Object Database data 접근을 위한 객체</summary></entry><entry><title type="html">[자바] HashMap</title><link href="http://localhost:4000/hashmap-post/" rel="alternate" type="text/html" title="[자바] HashMap" /><published>2020-05-24T00:00:00+09:00</published><updated>2020-05-24T00:00:00+09:00</updated><id>http://localhost:4000/hashmap-post</id><content type="html" xml:base="http://localhost:4000/hashmap-post/">&lt;h3 id=&quot;hashmap&quot;&gt;HashMap?&lt;/h3&gt;
+
+&lt;p&gt;Hashmap은 고정시간을 제공하는 Key-value 데이터 구조이다.&lt;br /&gt;
+&lt;strong&gt;시간복잡도 : O(1)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;자바의 Hash 개념을 사용한다. 이 데이터 구조는 키를 입력해서 O(1) 시간복잡도로 value 값을 찾을 수 있다.&lt;br /&gt;
+해싱에서 해시함수는 해시맵 안의 key와 value를 연결한다.&lt;/p&gt;
+
+&lt;p&gt;데이터를 넣기 위해서 put 함수를 사용하면 key object의 hashcode() 함수가 호출되는데 이는 맵의 해시함수가 value가 저장되어 있는 bucket(table로 알려져 있는 iternal array)에서의 location을 찾기 위함이다.&lt;/p&gt;
+
+&lt;p&gt;해시맵 내부에 Map.Entry 형태로 key value 매핑 값이 들어있다.(아래 코드 참고)&lt;/p&gt;
+
+&lt;p&gt;get() 함수를 사용해서&lt;/p&gt;
+
+&lt;p&gt;[데이터 저장]&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// java 11에서 map을 만드는 방법&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//java 8의 경우&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// add value&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Rice&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;6.9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Flour&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[데이터 검색, 조회]&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//get value : key 값을 사용해서 데이터 검색&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;egg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Egg&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;hashmap에서-모든-key와-value-출력&quot;&gt;HashMap에서 모든 Key와 Value 출력&lt;/h3&gt;
+&lt;p&gt;[모든 Key 출력]&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Java&quot;&gt;Set&amp;lt;String&amp;gt; keys = products.keySet();
+
+//print all the keys 
+for (String key : keys) {
+  System.out.println(key);
+}
+
+// or
+keys.forEach(key -&amp;gt; System.out.println(key));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;[모든 Value 출력]&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Collection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;values&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[모든 Key/Value 출력]&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;entrySet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;key: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getKey&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;, Value: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// or (lambda expression) 확실히 깔끔하네&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;products&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;key: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;, Value: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;hashmap-vs-hashtable&quot;&gt;Hashmap vs Hashtable&lt;/h3&gt;
+
+&lt;p&gt;Hashmap vs Hashtable&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;HashMap is non synchronized. It is not-thread safe and can’t be shared between many threads without proper synchronization code whereas Hashtable is synchronized. It is thread-safe and can be shared with many threads.&lt;/li&gt;
+  &lt;li&gt;HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key or value.&lt;/li&gt;
+  &lt;li&gt;HashMap is generally preferred over HashTable if thread synchronization is not needed&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Why HashTable doesn’t allow null and HashMap does?
+To successfully store and retrieve objects from a HashTable, the objects used as keys must implement the hashCode method and the equals method. Since null is not an object, it can’t implement these methods. HashMap is an advanced version and improvement on the Hashtable. HashMap was created later.&lt;/p&gt;
+
+&lt;p&gt;References&lt;br /&gt;
+[코드 참고]&lt;br /&gt;
+http://tech.javacafe.io/2018/12/03/HashMap/&lt;br /&gt;
+정리를 너무 잘 해주셔서 해당 내용 참고하면서 교육 목적으로 재정리 했습니다. 감사합니다 :)&lt;br /&gt;
+[Haspmap vs Hasptable]&lt;br /&gt;
+https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">HashMap?</summary></entry><entry><title type="html">[기타] 배포 전략의 종류 3가지</title><link href="http://localhost:4000/distribution-post/" rel="alternate" type="text/html" title="[기타] 배포 전략의 종류 3가지" /><published>2020-05-14T00:00:00+09:00</published><updated>2020-05-14T00:00:00+09:00</updated><id>http://localhost:4000/distribution-post</id><content type="html" xml:base="http://localhost:4000/distribution-post/">&lt;p&gt;해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.&lt;br /&gt;
+개인 학습용으로 해당 공간에 재생성하였습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-롤링-배포-rolling&quot;&gt;1. 롤링 배포 (Rolling)&lt;/h3&gt;
+&lt;p&gt;&lt;img width=&quot;752&quot; alt=&quot;스크린샷 2020-05-14 오후 10 03 19&quot; src=&quot;https://user-images.githubusercontent.com/17976251/81937588-c66e4980-962e-11ea-9319-06b1ecfd6780.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;일반적인 배포를 의미하며, &lt;strong&gt;구 버전에서 신 버전으로 트래픽을 점진적으로 전환하는 배포&lt;/strong&gt;이다.&lt;br /&gt;
+위 이미지를 보면 초록색 부분이 배포되는 영역이며, 점진적으로 전환되는 것을 확인 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;관리는 편하지만 배포 중 &lt;em&gt;한쪽 인스턴스의 수가 감소되므로 서버 처리 용량을 미리 고려해야 한다.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-블루그린-blue-green&quot;&gt;2. 블루그린 (Blue Green)&lt;/h3&gt;
+&lt;p&gt;&lt;img width=&quot;791&quot; alt=&quot;스크린샷 2020-05-14 오후 10 08 31&quot; src=&quot;https://user-images.githubusercontent.com/17976251/81938146-8360a600-962f-11ea-9d9e-e21130177ed7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;807&quot; alt=&quot;스크린샷 2020-05-14 오후 10 09 29&quot; src=&quot;https://user-images.githubusercontent.com/17976251/81938219-996e6680-962f-11ea-8a4d-e02a4b6a7683.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 이미지를 보면 쉽게 알 수 있는 것처럼 신 버전을 배포하고 일제히 전환하여 모든 연결을 신 버전을 바라보도록 하는 배포방법이다.&lt;br /&gt;
+구 버전(파랑)과 신 버전(초록) 서버를 동시에 나란히 구성하여 배포 시점에 트래픽을 일제히 전환시킨다.&lt;br /&gt;
+&lt;strong&gt;빠른 롤백이 가능하고 실제 서비스 환경으로 신 버전 테스트가 가능하다!&lt;/strong&gt;&lt;br /&gt;
+하지만, &lt;strong&gt;&lt;em&gt;시스템 자원이 두 배로 필요하다는 단점이 있다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3-카나리-canary&quot;&gt;3. 카나리 (Canary)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img width=&quot;819&quot; alt=&quot;스크린샷 2020-05-14 오후 10 12 39&quot; src=&quot;https://user-images.githubusercontent.com/17976251/81938574-0f72cd80-9630-11ea-9779-32d8604f9ce8.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;카나리의 어원은 카나리아라는 새이다. 카나리아는 유독가스에 굉장히 민감한 동물로 석탄에서 유독가스 유출을 알리는 용도로 사용되어 왔다. - 미리 위험을 감지하기 위함&lt;/p&gt;
+
+&lt;p&gt;카나리 배포는 &lt;em&gt;위험을 빠르게 감지할 수 있는 배포 전략&lt;/em&gt;이다.&lt;br /&gt;
+&lt;strong&gt;지정한 서버 또는 특정 유저에게만 배포했다가 정상적이면 전체를 배포하는 방식&lt;/strong&gt;으로 서버의 트래픽 일부를 신 버전으로 분산하여 오류 여부를 확인 할 수 있다.&lt;br /&gt;
+이러한 전략은 성능 모니터링에 유용하다. 트래픽을 분산시킬 때는 라우팅을 랜덤하게 할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;출처&quot;&gt;출처&lt;/h3&gt;
+&lt;p&gt;https://reference-m1.tistory.com/211&lt;br /&gt;
+모든 자료는 위 링크를 참고했습니다. 깔끔한 정리 감사합니다 ^^&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다. 개인 학습용으로 해당 공간에 재생성하였습니다.</summary></entry><entry><title type="html">[알고리즘] B-Tree에 대해 알아보자</title><link href="http://localhost:4000/Btree-post/" rel="alternate" type="text/html" title="[알고리즘] B-Tree에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/Btree-post</id><content type="html" xml:base="http://localhost:4000/Btree-post/">&lt;h2 id=&quot;b-tree&quot;&gt;B-tree&lt;/h2&gt;
+&lt;p&gt;데이터베이스와 파일시스템에서 B-Tree를 많이 사용하며, 
+rdb 인덱스에서도 일반적으로 B-Tree , B+-Tree 자료구조를 사용한다.&lt;/p&gt;
+
+&lt;p&gt;이진 트리가 자식 노드가 최대 2개인 노드라면 &lt;strong&gt;B-Tree는 자식 노드의 개수가 2개 이상&lt;/strong&gt;인 트리이다.  &lt;br /&gt;
+또한 &lt;strong&gt;노드내의 데이터가 1개 이상&lt;/strong&gt;일수가 있으며, 노드내 최대 데이터 수가 2개라면 2차 B-Tree, 3개라면 3차 B-Tree 라고 한다.&lt;br /&gt;
+차수가 홀수인지 짝수인지에 따라 알고리즘이 많이 달라진다고 한다. 아직 잘 모르겠다 ㅠ&lt;/p&gt;
+
+&lt;h3 id=&quot;b-tree-성립-조건&quot;&gt;B-tree 성립 조건&lt;/h3&gt;
+
+&lt;p&gt;1) 노드의 데이터수가 n개라면 자식 노드의 개수는 n+1 개이다.&lt;br /&gt;
+btree조건 root 노드의 데이터가 1, 2, 3 3개이므로 자식 노드의 개수는 4개 입니다.
+&lt;img width=&quot;678&quot; alt=&quot;btree_1&quot; src=&quot;https://user-images.githubusercontent.com/17976251/74100921-67082580-4b77-11ea-93f5-3c53d3629624.png&quot; /&gt;&lt;br /&gt;
+이미지 출처 : https://hyungjoon6876.github.io/jlog/2018/07/20/btree.html&lt;/p&gt;
+
+&lt;p&gt;2) 노드의 데이터는 반드시 정렬된 상태여야 한다.&lt;br /&gt;
+3) 노드의 자식노드의 데이터들은 노드 데이터를 기준으로 데이터보다 작은 값은 왼쪽 서브 트리에 큰값들은 오른쪽 서브 트리에 이루어 져야 한다.&lt;br /&gt;
+4) Root 노드가 자식이 있다면 2개이상의 자식을 가져야 한다. 
+5) Root 노드를 제외한 모든 노드는 적어도 M/2 개의 데이터를 갖고 있어야 한다.&lt;br /&gt;
+3차 B-Tree 까지는 1개의 데이터지만 4차부터는 최소 2개 이상의 데이터를 가져야 한다.&lt;br /&gt;
+&lt;img width=&quot;845&quot; alt=&quot;btree_4&quot; src=&quot;https://user-images.githubusercontent.com/17976251/74100930-7b4c2280-4b77-11ea-82e9-0c30918562a2.png&quot; /&gt;&lt;br /&gt;
+이미지 출처 : https://hyungjoon6876.github.io/jlog/2018/07/20/btree.html&lt;br /&gt;
+6) Leaf 노드로 가는 경로의 길이는 모두 같아야 한다.&lt;br /&gt;
+즉 Leaf 노드는 모두 같은 레벨에 있어야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;b-tree-삽입삭제-등-시뮬레이션-해볼-수-있는-사이트&quot;&gt;B-Tree 삽입/삭제 등 시뮬레이션 해볼 수 있는 사이트&lt;/h3&gt;
+&lt;p&gt;https://www.cs.usfca.edu/~galles/visualization/BTree.html&lt;/p&gt;
+
+&lt;h3 id=&quot;b-tree-삽입&quot;&gt;B-Tree 삽입&lt;/h3&gt;
+
+&lt;p&gt;&lt;img width=&quot;559&quot; alt=&quot;스크린샷 2020-02-09 오후 8 14 09&quot; src=&quot;https://user-images.githubusercontent.com/17976251/74101035-cf0b3b80-4b78-11ea-9bde-89141029dead.png&quot; /&gt;&lt;br /&gt;
+위 예제를 보면 위에서 명시한 조건들이 성립되는 것을 확인 할 수 있다.&lt;br /&gt;
+특히, Root 노드를 제외한 모든 노드는 적어도 M/2 개의 데이터를 가지고 있어야 한다고 했는데, M=4이고 4/2는 2이기 때문에 노드들의 최소 갯수가 2개 임을 볼 수 있다 :)&lt;br /&gt;
+또한, leaf 노드는 모두 같은 레벨에 있음을 확인 할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;b-tree-삭제&quot;&gt;B-Tree 삭제&lt;/h3&gt;
+&lt;p&gt;삭제는 케이스에 따라 달라지는 것 같아서 추후 추가 할 예정이다 :)&lt;/p&gt;
+
+&lt;p&gt;References&lt;br /&gt;
+https://hyungjoon6876.github.io/jlog/2018/07/20/btree.html&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">B-tree 데이터베이스와 파일시스템에서 B-Tree를 많이 사용하며, rdb 인덱스에서도 일반적으로 B-Tree , B+-Tree 자료구조를 사용한다.</summary></entry><entry><title type="html">[데이터베이스] index에 대해 알아보자</title><link href="http://localhost:4000/index-post/" rel="alternate" type="text/html" title="[데이터베이스] index에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/index-post</id><content type="html" xml:base="http://localhost:4000/index-post/">&lt;h2 id=&quot;index의-의미&quot;&gt;INDEX의 의미&lt;/h2&gt;
+&lt;p&gt;RDBMS에서 검색속도를 높이기 사용하는 기술로 INDEX는 색인이다.&lt;br /&gt;
+해당 TABLE의 컬럼을 색인화(따로 파일로 저장)하여 검색시 해당 TABLE의 레코드를 full scan 하는게 아니라 색인화 되어있는 INDEX 파일을 검색하여 검색속도를 빠르게 하는것이 포인트!&lt;br /&gt;
+RDBMS에서 INDEX는 B+ Tree를 사용한다. :)&lt;br /&gt;
+&lt;b tree=&quot;&quot; 관련=&quot;&quot; 내용=&quot;&quot; b-tree=&quot;&quot; 게시글=&quot;&quot; 참고=&quot;&quot;&gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;index의-원리&quot;&gt;INDEX의 원리&lt;/h3&gt;
+&lt;p&gt;INDEX를 해당 컬럼에 주게 되면 초기 TABLE생성시 만들어진 MYD,MYI,FRM 3개의 파일중에서 MYI에 해당 컬럼을 색인화 하여 저장한다.&lt;br /&gt;
+INDEX를 사용하지 않을 때 MYI파일은 비어 있다. 그래서 INDEX를 해당컬럼에 만들게 되면 해당컬럼을 따로 인덱싱하여 MYI 파일에 입력한다.&lt;/p&gt;
+
+&lt;p&gt;그래서 사용자가 INDEX를 사용하는 SELECT 쿼리를 할 때 해당 TABLE을 검색하는것이 아니라 &lt;strong&gt;TREE로 정리해둔 MYI파일의 내용을 검색&lt;/strong&gt;합니다.&lt;/p&gt;
+
+&lt;p&gt;만약 INDEX를 사용하지 않은 SEELCT쿼리라면 해당 TABLE full scan하여 모두 검색해야 한다. 인덱스는 책의 뒷부분에 찾아보기와 같은 의미로 정리해둔 단어중에서 원하는 단어를 찾아서 페이지수를 보고 쉽게 찾을 수 있지만 없다면 책 전체를 봐야하는 것과 비슷하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;index의-장점&quot;&gt;INDEX의 장점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;키 값을 기초로 하여 &lt;strong&gt;테이블의 검색과 정렬 속도를 향상&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;테이블의 기본 키는 자동으로 인덱스 된다!!!&lt;/li&gt;
+  &lt;li&gt;데이터 형식 때문에 인덱스 될 수 없는 필드도 있다.&lt;/li&gt;
+  &lt;li&gt;여러 필드로 이루어진(다중 필드) 인덱스를 사용하면 첫 필드 값이 같은 레코드도 구분할 수 있다. (액세스에서 다중 필드 인덱스는 최대 10개의 필드를 포함 가능)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;index의-단점&quot;&gt;INDEX의 단점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;인덱스를 만들면 .mdb 파일 크기가 늘어난다.&lt;/li&gt;
+  &lt;li&gt;여러 사용자 응용 프로그램에서의 여러 사용자가 한 페이지를 동시에 수정할 수 있는 병행성이 줄어든다.&lt;/li&gt;
+  &lt;li&gt;인덱스 된 필드에서 데이터를 업데이트하거나, 레코드를 &lt;strong&gt;추가 또는 삭제할 때 성능이 떨어진다.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;인덱스가 데이터베이스 공간을 차지해 추가적인 공간이 필요하다. (DB의 10퍼센트 내외의 공간이 추가로 필요)&lt;/li&gt;
+  &lt;li&gt;인덱스를 생성하는데 시간이 많이 소요될 수 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;데이터 변경 작업이 자주 일어날 경우에 인덱스를 재작성해야 할 필요가 있기에 성능에 영향을 끼칠 수 있다.&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;따라서 어느 필드를 인덱스 해야 하는지 미리 시험해 보고 결정하는 것이 좋다.&lt;br /&gt;
+인덱스를 추가하면 쿼리 속도가 1초 정도 빨라지지만, 데이터 행을 추가하는 속도는 2초 정도 느려지게 되어 여러 사용자가 사용하는 경우 레코드 잠금 문제가 발생할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;또, 다른 필드에 대한 인덱스를 만들게 되면 성능이 별로 향상되지 않을 수도 있는데 예를 들어, 테이블에 회사 이름 필드와 성 필드가 이미 인덱스 된 경우에 우편 번호 필드를 추가로 인덱스에 포함해도 성능이 거의 향상되지 않습니다. 만드는 쿼리의 종류와 관계 없이 &lt;strong&gt;&lt;em&gt;가장 고유한 값을 갖는 필드만 인덱스 해야 한다.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;index의-목적&quot;&gt;INDEX의 목적&lt;/h3&gt;
+&lt;p&gt;RDBMS 내 Index의 목적은 해당 RDBMS의 검색 속도를 높이는 것이다.&lt;br /&gt;
+SELECT쿼리의 WHERE절이나 JOIN 예약어를 사용했을때만 인덱스를 사용하며 SELECT 쿼리의 검색 속도를 빠르게 하는데 목적이 있다.
+※ DELETE,INSERT,UPDATE쿼리에는 해당 사항없으며 INDEX 사용 시 성능 저하&lt;/p&gt;
+
+&lt;h3 id=&quot;인덱스를-생성해야-하는-경우와-그렇지-않은-경우&quot;&gt;인덱스를 생성해야 하는 경우와 그렇지 않은 경우&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;인덱스는 열 단위로 생성된다.&lt;/li&gt;
+  &lt;li&gt;WHERE절에서 사용되는 컬럼을 인덱스로 만든다.&lt;/li&gt;
+  &lt;li&gt;데이터의 중복도가 높은 열은 인덱스로 만들어도 효용이 없다. (예 : 성별, 타입이 별로 없는 경우)&lt;/li&gt;
+  &lt;li&gt;외래키가 사용되는 열에는 인덱스를 되도록 생성해주는 것이 좋다.&lt;/li&gt;
+  &lt;li&gt;JOIN에 자주 사용되는 열에는 인덱스를 생성해주는 것이 좋다.&lt;/li&gt;
+  &lt;li&gt;INSERT / UPDATE / DELETE가 얼마나 자주 일어나는지를 고려한다.&lt;/li&gt;
+  &lt;li&gt;사용하지 않는 인덱스는 제거하자&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;References&lt;/p&gt;
+
+&lt;p&gt;https://lalwr.blogspot.com/2016/02/db-index.html&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">INDEX의 의미 RDBMS에서 검색속도를 높이기 사용하는 기술로 INDEX는 색인이다. 해당 TABLE의 컬럼을 색인화(따로 파일로 저장)하여 검색시 해당 TABLE의 레코드를 full scan 하는게 아니라 색인화 되어있는 INDEX 파일을 검색하여 검색속도를 빠르게 하는것이 포인트! RDBMS에서 INDEX는 B+ Tree를 사용한다. :)</summary></entry><entry><title type="html">[자바 기본] Thread에 대해 알아보자</title><link href="http://localhost:4000/thread-post/" rel="alternate" type="text/html" title="[자바 기본] Thread에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/thread-post</id><content type="html" xml:base="http://localhost:4000/thread-post/">&lt;h2 id=&quot;thread&quot;&gt;Thread&lt;/h2&gt;
+
+&lt;p&gt;할당된 메모리 공간을 기반으로 실행 중에 있는 프로그램을 가리켜 ‘프로세스(Process)’라 한다. 따라서 프로세스를 간단히 ‘실행중인 프로그램’ 으로 설명하기도 한다.&lt;/p&gt;
+
+&lt;p&gt;쓰레드를 통해 하나의 프로세스 내에서 둘 이상의 프로그램 흐름을 형성할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;extends-thread&quot;&gt;extends Thread&lt;/h3&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ShowThread&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//... 생략&lt;/span&gt;
+    &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threadName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;showThread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;threadName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;// Thread 클래스의 run 메소드를 오버라이딩 한 것&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// ... 로직&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ThreadUnderStand&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;ShowThread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ShowThread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;멋진 쓰레드&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;ShowThread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;st2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ShowThread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;예쁜 쓰레드&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 별도의 흐름을 생성하기 위해 Thread 클래스에 정의되어 있는 start 메소드 호출&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;str1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; 
+        &lt;span class=&quot;n&quot;&gt;str2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;모든 쓰레드는 CPU를 공유한다.&lt;/li&gt;
+  &lt;li&gt;쓰레드를 생성하고 start 메소드를 호출한다고 해서 main 메소드가 멈춰서는 것은 아니다. main 메소드도 여느 쓰레드와 마찬가지로 자신만의 실행흐름을 이어간다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;implements-runnable&quot;&gt;implements Runnable&lt;/h3&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AdderThread&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Sum&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Runnable&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//... 생략&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RunnableThread&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;AdderThread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AdderThread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;AdderThread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AdderThread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;51&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Runnable 인터페이스를 구현하는 인스턴스를 대상으로 쓰레드 생성&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tr1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;at1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tr2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;at2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;tr1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;tr2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;tr1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;tr2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;InterrruptedException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1~100까지의 합 : &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;at1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getNum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;at2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getNum&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;join()&lt;/strong&gt; : 다른 쓰레드의 실행완료를 기다리는 목적으로 호출하는 join 메소드&lt;/p&gt;
+
+&lt;h2 id=&quot;thread의-특성&quot;&gt;Thread의 특성&lt;/h2&gt;
+
+&lt;h3 id=&quot;쓰레드의-스케줄링과-우선순위-컨트롤&quot;&gt;쓰레드의 스케줄링과 우선순위 컨트롤&lt;/h3&gt;
+&lt;p&gt;.. 추후 내용 추가 예정&lt;/p&gt;
+
+&lt;h3 id=&quot;쓰레드의-라이프-사이클life-cycle&quot;&gt;쓰레드의 라이프 사이클(Life Cycle)&lt;/h3&gt;
+&lt;p&gt;1) New 상태 : 쓰레드 클래스가 키워드 new를 통해서 인스턴스화 된 상태를 가리켜 ‘New 상태’ 라고 한다.&lt;/p&gt;
+
+&lt;p&gt;2) Runnable 상태 : start 메소드가 호출되면, 해당 쓰레드는 ‘Runnable’ 상태가 된다.&lt;br /&gt;
+모든 실행의 준비를 마치고, 스케줄러에 의해서 선택되어 실행될 수 있기만을 기다리는 상태다.&lt;br /&gt;
+-&amp;gt; start 메소드가 호출된다고 해서 바로 run 메소드가 호출되는 것이 아님을 알 수 있다!&lt;/p&gt;
+
+&lt;p&gt;3) Blocked 상태&lt;br /&gt;
+실행 중인 쓰레드가 sleep, join 메소드를 호출하거나 CPU 할당이 필요하지 않은 입출력 연산을 하게 되면 CPU를 다른 쓰레드에게 양보하고, 본인은 ‘Block 상태’ 가 된다.&lt;/p&gt;
+
+&lt;p&gt;4) Dead 상태
+run 메소드의 실행이 완료되어서 run 메소드를 빠져 나오게 되면, 해당 쓰레드는 ‘Dead 상태’ 가 된다.&lt;br /&gt;
+한번 Dead 상태가 된 쓰레드는 다시 Runnable 상태가 되지 못한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;쓰레드의-메모리-구성&quot;&gt;쓰레드의 메모리 구성&lt;/h3&gt;
+&lt;p&gt;쓰레드의 가장 큰 역할은 ‘별도의 실행흐름 형성’ 이다.&lt;br /&gt;
+따라서 main 메소드와는 전혀 다른 실행 흐름을 형성하기 위해 &lt;strong&gt;별도의 스택이 쓰레드에게 할당&lt;/strong&gt;되어야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img width=&quot;616&quot; alt=&quot;스크린샷 2020-02-09 오전 11 22 01&quot; src=&quot;https://user-images.githubusercontent.com/17976251/74095047-6e571100-4b2e-11ea-99e2-93c860babfb5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드는 자신의 스택을 할당받지만, &lt;strong&gt;힙과 메소드 영역은 모든 쓰레드에서 공유&lt;/strong&gt;한다.&lt;br /&gt;
+(JVM 포스팅 참고!!)&lt;br /&gt;
+특히 힙은 쓰레드 사이에 데이터를 주고받아야 할 때 힙 영역을 활용하기도 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;동기화synchronization&quot;&gt;동기화(Synchronization)&lt;/h2&gt;
+
+&lt;p&gt;한 쓰레드가 변수 num에 접근해서 연산을 완료할 때까지, 다른 쓰레드가 변수 num에 접근하지 못하도록 막아야 한다. 이것이 ‘동기화(Synchronization)’ 이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;thread-safe-합니까&quot;&gt;Thread-safe 합니까?&lt;/h3&gt;
+&lt;p&gt;String 포스팅을 참고하면 StringBuffer 클래스가 Thread-safe 하다고 설명한 내용이 있다. StringBuffer는 이미 동기화 처리가 되어있어서, 둘 이상의 쓰레드가 동시에 접근을 해도 문제가 발생하지 않는다는 뜻이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;쓰레드-동기화-기법-1--synchronized-기반의-동기화-메소드&quot;&gt;쓰레드 동기화 기법 1 : synchronized 기반의 동기화 메소드&lt;/h3&gt;
+
+&lt;p&gt;키워드 synchronized를 사용해서 ‘동기화 메소드’를 선언하거나 ‘동기화 블록’을 지정해 주면 된다.&lt;/p&gt;
+
+&lt;p&gt;아래는 동기화 메소드의 선언 방법이다.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;increment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 동기화 메소드를 사용하면 쓰레드B는 쓰레드A가 메소드의 실행을 완료할 때까지 대기하고 있다가, 완료가 되면 비로소 실행을 하게 된다.&lt;br /&gt;
+따라서 정확한 값이 출력되지만, &lt;strong&gt;&lt;em&gt;실행시간이 오래 걸린다&lt;/em&gt;&lt;/strong&gt;는 문제가 발생한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;synchronized-기반-동기화-메소드의-정확한-이해&quot;&gt;synchronized 기반 동기화 메소드의 정확한 이해&lt;/h3&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;opCnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;opCnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Q. 위 코드는 add 메소드가 호출 될 때, min 메소드의 호출도 막을 수 있나요? 그리고 그 반대의 상황도 막을 수 있나요?&lt;/p&gt;
+
+&lt;p&gt;A. YES ~  &lt;strong&gt;&lt;em&gt;실질적인 동기화의 주체는 인스턴스&lt;/em&gt;&lt;/strong&gt;이기 때문에 동기화되는 영역은 인스턴스 전체로 확장이 된다.&lt;/p&gt;
+
+&lt;p&gt;자바의 모든 인스턴스에는 하나의 열쇠가 존재한다.&lt;br /&gt;
+calculator 라는 인스턴스 내에 하나의 열쇠를 사용하여 add 함수와 min 함수를 실행하고, 실행이 멈추면 열쇠를 다시 반납한다.&lt;br /&gt;
+따라서 인스턴스 내에서 synchronized로 선언된 모든 메소드는 동시에 둘 이상이 실행될 수 없다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;동기화 대상이 인스턴스이기는 하지만 synchronized로 선언되지 않은 메소드에는 얼마든지 접근이 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;쓰레드-동기화-기법-2--synchronized-선언에-의한-동기화-블록의-구성&quot;&gt;쓰레드 동기화 기법 2 : synchronized 선언에 의한 동기화 블록의 구성&lt;/h3&gt;
+
+&lt;p&gt;위 동기화 메소드에서 동기화가 필요한 문장은 opCnt++; 와 같이 연산을 진행하는 한 줄에 지나지 않는다. 메소드의 전체 실행이 완료될 때까지 열쇠를 반납하지 않는 것은 성능 감소가 발생한다.&lt;br /&gt;
+따라서 코드 블록 일부로  메소드 대상을 제한하는 ‘동기화 블록’ 을 사용해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//!!!! (1)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;opCnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 동기화 된 문장&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;opCnt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 동기화 된 문장&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 동기화 블록을 사용하여 코드의 일부를 부분적으로 동기화의 대상에 포함시킬 수 있다.&lt;br /&gt;
+여기서 synchrnized(this) 의 this 에 대해 생각해보자.&lt;br /&gt;
+괄호 안에 들어가는 내용은 “어디에 있는 열쇠를 가져다 동기화를 하겠는가?” 이다.&lt;br /&gt;
+아래 예제를 보고 명확히 이해해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addOneNum1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTwoNum1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;num1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addOneNum2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addTwoNum2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;num2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;//... 생략&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 예제의 key1, key2는 동기화의 ‘열쇠’로 사용하기 위해서 생성되었다.&lt;br /&gt;
+num1을 사용하는 함수와 num2를 사용하는 함수는 동기화를 위해 사용된 열쇠가 다르기 때문에 과도한 동기화로 인한 성능 저하는 발생하지 않는다 :)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;정말로 필요한 부분에 최소한의 형태로 동기화를 하는 개발자가 정말로 동기화를 잘하는 개발자이다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;동기화는-쓰레드의-접근-순서방식를-컨트롤한다는-의미이다&quot;&gt;동기화는 쓰레드의 접근 순서(방식)를 컨트롤한다는 의미이다.&lt;/h3&gt;
+&lt;p&gt;쓰레드의 실행순서를 결정하는 것도 동기화의 범주에 포함된다.&lt;br /&gt;
+“쓰레드의 실행순서는 소스코드가 나열된 순서와 다를 수 있다.” 
+따라서 아래와 같이 실행 순서를 동기화 할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;wait-notify-notifyall에-의한-실행순서의-동기화&quot;&gt;wait, notify, notifyAll에 의한 실행순서의 동기화&lt;/h3&gt;
+&lt;p&gt;소포(데이터)가 도착하기로 약속된 장소(인스턴스)가 있는데,
+배달부보다 수취인이 먼저 약속된 장소에 도착했다.&lt;br /&gt;
+이때 수취인은 “배달부가 오기를 기다리며 낮잠 한숨 잔다”&lt;br /&gt;
+그리고 배달부가 와서 데이터를 놓은 뒤에 “수취인을 깨워서 물건을 가져가게 한다”&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;배달부가 오기를 기다리며 낮잠 한숨 잔다&quot;  &lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;InterruptedException&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위 메소드는 Object 클래스에 정의되어 있다. 따라서 어느 인스턴스를 대상으로 하건 호출이 가능하다.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;수취인을 깨워서 물건을 가져가게 한다&quot;  &lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;notify&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;notifyAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;위 코드를 사용한 예제를 확인해보자.&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//... 생략&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setTodayNews&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;news&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;notifyAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 모두 일어나세요~&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;getTodayNews&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;wait&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 한숨 자면서 기다릴게요.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;“wait과 notifyAll(notify) 메소드는 동기화 처리를 해서, 한 순간에 하나의 쓰레드만 호출이 가능하도록 해야 한다.”&lt;br /&gt;
+이 말은 즉 두 메소드 wait과 notify가 서로 다른 두 쓰레드에 의해 각각 동시 호출되는 것 조차 허용되지 않아야 함을 의미한다. 따라서 동기화 블록 또는 동기화 메소드를 이용해서 처리를 한다.&lt;br /&gt;
+그리고 wait 메소드는 연이은 호출이 가능하다 :) 
+예를들어 A쓰레드가 위 wait 메소드를 호출하면서 잠이 들었다고 가정하면, wait 문장을 감싸는 동기화 블록을 완전히 벗어난것은 아니지만 더 이상 실행중인 것이 아니라 그냥 잠이 들어버린 것이므로 다른 쓰레드가 이 동기화 블록에 접근하는 것은 허용이 된다.&lt;br /&gt;
+즉, 다른 쓰레드에 의해서 wait 메소드는 또 다시 호출이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;References&lt;br /&gt;
+난 정말 JAVA를 공부한 적이 없다구요&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">Thread</summary></entry><entry><title type="html">[알고리즘] 분할 정복 알고리즘(정렬)에 대해 알아보자</title><link href="http://localhost:4000/sort-post/" rel="alternate" type="text/html" title="[알고리즘] 분할 정복 알고리즘(정렬)에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/sort-post</id><content type="html" xml:base="http://localhost:4000/sort-post/">&lt;p&gt;아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;합병정렬merge-sort&quot;&gt;합병정렬(Merge sort)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;분할 정복 알고리즘의 하나 이다.
+분할 정복(divide and conquer) 방법&lt;br /&gt;
+문제를 작은 2개의 문제로 분리하고 각각을 해결한 다음, 결과를 모아서 원래의 문제를 해결하는 전략이다.&lt;br /&gt;
+분할 정복 방법은 대개 순환 호출을 이용하여 구현한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;과정 설명
+1) &lt;strong&gt;리스트의 길이가 0 또는 1이면 이미 정렬된 것으로 본다.&lt;/strong&gt; 그렇지 않은 경우에는&lt;br /&gt;
+2) 정렬되지 않은 리스트를 절반으로 잘라 비슷한 크기의 두 부분 리스트로 나눈다.&lt;br /&gt;
+3) 각 부분 리스트를 &lt;em&gt;재귀적&lt;/em&gt;으로 합병 정렬을 이용해 정렬한다.&lt;br /&gt;
+4) 두 부분 리스트를 다시 하나의 정렬된 리스트로 합병한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;합병-정렬merge-sort-알고리즘의-구체적인-개념&quot;&gt;합병 정렬(merge sort) 알고리즘의 구체적인 개념&lt;/h3&gt;
+&lt;p&gt;하나의 리스트를 두 개의 균등한 크기로 분할하고 분할된 부분 리스트를 정렬한 다음, 두 개의 정렬된 부분 리스트를 합하여 전체가 정렬된 리스트가 되게 하는 방법이다.
+합병 정렬은 다음의 단계들로 이루어진다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;분할(Divide): 입력 배열을 같은 크기의 2개의 부분 배열로 분할한다.&lt;/li&gt;
+  &lt;li&gt;정복(Conquer): 부분 배열을 정렬한다. 부분 배열의 크기가 충분히 작지 않으면 순환 호출 을 이용하여 다시 분할 정복 방법을 적용한다.&lt;/li&gt;
+  &lt;li&gt;결합(Combine): 정렬된 부분 배열들을 하나의 배열에 합병한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;conquer과 combine은 함께 일어난다.&lt;/p&gt;
+
+&lt;h4 id=&quot;합병-정렬의-과정&quot;&gt;합병 정렬의 과정&lt;/h4&gt;
+&lt;p&gt;추가적인 리스트 필요&lt;br /&gt;
+각 부분 배열을 정렬할 때도 합병 정렬을 순환적으로 호출하여 적용한다.&lt;br /&gt;
+합병 정렬에서 &lt;strong&gt;&lt;em&gt;실제로 정렬이 이루어지는 시점은 2개의 리스트를 합병(merge)하는 단계&lt;/em&gt;&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74096758-4378b700-4b46-11ea-83bd-ac46b2946390.png&quot; alt=&quot;merge-sort-concepts&quot; /&gt;&lt;br /&gt;
+이미지 출처 : https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html&lt;/p&gt;
+
+&lt;h3 id=&quot;합병-정렬merge-sort-알고리즘의-예제&quot;&gt;합병 정렬(merge sort) 알고리즘의 예제&lt;/h3&gt;
+&lt;p&gt;배열 =[27, 10, 12, 20, 25, 13, 15, 22] 오름차순으로 정렬해 보자.&lt;br /&gt;
+2개의 정렬된 리스트를 합병(merge)하는 과정&lt;br /&gt;
+2개의 리스트의 값들을 처음부터 하나씩 비교하여 두 개의 리스트의 값 중에서 더 작은 값을 새로운 리스트(sorted)로 옮긴다.&lt;br /&gt;
+둘 중에서 하나가 끝날 때까지 이 과정을 되풀이한다.&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;만약 둘 중에서 하나의 리스트가 먼저 끝나게 되면 나머지 리스트의 값들을 전부 새로운 리스트(sorted)로 복사&lt;/em&gt;&lt;/strong&gt;한다.&lt;br /&gt;
+새로운 리스트(sorted)를 원래의 리스트(list)로 옮긴다.&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;# include &amp;lt;stdio.h&amp;gt;
+# define MAX_SIZE 8
+&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 추가적인 공간이 필요&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// i: 정렬된 왼쪽 리스트에 대한 인덱스&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// j: 정렬된 오른쪽 리스트에 대한 인덱스&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// k: 정렬될 리스트에 대한 인덱스&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* 2개의 인접한 배열 list[left...mid]와 list[mid+1...right]의 합병 과정 */&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* (실제로 숫자들이 정렬되는 과정) */&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/* 분할 정렬된 list의 합병 */&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 남아 있는 값들을 일괄 복사&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 남아 있는 값들을 일괄 복사&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 배열 sorted[](임시 배열)의 리스트를 배열 list[]로 재복사&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 합병 정렬&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;merge_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 중간 위치를 계산하여 리스트를 균등 분할 -분할(Divide)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;merge_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 앞쪽 부분 리스트 정렬 -정복(Conquer)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;merge_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 뒤쪽 부분 리스트 정렬 -정복(Conquer)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;merge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 정렬된 2개의 부분 배열을 합병하는 과정 -결합(Combine)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 합병 정렬 수행(left: 배열의 시작 = 0, right: 배열의 끝 = 7)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;merge_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 정렬 결과 출력&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C언어 코드의 과정&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74096861-a7e84600-4b47-11ea-9433-6b21d0292f61.png&quot; alt=&quot;merge-sort-ccode&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;합병-정렬merge-sort-알고리즘의-특징&quot;&gt;합병 정렬(merge sort) 알고리즘의 특징&lt;/h3&gt;
+&lt;h4 id=&quot;단점&quot;&gt;단점&lt;/h4&gt;
+&lt;p&gt;만약 레코드를 배열(Array)로 구성하면, &lt;strong&gt;임시 배열&lt;/strong&gt;이 필요하다.&lt;br /&gt;
+제자리 정렬(in-place sorting)이 아니다.&lt;br /&gt;
+레크드들의 크기가 큰 경우에는 이동 횟수가 많으므로 매우 큰 시간적 낭비를 초래한다.&lt;/p&gt;
+&lt;h4 id=&quot;장점&quot;&gt;장점&lt;/h4&gt;
+&lt;p&gt;안정적인 정렬 방법&lt;br /&gt;
+데이터의 분포에 영향을 덜 받는다. 즉, 입력 데이터가 무엇이든 간에 정렬되는 시간은 동일하다. 
+(O(nlog₂n)로 동일)&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;만약 레코드를 연결 리스트(Linked List)로 구성하면, 링크 인덱스만 변경되므로 데이터의 이동은 굉장히 작아지며, 제자리 정렬(in-place sorting)로 구현할 수 있다.&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+따라서 크기가 큰 레코드를 정렬할 경우에 연결 리스트를 사용한다면, 합병 정렬은 퀵 정렬을 포함한 다른 어떤 졍렬 방법보다 효율적이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;합병-정렬merge-sort의-시간복잡도&quot;&gt;합병 정렬(merge sort)의 시간복잡도&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;분할 단계 - 비교 연산과 이동 연산이 수행되지 않는다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;합병 단계&lt;/p&gt;
+    &lt;h4 id=&quot;비교&quot;&gt;비교&lt;/h4&gt;
+    &lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74096916-93587d80-4b48-11ea-8d43-ff8240004bd2.png&quot; alt=&quot;sort-time-complexity-etc&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;순환 호출의 깊이 (합병 단계의 수) : k=log₂n&lt;br /&gt;
+순환 호출의 깊이 만큼의 합병 단계 * 각 합병 단계의 비교 연산 = nlog₂n&lt;/p&gt;
+
+&lt;h4 id=&quot;이동&quot;&gt;이동&lt;/h4&gt;
+&lt;p&gt;임시 배열에 복사했다가 다시 가져와야 되므로 이동 연산은 총 부분 배열에 들어 있는 요소의 개수가 n인 경우, 레코드의 이동이 2n번 발생한다.&lt;br /&gt;
+순환 호출의 깊이 만큼의 합병 단계 * 각 합병 단계의 이동 연산 = 2nlog₂n&lt;/p&gt;
+
+&lt;h3 id=&quot;결과&quot;&gt;결과&lt;/h3&gt;
+&lt;p&gt;T(n) = nlog₂n(비교) + 2nlog₂n(이동) = 3nlog₂n = &lt;span style=&quot;color:green&quot;&gt;O(nlog₂n)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;퀵정렬quick-sort&quot;&gt;퀵정렬(Quick sort)&lt;/h2&gt;
+
+&lt;h3 id=&quot;퀵-정렬quick-sort-알고리즘의-개념-요약&quot;&gt;퀵 정렬(quick sort) 알고리즘의 개념 요약&lt;/h3&gt;
+&lt;p&gt;분할 정복 알고리즘의 하나로, 평균적으로 매우 빠른 수행 속도를 자랑하는 정렬 방법&lt;br /&gt;
+합병 정렬(merge sort)과 달리 퀵 정렬은 리스트를 비균등하게 분할한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;과정-설명&quot;&gt;과정 설명&lt;/h3&gt;
+&lt;p&gt;1) 리스트 안에 있는 한 원소를 선택하고 피벗(pivot) 이라고 한다.&lt;br /&gt;
+2) 피벗을 기준으로 피벗보다 작은 요소들은 모두 피벗의 왼쪽으로 옮겨지고 피벗보다 큰 요소들은 모두 피벗의 오른쪽으로 옮겨진다. (피벗을 중심으로 왼쪽: 피벗보다 작은 요소들, 오른쪽: 피벗보다 큰 요소들)&lt;br /&gt;
+3) 피벗을 제외한 왼쪽 리스트와 오른쪽 리스트를 다시 정렬한다.&lt;br /&gt;
+4) 분할된 부분 리스트에 대하여 순환 호출 을 이용하여 정렬을 반복한다.&lt;br /&gt;
+5) 부분 리스트에서도 다시 피벗을 정하고 피벗을 기준으로 2개의 부분 리스트로 나누는 과정을 반복한다.&lt;br /&gt;
+6) 부분 리스트들이 더 이상 분할이 불가능할 때까지 반복한다.(리스트의 크기가 0이나 1이 될 때까지 반복)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74097044-8fc5f600-4b4a-11ea-82e5-136815f40525.png&quot; alt=&quot;quick-sort-concepts&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;퀵-정렬quick-sort-알고리즘의-구체적인-개념&quot;&gt;퀵 정렬(quick sort) 알고리즘의 구체적인 개념&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;하나의 리스트를 피벗(pivot)을 기준으로 두 개의 비균등한 크기로 분할하고 분할된 부분 리스트를 정렬한 다음, 두 개의 정렬된 부분 리스트를 합하여 전체가 정렬된 리스트가 되게 하는 방법이다.&lt;/li&gt;
+  &lt;li&gt;퀵 정렬은 다음의 단계들로 이루어진다.&lt;br /&gt;
+분할(Divide): 입력 배열을 &lt;em&gt;피벗을 기준으로 비균등하게 2개의 부분 배열&lt;/em&gt;(피벗을 중심으로 왼쪽: 피벗보다 작은 요소들, 오른쪽: 피벗보다 큰 요소들)로 분할한다.&lt;br /&gt;
+정복(Conquer): 부분 배열을 정렬한다. 부분 배열의 크기가 충분히 작지 않으면 순환 호출 을 이용하여 다시 분할 정복 방법을 적용한다.&lt;br /&gt;
+결합(Combine): 정렬된 부분 배열들을 하나의 배열에 합병한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;순환 호출이 한번 진행될 때마다 최소한 하나의 원소(피벗)는 최종적으로 위치가 정해지므로&lt;/em&gt;&lt;/strong&gt;, 이 알고리즘은 반드시 끝난다는 것을 보장할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;퀼-정렬-알고리즘의-예제&quot;&gt;퀼 정렬 알고리즘의 예제&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74097256-5a6ed780-4b4d-11ea-8321-bea18506de1f.png&quot; alt=&quot;quick-sort2&quot; /&gt;&lt;br /&gt;
+1) 피벗 값을 입력 리스트의 첫 번째 데이터로 하자. (다른 임의의 값이어도 상관없다.)&lt;br /&gt;
+2) 2개의 인덱스 변수(low, high)를 이용해서 리스트를 두 개의 부분 리스트로 나눈다.&lt;br /&gt;
+1회전: 피벗이 5인 경우,&lt;br /&gt;
+&lt;strong&gt;low는 왼쪽에서 오른쪽으로&lt;/strong&gt; 탐색해가다가 &lt;strong&gt;&lt;em&gt;피벗보다 큰 데이터(8)&lt;/em&gt;&lt;/strong&gt;을 찾으면 멈춘다.&lt;br /&gt;
+&lt;strong&gt;high는 오른쪽에서 왼쪽으로&lt;/strong&gt; 탐색해가다가 &lt;strong&gt;&lt;em&gt;피벗보다 작은 데이터(2)&lt;/em&gt;&lt;/strong&gt;를 찾으면 멈춘다.&lt;br /&gt;
+low와 high가 가리키는 두 데이터를 서로 교환한다.&lt;br /&gt;
+이 탐색-교환 과정은 &lt;em&gt;low와 high가 엇갈릴 때까지 반복&lt;/em&gt;한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;위 예제에서 헷갈렸던 부분은 1회전이 끝난 2회전이었다. 2회전의 시작인 첫번째 피봇은 리스트에서 가장 작은 값이기 때문에 아무런 변화 없이 왼쪽 2회전은 종료되어야 한다.&lt;br /&gt;
+high는 피봇보다 작은 값을 찾기 때문에(아래 코드 참고) high가 pivot 위치까지 내려간다. 그리고 high와 pivot의 위치를 바꾸면 아무런 변화가 일어나지 않고 종료되는 것이다 :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;# include &amp;lt;stdio.h&amp;gt;
+# define MAX_SIZE 9
+# define SWAP(x, y, temp) ( (temp)=(x), (x)=(y), (y)=(temp) )
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 1. 피벗을 기준으로 2개의 부분 리스트로 나눈다.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 2. 피벗보다 작은 값은 모두 왼쪽 부분 리스트로, 큰 값은 오른쪽 부분 리스트로 옮긴다.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* 2개의 비균등 배열 list[left...pivot-1]와 list[pivot+1...right]의 합병 과정 */&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/* (실제로 숫자들이 정렬되는 과정) */&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;partition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;low&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;high&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pivot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 정렬할 리스트의 가장 왼쪽 데이터를 피벗으로 선택(임의의 값을 피벗으로 선택)&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/* low와 high가 교차할 때까지 반복(low&amp;lt;high) */&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/* list[low]가 피벗보다 작으면 계속 low를 증가 */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// low는 left+1 에서 시작&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/* list[high]가 피벗보다 크면 계속 high를 감소 */&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//high는 right 에서 시작&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pivot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 만약 low와 high가 교차하지 않았으면 list[low]를 list[high] 교환&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;SWAP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// low와 high가 교차했으면 반복문을 빠져나와 list[left]와 list[high]를 교환&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;SWAP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 피벗의 위치인 high를 반환&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 퀵 정렬&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;quick_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/* 정렬할 범위가 2개 이상의 데이터이면(리스트의 크기가 0이나 1이 아니면) */&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// partition 함수를 호출하여 피벗을 기준으로 리스트를 비균등 분할 -분할(Divide)&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;partition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 피벗의 위치&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// 피벗은 제외한 2개의 부분 리스트를 대상으로 순환 호출&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;quick_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// (left ~ 피벗 바로 앞) 앞쪽 부분 리스트 정렬 -정복(Conquer)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;quick_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// (피벗 바로 뒤 ~ right) 뒤쪽 부분 리스트 정렬 -정복(Conquer)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAX_SIZE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 퀵 정렬 수행(left: 배열의 시작 = 0, right: 배열의 끝 = 8)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;quick_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// 정렬 결과 출력&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;퀵-정렬quick-sort-알고리즘의-특징&quot;&gt;퀵 정렬(quick sort) 알고리즘의 특징&lt;/h3&gt;
+&lt;h4 id=&quot;단점-1&quot;&gt;단점&lt;/h4&gt;
+&lt;p&gt;정렬된 리스트에 대해서는 퀵 정렬의 불균형 분할에 의해 오히려 수행시간이 더 많이 걸린다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;퀵 정렬의 불균형 분할을 방지하기 위하여 피벗을 선택할 때 더욱 리스트를 균등하게 분할할 수 있는 데이터를 선택한다.&lt;br /&gt;
+EX) 리스트 내의 몇 개의 데이터 중에서 크기순으로 중간 값(medium)을 피벗으로 선택한다.&lt;/p&gt;
+  &lt;h4 id=&quot;장점-1&quot;&gt;장점&lt;/h4&gt;
+  &lt;p&gt;1) 속도가 빠르다.
+시간 복잡도가 O(nlog₂n)를 가지는 다른 정렬 알고리즘과 비교했을 때도 &lt;strong&gt;&lt;em&gt;가장 빠르다&lt;/em&gt;&lt;/strong&gt;.&lt;br /&gt;
+2) 추가 메모리 공간을 필요로 하지 않는다. (병합정렬은 배열로 구현 시 추가 배열이 필요했다.)&lt;br /&gt;
+퀵 정렬은 O(log n)만큼의 메모리를 필요로 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;퀵-정렬quick-sort의-시간복잡도&quot;&gt;퀵 정렬(quick sort)의 시간복잡도&lt;/h3&gt;
+&lt;h4 id=&quot;최선의-경우&quot;&gt;최선의 경우&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;각 순환 호출 단계의 비교 연산 - 병합정렬과 동일&lt;br /&gt;
+순환 호출의 깊이 * 각 순환 호출 단계의 비교 연산 = nlog₂n&lt;/li&gt;
+  &lt;li&gt;이동 횟수&lt;br /&gt;
+비교 횟수보다 적기 때문에 무시&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;최선의 경우 : T(n) = nlog₂n&lt;/p&gt;
+
+&lt;h4 id=&quot;최악의-경우&quot;&gt;최악의 경우&lt;/h4&gt;
+&lt;p&gt;리스트가 계속 불균형하게 나누어지는 경우 (&lt;strong&gt;&lt;em&gt;이미 정렬된 리스트&lt;/em&gt;&lt;/strong&gt;에 대하여 퀵 정렬을 실행하는 경우)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;각 순환 호출 단계의 비교 연산 -&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;비교 횟수 - 순환 호출의 깊이&lt;br /&gt;
+레코드의 개수 n이 2의 거듭제곱이라고 가정(n=2^k)했을 때, 순환 호출의 깊이는 n&lt;/p&gt;
+
+&lt;p&gt;각 순환 호출 단계의 비교 연산&lt;br /&gt;
+각 순환 호출에서는 전체 리스트의 대부분의 레코드를 비교해야 하므로 평균 n번 정도 비교&lt;br /&gt;
+&lt;strong&gt;순환 호출의 깊이 * 각 순환 호출 단계의 비교 연산 = n^2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74097479-d8cc7900-4b4f-11ea-819d-f01f2164919e.png&quot; alt=&quot;sort-time-complexity-etc2&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이동 횟수 - 비교 횟수보다 적으므로 무시할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;최악의 경우 T(n) = O(n^2)&lt;/p&gt;
+
+&lt;h4 id=&quot;평균&quot;&gt;평균&lt;/h4&gt;
+&lt;p&gt;평균 T(n) = O(nlog₂n)&lt;br /&gt;
+시간 복잡도가 O(nlog₂n)를 가지는 다른 정렬 알고리즘과 비교했을 때도 가장 빠름&lt;br /&gt;
+퀵 정렬이 불필요한 데이터의 이동을 줄이고 먼 거리의 데이터를 교환할 뿐만 아니라, 한 번 결정된 피벗들이 추후 연산에서 제외되는 특성 때문이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;heap-sort힙-정렬&quot;&gt;Heap sort(힙 정렬)&lt;/h2&gt;
+
+&lt;h4 id=&quot;자료구조-heap힙&quot;&gt;자료구조 heap(힙)&lt;/h4&gt;
+&lt;p&gt;완전 이진 트리의 일종으로 우선순위 큐를 위하여 만들어진 자료구조&lt;br /&gt;
+최댓값, 최솟값을 쉽게 추출할 수 있는 자료구조&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74097587-e6cec980-4b50-11ea-914e-68c57840b88b.png&quot; alt=&quot;types-of-heap&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;최대 힙 트리나 최소 힙 트리를 구성해 정렬을 하는 방법&lt;br /&gt;
+내림차순 정렬을 위해서는 최대 힙을 구성하고 오름차순 정렬을 위해서는 최소 힙을 구성한다.&lt;/li&gt;
+  &lt;li&gt;과정 설명
+1) 정렬해야 할 n개의 요소들로 최대 힙(완전 이진 트리 형태)을 만듬(내림차순을 기준 정렬)&lt;br /&gt;
+2) 하나씩 요소를 힙에서 꺼내서 배열의 뒤부터 저장&lt;br /&gt;
+3) 삭제되는 요소들(최댓값부터 삭제)은 값이 감소되는 순서로 정렬됨&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;내림차순-정렬을-위한-최대-힙max-heap의-구현&quot;&gt;내림차순 정렬을 위한 최대 힙(max heap)의 구현&lt;/h3&gt;
+
+&lt;h4 id=&quot;1-최대-힙max-heap의-삽입&quot;&gt;1. 최대 힙(max heap)의 삽입&lt;/h4&gt;
+&lt;p&gt;힙에 새로운 요소가 들어오면, 일단 새로운 노드를 힙의 마지막 노드에 이어서 삽입한다.&lt;br /&gt;
+새로운 노드를 부모 노드들과 교환해서 힙의 성질을 만족시킨다.&lt;br /&gt;
+아래의 최대 힙(max heap)에 새로운 요소 8을 삽입해보자.&lt;br /&gt;
+(아래 이미지를 보면 기억이 새록새록 난다 ㅎㅎㅎㅎ)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74097619-72485a80-4b51-11ea-9553-e9a52adb58c5.png&quot; alt=&quot;maxheap-insertion&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-최대-힙max-heap의-삭제&quot;&gt;2. 최대 힙(max heap)의 삭제&lt;/h4&gt;
+&lt;p&gt;최대 힙에서 최댓값은 루트 노드이므로 루트 노드가 삭제된다.&lt;br /&gt;
+최대 힙(max heap)에서 삭제 연산은 최댓값을 가진 요소를 삭제하는 것이다.&lt;br /&gt;
+삭제된 루트 노드에는 &lt;em&gt;힙의 마지막 노드를 가져오고 힙을 재구성한다.&lt;/em&gt;&lt;br /&gt;
+아래의 최대 힙(max heap)에서 최댓값을 삭제해보자.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74097627-9d32ae80-4b51-11ea-8926-624f10851605.png&quot; alt=&quot;maxheap-delete&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;힙-알고리즘의-특징&quot;&gt;힙 알고리즘의 특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;장점
+시간 복잡도가 좋은편
+가장 큰 값 몇개만 필요할 때 가장 유용하다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;힙-정렬heap-sort의-시간복잡도&quot;&gt;힙 정렬(heap sort)의 시간복잡도&lt;/h3&gt;
+&lt;p&gt;힙 트리의 전체 높이가 거의 log₂n(완전 이진 트리이므로)이므로 하나의 요소를 힙에 삽입하거나 삭제할 때 힙을 재정비하는 시간이 log₂n만큼 소요된다.&lt;br /&gt;
+요소의 개수가 n개 이므로 전체적으로 O(nlog₂n)의 시간이 걸린다.&lt;br /&gt;
+&lt;strong&gt;T(n) = O(nlog₂n)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74096934-d9154600-4b48-11ea-92d0-6c9c667fafe6.png&quot; alt=&quot;sort-time-complexity&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;References&lt;br /&gt;
+[알고리즘] 합병 정렬(merge sort)이란  &lt;br /&gt;
+https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html&lt;br /&gt;
+정리 정말 잘해주시는 개발자님 :) 모든 내용은 위 블로그에서 참고했습니다.&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.</summary></entry><entry><title type="html">[알고리즘] 정렬 알고리즘에 대해 알아보자</title><link href="http://localhost:4000/basicsort-post/" rel="alternate" type="text/html" title="[알고리즘] 정렬 알고리즘에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/basicsort-post</id><content type="html" xml:base="http://localhost:4000/basicsort-post/">&lt;h2 id=&quot;insertion-sort삽입-정렬&quot;&gt;Insertion sort(삽입 정렬)&lt;/h2&gt;
+&lt;p&gt;자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교 하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘&lt;br /&gt;
+매 순서마다 해당 원소를 삽입할 수 있는 위치를 찾아 해당 위치에 넣는다.&lt;/p&gt;
+
+&lt;p&gt;삽입 정렬은 두 번째 자료부터 시작하여 그 앞(왼쪽)의 자료들과 비교하여 삽입할 위치를 지정한 후 자료를 뒤로 옮기고 지정한 자리에 자료를 삽입하여 정렬하는 알고리즘이다.&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;처음 key값은 두 번째 자료부터 시작한다&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74099242-c90b5f80-4b64-11ea-8841-6a2e131ab17e.png&quot; alt=&quot;insertion-sort&quot; /&gt;&lt;br /&gt;
+이미지 출처 : https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;InsertionSort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 처음 key값은 두 번째 자료부터 시작하기 때문에 시작은 1이다.&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// 시작값은 temp 에 저장해둔다.&lt;/span&gt;
+			&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+					&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+				&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+					&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+				&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// point :)&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;selection-sort선택-정렬&quot;&gt;Selection sort(선택 정렬)&lt;/h2&gt;
+&lt;p&gt;선택 정렬은 첫 번째 자료를 두 번째 자료부터 마지막 자료까지 차례대로 비교하여 가장 작은 값을 찾아 첫 번째, 두번째,… 에 놓는 과정을 반복하며 정렬을 수행한다.&lt;br /&gt;
+&lt;em&gt;1회전을 수행하고 나면 가장 작은 값의 자료가 맨 앞에 오게 되므로&lt;/em&gt; 그 다음 회전에서는 두 번째 자료를 가지고 비교한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74099613-fce88400-4b68-11ea-9c75-bfd033f62b0e.png&quot; alt=&quot;selection-sort&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 순차적으로 보면서 가장 작은애를 제일 앞으로 가져옴.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SelectionSort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minIdx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minIdx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;
+					&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minIdx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minIdx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+			&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minIdx&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;bubble-srt버블-정렬&quot;&gt;Bubble srt(버블 정렬)&lt;/h2&gt;
+&lt;p&gt;1회전을 수행하고 나면 가장 큰 자료가 맨 뒤로 이동하며 이와 같은 과정을 반복한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74099820-e8a58680-4b6a-11ea-8772-7869e0c08c59.png&quot; alt=&quot;bubble-sort (1)&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;BubbleSort&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+					&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+					&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+					&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+				&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;시간-복잡도&quot;&gt;시간 복잡도&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/74099583-be52c980-4b68-11ea-9490-49ef8be4ebbc.png&quot; alt=&quot;sort-time-complexity&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;References&lt;br /&gt;
+[알고리즘] 합병 정렬(merge sort)이란  &lt;br /&gt;
+https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html&lt;br /&gt;
+정리 정말 잘해주시는 개발자님 :) 모든 내용은 위 블로그에서 참고했습니다.&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">Insertion sort(삽입 정렬) 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교 하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘 매 순서마다 해당 원소를 삽입할 수 있는 위치를 찾아 해당 위치에 넣는다.</summary></entry><entry><title type="html">[통신] 쿠키와 세션에 대한 간단한 정리</title><link href="http://localhost:4000/cookie-post/" rel="alternate" type="text/html" title="[통신] 쿠키와 세션에 대한 간단한 정리" /><published>2020-02-08T00:00:00+09:00</published><updated>2020-02-08T00:00:00+09:00</updated><id>http://localhost:4000/cookie-post</id><content type="html" xml:base="http://localhost:4000/cookie-post/">&lt;h2 id=&quot;cookie와-session&quot;&gt;Cookie와 Session&lt;/h2&gt;
+
+&lt;h3 id=&quot;cookie와-session-사용-이유&quot;&gt;Cookie와 Session 사용 이유&lt;/h3&gt;
+&lt;p&gt;현재 우리가 인터넷에서 사용하고 있는 HTTP 프로토콜은 연결 지향적인 성격을 버렸기 때문에 &lt;strong&gt;새로운 페이지를 요청할 때마다 새로운 접속&lt;/strong&gt;이 이루어지며 이전 페이지와 현재 페이지 간의 &lt;em&gt;관계가 지속되지 않는다.&lt;/em&gt;&lt;br /&gt;
+이에 따라 HTTP프로토콜을 이용하게 되는 웹 사이트에서는 웹 페이지에 특정 방문자가 머무르고 있는 동안에 그 방문자의 상태를 지속시키기 위해 쿠키와 세션을 이용한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;쿠키cookie&quot;&gt;쿠키(Cookie)&lt;/h3&gt;
+&lt;p&gt;브라우저를 사용하는 환경 (로컬 컴퓨터)에 서버에서 받은 데이터를 저장한 파일&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자 정보를 유지할 수 없는 HTTP의 한계를 극복할 수 있는 방법&lt;/li&gt;
+  &lt;li&gt;인터넷 웹 사이트의 방문 기록을 남겨 사용자와 웹 사이트 사이를 매개해주는 정보이다.&lt;/li&gt;
+  &lt;li&gt;Cookie는 인터넷 사용자가 특정 웹서버에 접속할 때, 생성되는 개인 아이디와 비밀번호, 방문한 사이트의 정보를 담은 임시파일로써, Client에 텍스트 파일로 저장되어 다음에 해당 웹서버를 찾을 경우 웹서버에서는 그가 누구인지 어떤 정보를 주로 찾았는지 등을 파악할 때 사용된다.&lt;/li&gt;
+  &lt;li&gt;다시 서버에 request 할 필요가 없기 때문에 속도가 빠르다.&lt;/li&gt;
+  &lt;li&gt;브라우저를 닫을 때 사라진다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Cookie는 Client PC에 저장되는 정보이기 때문에, 다른 사용자에 의해서 임의로 변경이 가능하다.&lt;/strong&gt; (정보유출 가능, Session보다 보안성이 낮은 이유)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(사용 예) 자동로그인 , 오늘그만보기 팝업창 등&lt;/p&gt;
+
+&lt;h3 id=&quot;세션session&quot;&gt;세션(Session)&lt;/h3&gt;
+&lt;p&gt;서버에서 유저의 인증상태 (로그인 여부 등) 을 임시로 저장한 파일&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;서버에 저장해두기 때문에 쿠키보다 보안이 우수하다.&lt;/li&gt;
+  &lt;li&gt;서버에 저장되어있어서 쿠키보다 다소 느리고 유저정보가 많으면 메모리 과부하가 생길 수 있음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(사용 예) 로그인 한 정보들&lt;/p&gt;
+
+&lt;h4 id=&quot;보안성이-낮은-cookie대신-session을-사용하면-되는데-안하는-이유&quot;&gt;보안성이 낮은 Cookie대신 Session을 사용하면 되는데 안하는 이유?&lt;/h4&gt;
+
+&lt;p&gt;A. 모든 정보를 Session에 저장하면 Server의 메모리를 과도하게 사용하게 되어 Server에 무리가 가게 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;캐시cache&quot;&gt;캐시(cache)&lt;/h3&gt;
+&lt;p&gt;홈페이지를 접속하면 css, js, 이미지 파일이 사용자의 브라우저에 저장이 되고, 다시 같은 홈페이지를 접속하게 되면 css, js, 이미지 파일을 서버가 아닌 사용자의 PC에서 가져온다.&lt;/p&gt;
+
+&lt;p&gt;브라우저를 사용하는 환경 (로컬 컴퓨터)에 서버에서 받은 데이터를 저장한 파일 (쿠키와 동일)&lt;br /&gt;
+이미지같은 재사용될 것 같거나 &lt;em&gt;용량이 큰 리소스를 임시로 저장&lt;/em&gt;해두어서 렌더링 속도를 높이는 것이 목적!&lt;br /&gt;
+쿠키와는 비슷하지만 목적성에 차이가 있다 :)&lt;/p&gt;
+
+&lt;p&gt;References&lt;br /&gt;
+https://sas-study.tistory.com/54?category=774876&lt;/p&gt;
+
+&lt;p&gt;쿠키(cookie), 세션(session) 과 캐시(cache) - 네트워크 study3&lt;br /&gt;
+https://velog.io/@kimtaeeeny/%EC%BF%A0%ED%82%A4cookie-%EC%84%B8%EC%85%98session-%EA%B3%BC-%EC%BA%90%EC%8B%9Ccache-FE-study9&lt;/p&gt;</content><author><name>Your Name</name></author><summary type="html">Cookie와 Session</summary></entry></feed>

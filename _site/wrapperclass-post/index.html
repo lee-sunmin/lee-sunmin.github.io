@@ -1,0 +1,48 @@
+<h2 id="int와-integer의-차이에-대해서-아시나요">int와 Integer의 차이에 대해서 아시나요?</h2>
+
+<h3 id="wrapper-class래퍼-클래스">wrapper class(래퍼 클래스)</h3>
+<p>기본타입 8개를 객체로 포장해주는 클래스이다.<br />
+즉, <strong><em>기본 자료형을 클래스화 한 객체</em></strong><br />
+각 타입에 해당하는 데이토를 인수로 전달받아 해당값을 가지는 객체를 생성한다.</p>
+
+<p>기본(int, double, char)<br />
+[Unboxing] =&gt;<br />
+래퍼클래스(Integer, Double, Character)</p>
+
+<p><img width="621" alt="스크린샷 2020-02-06 오전 6 21 04" src="https://user-images.githubusercontent.com/17976251/73884343-05129c00-48a9-11ea-8240-97427c096b0d.png" /><br />
+이미지 출처 : https://qkrrudtjr954.github.io/java/2017/11/03/wrapper-class.html</p>
+
+<p>자료형을 선언하는 것 뿐만 아니라 클래스가 제공하는 메소드를 활용하여 일반 자료형보다 폭넓은 활용을 보일 수 있지만 일반 자료형보다 더 많은 메모리 공간을 차지하게 된다.<br />
+따라서 무분별한 사용을 삼가하는 것이 좋다.</p>
+
+<p>1) int<br />
+자료형(long, float, double ..)<br />
+산술 연산 가능<br />
+null로 초기화 불가능</p>
+
+<p>2) Integer<br />
+래퍼클래스(객체)<br />
+unboxing을 하지 않으면 산술 연산이 불가능
+null값 처리 가능<br />
+-&gt; SQL과 연동할 경우 처리 용이<br />
+-&gt; DB에서 자료형이 정수지만 null값이 필요한 경우 VO에서 Integer 사용 가능</p>
+
+<h3 id="다양한-메소드">다양한 메소드</h3>
+<p>.equal(), parseInt(), toString() 등 다양한 메소드를 제공해준다.<br />
+(wrapper 클래스 내부의 값을 비교하고 싶을 때는 꼭 .equals() 를 사용해야 한다.)</p>
+
+<p>문자열을 숫자로 변환하거나, 숫자를 문자로 변환하는 상황에서 주로 사용된다. :)<br />
+따라서 위의 메소드들이 익숙할 것이라 생각한다.</p>
+
+<h3 id="auto-boxing--unboxing">Auto boxing / unboxing</h3>
+
+<p>자바에서는 boxing(자료형-&gt;래퍼클래스)와 unboxing(래퍼클래스-&gt;자료형)을 거의 자동으로 변환해준다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="nc">Integer</span> <span class="n">integer</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// auto boxing</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">integer</span><span class="o">;</span> <span class="c1">// auto unboxing</span>
+</code></pre></div></div>
+
+<p>출처 : https://jjunii486.tistory.com/49</p>
+
+<p>https://qkrrudtjr954.github.io/java/2017/11/03/wrapper-class.html</p>
