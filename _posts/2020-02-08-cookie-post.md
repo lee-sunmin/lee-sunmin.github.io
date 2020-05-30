@@ -1,10 +1,15 @@
 ---
-layout: post
-title:  "[통신] 쿠키와 세션에 대한 간단한 정리"
-date:   2020-02-08
-description: 쿠키와 세션에 대해 알아보자.
+title: "[통신] 쿠키와 세션에 대한 간단한 정리"
+categories:
+  - Network
+tags:
+  - network
+  - cookie
+  - session
 ---
-
+  
+  
+  
 ##  Cookie와 Session
 
 ### Cookie와 Session 사용 이유  

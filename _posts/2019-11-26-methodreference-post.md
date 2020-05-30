@@ -1,8 +1,11 @@
 ---
-layout: post
-title:  "[자바] 자바 메서드 참조(method reference)"
-date:   2019-11-26
-description: 메서드 참조
+title: "[자바] 자바 메서드 참조(method reference)"
+categories:
+  - Java
+tags:
+  - java
+  - method
+  - reference
 ---
 
 

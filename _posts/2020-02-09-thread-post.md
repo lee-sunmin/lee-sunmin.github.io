@@ -1,10 +1,13 @@
 ---
-layout: post
-title:  "[자바 기본] Thread에 대해 알아보자"
-date:   2020-02-09
-description: Thread와 동기화
+title: "[자바 기본] Thread에 대해 알아보자"
+categories:
+  - Java
+tags:
+  - java
+  - thread
 ---
-
+  
+  
 ## Thread
 
 할당된 메모리 공간을 기반으로 실행 중에 있는 프로그램을 가리켜 '프로세스(Process)'라 한다. 따라서 프로세스를 간단히 '실행중인 프로그램' 으로 설명하기도 한다.  

@@ -1,9 +1,11 @@
 ---
-layout: post
-title:  "[자바기본] 상수와 형 변환(Type casting)"
-date:   2019-11-27
-description: 자바의 상수 값과 형 변환에 대한 내용을 다룬다.
----
+title: "[자바기본] 상수와 형 변환(Type casting)"
+categories:
+  - Java
+tags:
+  - type
+  - type casting
+---  
 
 
 #### 상수도 메모리 공간에 저장 된다고?

@@ -1,9 +1,12 @@
 ---
-layout: post
-title:  "[자바 기본] 자바 abstract에 대해 알아보자"
-date:   2020-01-19
-description: 자바 abstract class, method에 대한 간단 정리
----
+title: "[자바 기본] 자바 abstract에 대해 알아보자"
+categories:
+  - Java
+tags:
+  - java
+  - abstract
+--- 
+  
 
 ## 이 클래스의 인스턴스 생성은 제가 원하는 것이 아닙니다.
 

@@ -1,10 +1,14 @@
 ---
-layout: post
-title:  "[자바] HashMap"
-date:   2020-05-24
-description: HashMap
+title: "[자바] HashMap"
+categories:
+  - Java
+tags:
+  - java
+  - hash
+  - hashmap
 ---
-
+  
+  
 ### HashMap?  
 
 Hashmap은 고정시간을 제공하는 Key-value 데이터 구조이다.  

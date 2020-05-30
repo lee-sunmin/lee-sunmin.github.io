@@ -1,10 +1,16 @@
 ---
-layout: post
-title:  "[자바 기본] String, StringBuilder, StringBuffer"
-date:   2020-02-08
-description: String, StringBuilder, StringBuffer의 차이에 대해 알아보자.
+title: "[자바 기본] String, StringBuilder, StringBuffer"
+categories:
+  - Java
+tags:
+  - java
+  - string
+  - stringbuffer
+  - stringbuilder
 ---
+  
 
+  
 크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)  
 
 ## String

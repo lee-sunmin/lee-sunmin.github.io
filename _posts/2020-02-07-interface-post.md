@@ -1,9 +1,13 @@
 ---
-layout: post
-title:  "[자바 기본] 자바 interface에 대해 알아보자"
-date:   2020-02-07
-description: 자바 interface와 interface/abstract의 차이에 대해 알아보자.
----
+title: "[자바 기본] 자바 interface에 대해 알아보자"
+categories:
+  - Java
+tags:
+  - java
+  - interface
+--- 
+  
+
 
 ## 완벽한 abstract 클래스는 interface
 

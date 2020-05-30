@@ -1,0 +1,659 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[자바 기본] 자바 jvm의 실행 과정에 대해서 알아보자! - Site Title</title>
+<meta name="description" content="아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.  ">
+
+
+  <meta name="author" content="Your Name">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="[자바 기본] 자바 jvm의 실행 과정에 대해서 알아보자!">
+<meta property="og:url" content="http://localhost:4000/java/jvm-post/">
+
+
+  <meta property="og:description" content="아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.  ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/jvm-post/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[자바 기본] 자바 jvm의 실행 과정에 대해서 알아보자!">
+    <meta itemprop="description" content="아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.">
+    <meta itemprop="datePublished" content="2020-02-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[자바 기본] 자바 jvm의 실행 과정에 대해서 알아보자!
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.</p>
+
+<h2 id="jvmjava-virtual-machine">JVM(Java Virtual Machine)</h2>
+<p>: 자바 가상 머신으로 자바 바이트 코드를 실행할 수 있는 주체이며,<br />
+CPU나 운영체제(플랫폼)의 종류와 무관하게 실행이 가능하다.<br />
+(자바의 장점 중 하나라고 생각함~)</p>
+
+<p>즉, 운영체제 위에서 동작하는 프로세스로 <strong><em>자바 코드를 컴파일해서 얻은 바이트 코드를 해당 운영체제가 이해할 수 있는 기계어로 바꿔 실행</em></strong>시켜주는 역할을 한다.</p>
+
+<p>JVM는 크게 4가지(Class Loader, Execution Engine, Garbage Collector, Runtime Data Area)로 나뉨</p>
+
+<p><img src="https://user-images.githubusercontent.com/17976251/73743736-9e9b5a00-4792-11ea-9569-d47d4bc975e8.png" alt="다운로드" />
+출처 : [기본기를 쌓는 정아마추어 코딩블로그]</p>
+
+<h3 id="1-class-loader">1. Class Loader</h3>
+<p>자바에서 소스를 작성하면 .java파일이 생성되는데,
+.java 소스를 자바컴파일러가 컴파일하면 .class파일(바이트코드)이 생성된다.</p>
+
+<p>이렇게 <strong>생성된 클래스파일들을 엮어서 JVM이 운영체제로부터 할당받은 메모리영역인 Runtime Data Area로 적재</strong>하는 역할을 Class Loader가 한다.<br />
+(자바 애플리케이션이 실행중일 때 이런 작업이 수행된다.)</p>
+
+<h3 id="2-execution-engine">2. Execution Engine</h3>
+<p>Class Loader에 의해 메모리에 적재된 클래스(바이트 코드)들을 <strong>기계어로 변경해 명령어 단위로 실행</strong>하는 역할을 한다.</p>
+
+<p>[참고]<br />
+명령어를 하나 하나 실행하는 인터프리터(Interpreter)방식이 있고 JIT(Just-In-Time) 컴파일러를 이용하는 방식이 있다.<br />
+JIT 컴파일러는 적절한 시간에 전체 바이트 코드를 네이티브 코드로 변경해서 Execution Engine이 네이티브로 컴파일된 코드를 실행하는 것으로 성능을 높이는 방식이다.</p>
+
+<h3 id="3-garbage-collector">3. Garbage Collector</h3>
+<p>Garbage Collector(GC)는 Heap 메모리 영역에 생성(적재)된 객체들 중에 참조되지 않는 객체들을 탐색 후 제거하는 역할을 한다.</p>
+
+<p>GC가 역할을 하는 시간은 정확히 언제인지를 알 수 없다.<br />
+(참조가 없어지자마자 해제되는 것을 보장하지 않음)</p>
+
+<p>또 다른 특징은 GC가 수행되는 동안 GC를 수행하는 쓰레드가 아닌 다른 모든 쓰레드가 일시정지된다.</p>
+
+<p>특히 Full GC가 일어나서 수 초간 모든 쓰레드가 정지한다면 장애로 이어지는 치명적인 문제가 생길 수 있는 것이다. (GC와 관련된 내용은 아래 Heap영역 메모리를 설명할 때 더 자세히 알아본다.)</p>
+
+<h3 id="4-runtime-data-area">4. Runtime Data Area</h3>
+
+<p>JVM의 메모리 영역으로 자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역이다.</p>
+
+<p>이 영역은 크게 Method Area, Heap Area, Stack Area, PC Register, Native Method Stack로 나눌 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/17976251/73744267-ce972d00-4793-11ea-9779-d74409f4fc28.png" alt="다운로드 (1)" />
+출처 : [기본기를 쌓는 정아마추어 코딩블로그]</p>
+
+<h4 id="1-method-area-메소드-영역">1. Method area (메소드 영역)</h4>
+
+<p>필드 정보(클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보)<br />
+메소드 정보 (메소드의 이름, 리턴 타입, 파라미터, 접근 제어자 정보) <br />
+Type정보(Interface인지 class인지)<br />
+Constant Pool(상수 풀 : 문자 상수, 타입, 필드, 객체 참조가 저장됨)<br />
+static 변수, final class 변수등이 생성되는 영역</p>
+
+<h4 id="2-heap-area-힙-영역">2. Heap area (힙 영역)</h4>
+<p><strong><em>new 키워드로 생성된 객체와 배열이 생성되는 영역</em></strong>이다.</p>
+
+<p>메소드 영역에 로드된 클래스만 생성이 가능하고 Garbage Collector가 참조되지 않는 메모리를 확인하고 제거하는 영역이다.</p>
+
+<h4 id="3-stack-area-스택-영역">3. Stack area (스택 영역)</h4>
+<p>지역 변수, 파라미터, 리턴 값, 연산에 사용되는 임시 값등이 생성되는 영역이다.<br />
+메소드를 호출할 때마다 개별적으로 스택이 생성된다.</p>
+
+<p>[ex1]<br />
+int a = 10;<br />
+정수값이 할당될 수 있는 메모리공간을 a라고 잡아두고 그 메모리 영역에 값이 10이 들어간다.<br />
+즉, 스택에 메모리에 이름이 a라고 붙여주고 값이 10인 메모리 공간을 만든다.</p>
+
+<p>[ex2]<br />
+클래스 Person p = new Person();<br />
+Person p는 <strong>스택</strong> 영역에 생성되고 new로 생성된 Person 클래스의 인스턴스는 <strong>힙</strong> 영역에 생성된다.<br />
+그리고 스택영역에 생성된 p의 값으로 힙 영역의 주소값을 가지고 있다. 즉, 스택 영역에 생성된 p가 힙 영역에 생성된 객체를 가리키고(참조하고) 있는 것이다.</p>
+
+<h4 id="4-pc-register-pc-레지스터">4. PC Register (PC 레지스터)</h4>
+<p>Thread가 생성될 때마다 생성되는 영역<br />
+Program Counter 즉, 현재 쓰레드가 실행되는 부분의 주소와 명령을 저장하고 있는 영역이다. (*CPU의 레지스터와 다름)</p>
+
+<p>이것을 이용해서 쓰레드를 돌아가면서 수행할 수 있게 한다.</p>
+
+<h4 id="5-native-method-stack">5. Native method stack</h4>
+<p>자바 외 언어로 작성된 네이티브 코드를 위한 메모리 영역이다.<br />
+보통 C/C++등의 코드를 수행하기 위한 스택이다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>쓰레드가 생성되었을 때 기준으로
+
+1,2번인 메소드 영역과 힙 영역을 모든 쓰레드가 공유하고,  
+3,4,5번인 스택 영역과 PC 레지스터, Native method stack은 각각의 쓰레드마다 생성되고 공유되지 않는다.
+</code></pre></div></div>
+
+<p>Garbage collection 관련 내용은 다음 포스팅에 이어서 진행 예정 :)</p>
+
+<p>References<br />
+https://jeong-pro.tistory.com/148  [기본기를 쌓는 정아마추어 코딩블로그]<br />
+이해가기 쉽게 정리해주셔서 감사합니다!<br />
+여태 봤던 글중에 제일 이해가 잘가서 위 포스팅을 참고하며 공부했습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#jvm" class="page__taxonomy-item" rel="tag">jvm</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#java" class="page__taxonomy-item" rel="tag">Java</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-04T00:00:00+09:00">February 4, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9E%90%EB%B0%94+%EA%B8%B0%EB%B3%B8%5D+%EC%9E%90%EB%B0%94+jvm%EC%9D%98+%EC%8B%A4%ED%96%89+%EA%B3%BC%EC%A0%95%EC%97%90+%EB%8C%80%ED%95%B4%EC%84%9C+%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90%21%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fjvm-post%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fjvm-post%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fjvm-post%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/network/http-post/" class="pagination--pager" title="[통신] HTTP, TCP
+">Previous</a>
+    
+    
+      <a href="/java/gc-post/" class="pagination--pager" title="[자바 기본] 자바 GC(Gargabe Collection)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/network/tcpudp-post/" rel="permalink">[통신] TCP VS UDP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">TCP / UDP ?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/springboot/dtovsdao-post/" rel="permalink">[스프링부트] DAO VS DTO(VO)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">DAO
+DAO : Data Access Object
+Database data 접근을 위한 객체
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/java/hashmap-post/" rel="permalink">[자바] HashMap
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">HashMap?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/etc/distribution-post/" rel="permalink">[기타] 배포 전략의 종류 3가지
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.
+개인 학습용으로 해당 공간에 재생성하였습니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

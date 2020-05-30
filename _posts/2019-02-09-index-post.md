@@ -1,8 +1,11 @@
 ---
-layout: post
-title:  "[데이터베이스] index에 대해 알아보자"
-date:   2020-02-09
-description: 인덱스에 대한 간단한 정리
+title: "[데이터베이스] index ?"
+categories:
+  - Database
+tags:
+  - database
+  - db
+  - index
 ---
 
 ## INDEX의 의미

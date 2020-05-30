@@ -1,0 +1,727 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[자바 기본] String, StringBuilder, StringBuffer - Site Title</title>
+<meta name="description" content="크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)  ">
+
+
+  <meta name="author" content="Your Name">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="[자바 기본] String, StringBuilder, StringBuffer">
+<meta property="og:url" content="http://localhost:4000/java/string-post/">
+
+
+  <meta property="og:description" content="크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)  ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-08T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/string-post/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[자바 기본] String, StringBuilder, StringBuffer">
+    <meta itemprop="description" content="크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)">
+    <meta itemprop="datePublished" content="2020-02-08T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[자바 기본] String, StringBuilder, StringBuffer
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)</p>
+
+<h2 id="string">String</h2>
+
+<p>이전 게시글인 final 관련 글을 보면 String은 immutable class 중 하나라고 되어있다.<br />
+String에 대해 자세히 살펴보자</p>
+
+<h3 id="string-클래스의-인스턴스는-상수-형태의-인스턴스이다">String 클래스의 인스턴스는 상수 형태의 인스턴스이다.</h3>
+<p>String의 인스턴스는 상수의 성격을 갖는다고 표현을 한다.<br />
+String의 인스턴스에 저장된 문자열 데이터의 변경이 불가능하기 때문이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"Constant String"</span><span class="o">;</span>
+</code></pre></div></div>
+<p>이렇게 저장된 문자열 데이터는 <em>결코 바꿀 수 없다!</em></p>
+
+<p>바꾸는 메소드가 제공되지 않을 뿐 아니라 문자열 데이터에 직접적인 접근도 불가능하리 때문에 바꿀 수 있는 방법이 전-혀 없다.</p>
+
+<h4 id="상수-형태로-string-클래스를-정의한-이유는-무엇일까">상수 형태로 String 클래스를 정의한 이유는 무엇일까?</h4>
+<p>인스턴스의 생성은 시스템에 부담되는 요소인데 자바에서는 문자열을 표현할 때마다 인스턴스가 생성되니, 생성을 최소화할 필요가 있었다.<br />
+그래서 다음과 같은 원칙이 기준이 되었다.</p>
+
+<p><span style="color:green">“문자열이 동일한 경우에는 하나의 String 인스턴스만 생성해서 공유하도록 한다!”</span><br />
+위 문장을 보고 띠용- 했다 정말 핵심이 되는 한 줄이라 생각한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ImmutableString</span>
+<span class="o">{</span>
+    <span class="c1">// ... 생략</span>
+    <span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"Ming"</span>
+    <span class="nc">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"Ming"</span>
+    <span class="nc">String</span> <span class="n">str3</span> <span class="o">=</span> <span class="s">"lee"</span>
+
+    <span class="k">if</span><span class="o">(</span><span class="n">str1</span><span class="o">==</span><span class="n">str2</span><span class="o">)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"동일 인스턴스 참조"</span><span class="o">);</span>
+    <span class="k">else</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"다른 인스턴스 참조"</span><span class="o">);</span>
+
+    <span class="k">if</span><span class="o">(</span><span class="n">str2</span><span class="o">==</span><span class="n">str3</span><span class="o">)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"동일 인스턴스 참조"</span><span class="o">);</span>
+    <span class="k">else</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"다른 인스턴스 참조"</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>결과</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>동일 인스턴스 참조
+다른 인스턴스 참조
+</code></pre></div></div>
+
+<p>위 상황에서는 str1과 str2가 함께 동일한 인스턴스를 참조한다.<br />
+이때, 참조변수 str2를 이용해서 저장되어 있던 문자열을 “MingMing” 으로 바꾼다면 함께 인스턴스를 참조하던 str1은 자신의 동의 없이 바뀌어버린 문자열을 확인하며 황당할 것이다.</p>
+
+<p>즉!!!!!</p>
+<blockquote>
+  <p>자바는 인스턴스 생성의 수를 줄이기 위해서 동일한 문자열 데이터로 구성되는 String 인스턴스의 생성을 하나로 제한한다. 그리고 이를 통한 문제의 발생을 막기 위해서 String 인스턴스의 데이터 변경은 허용하지 않고 있다.</p>
+</blockquote>
+
+<h3 id="자바에서는-문자열을-복사한다는-표현을-쉽게-찾아보기-어렵다">자바에서는 문자열을 복사한다는 표현을 쉽게 찾아보기 어렵다.</h3>
+
+<p>String을 새로 생성함과 동시에 복사하는 것이 목적이라면, 아래와 같이 코드를 작성해야 한다. - 별도의 인스턴스에 저장하기 위해 새로운 String 인스턴스 생성하는 방법.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"Best String"</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="n">str1</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h4 id="string----vs-new-string--의-차이">String = “ “ vs new String(“ “) 의 차이</h4>
+<p><img src="https://user-images.githubusercontent.com/17976251/82747120-2607ea00-9dd1-11ea-9284-3ed539b7b1d2.png" alt="img" /><br />
+[두 가지 방법으로 String]</p>
+
+<p>자바의 문자열은 java.lang 패키지의 String 클래스의 인스턴스로 관리됨.<br />
+1)String=”aa” 를 하면 문자열 리터럴은 String 객체로 자동 생성되지만,<br />
+2)String 클래스의 다양한 생성자를 이용해서 직접 String 객체를 생성하고 사용 할 수 있다.<br />
+ex)String s3 = new String(“Cat”);</p>
+
+<p>즉, 첫 번째는 문자열 리터럴 생성 방식, 두 번째는 생성자인 new 연산자를 이용한 문자열 생성 방식인데, 겉으로 보았을 때의 문법 차이도 있지만 실제 메모리에 할당되는 영역에도 차이가 있다.(위 이미지 참고)</p>
+
+<h4>???</h4>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>		<span class="nc">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">"abc"</span><span class="o">;</span>
+		<span class="n">a</span> <span class="o">+=</span> <span class="s">"def"</span><span class="o">;</span>
+
+		<span class="nc">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">"abcdef"</span><span class="o">;</span>
+		<span class="nc">String</span> <span class="n">c</span> <span class="o">=</span> <span class="s">"abcdef"</span><span class="o">;</span>
+
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+
+		<span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">)</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"true"</span><span class="o">);</span>
+		<span class="k">else</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"false"</span><span class="o">);</span>
+
+		<span class="k">if</span> <span class="o">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="o">)</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"true"</span><span class="o">);</span>
+		<span class="k">else</span>
+			<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"false"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>[결과]</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>false
+true
+</code></pre></div></div>
+
+<p>첫 번째 결과가 왜 false가 나오는지 궁금하다. 다음에 추가 할 예정 :)</p>
+
+<h2 id="stringbuilder">StringBuilder</h2>
+<p><span style="color:green">“가변”</span>  <br />
+문자열의 저장 및 변경을 위한 메모리 공간(버퍼)을 내부에 지니고 있으며 이 메모리 공간은 크기가 자동으로 조절된다는 특징이 있다.</p>
+
+<p>중요하게 여겨지는 메소드는 append와 insert이다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">BuilderString</span><span class="o">{</span>
+    <span class="c1">// ... 생략</span>
+    <span class="nc">StringBuffer</span> <span class="n">strBuf</span> <span class="o">=</span> <span class="k">new</span>  <span class="nc">StringBuffer</span><span class="o">(</span><span class="s">"AB"</span><span class="o">);</span>
+    <span class="n">strBuf</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="mi">25</span><span class="o">);</span>
+    <span class="n">strBuf</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">'Y'</span><span class="o">).</span><span class="na">appned</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">strBuf</span><span class="o">);</span>
+
+    <span class="n">stfBuf</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="mi">2</span><span class="o">.</span><span class="na">false</span><span class="o">);</span>
+    <span class="n">strBuf</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">strBuf</span><span class="o">.</span><span class="na">length</span><span class="o">(),</span><span class="sc">'Z'</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">strBuf</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>결과</strong></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AB25Ytrue
+ABfalse25YtrueZ
+</code></pre></div></div>
+
+<p>append 메소드의 반환 형태는 ‘strBuf의 참조 값’ 이다.<br />
+즉, 자신의 <strong><em>참조 값을 반환</em></strong>하는 것이다.<br />
+때문에 아래와 같이 연이은 메소드의 호출이 가능하다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">().</span><span class="na">append</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"Lemon"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="mi">2</span><span class="o">).</span><span class="na">toString</span><span class="o">()</span>
+</code></pre></div></div>
+<p>toString() 메소드는 StringBuilder인스턴스가 저장하고 있는 문자 데이터들을 하나로 모아서 String 인스턴스를 생성하여, 생성된 인스턴스의 참조 값을 반환한다.<br />
+따라서 이 과정에서 또 하나의 인스턴스를 생성하기 때문에 총 2개의 인스턴스가 생성되는 셈이다 :)</p>
+
+<h3 id="stringbuilder는-버퍼의-크기를-스스로-확장한다">StringBuilder는 버퍼의 크기를 스스로 확장한다.</h3>
+<p>StringBuilder의 내부에 존재하는 버퍼는 자동으로 크기가 증가하도록 설계되어 있다.  그러나 필요에 따라서는 그 크기를 조절할 수도 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">StringBuilder</span><span class="o">()</span> <span class="c1">// 16개의 문자 저장 버퍼 생성</span>
+<span class="kd">public</span> <span class="nf">StringBuilder</span><span class="o">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="o">)</span> <span class="c1">// capacity 개의 문자 저장 버퍼 생성</span>
+<span class="kd">public</span> <span class="nf">StringBuilder</span><span class="o">(</span><span class="nc">String</span> <span class="n">str</span><span class="o">)</span> <span class="c1">// str.length()+16개의 문자 저장 버퍼 생성</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>버퍼의 크기를 확장하는 작업은 많은 연산이 요구되는 작업이기 때문에, 가급적 필요로 하는 버퍼의 크기를 미리 할당하는 것이 성능에 도움이 된다.</p>
+</blockquote>
+
+<h2 id="stringbuffer">StringBuffer</h2>
+<p><span style="color:green">“StringBuffer 클래스는 Thread-safe 하다.”</span>  <br />
+“StringBuffer는 쓰레드에 안전하지만, StringBuilder는 쓰레드에 안전하지 못하다.”</p>
+
+<p>References<br />
+난 정말 JAVA를 공부한 적이 없다구요!</p>
+
+<p>[[JAVA] String = “ “ vs new String(“ “) 의 차이<br />
+https://ict-nroo.tistory.com/18 [개발자의 기록습관]</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#stringbuffer" class="page__taxonomy-item" rel="tag">stringbuffer</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#stringbuilder" class="page__taxonomy-item" rel="tag">stringbuilder</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#string" class="page__taxonomy-item" rel="tag">string</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#java" class="page__taxonomy-item" rel="tag">Java</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-08T00:00:00+09:00">February 8, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9E%90%EB%B0%94+%EA%B8%B0%EB%B3%B8%5D+String%2C+StringBuilder%2C+StringBuffer%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fstring-post%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fstring-post%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fstring-post%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/network/cookie-post/" class="pagination--pager" title="[통신] 쿠키와 세션에 대한 간단한 정리
+">Previous</a>
+    
+    
+      <a href="/etc/sync-post/" class="pagination--pager" title="Async와 Sync에 대해 알아보자
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/network/tcpudp-post/" rel="permalink">[통신] TCP VS UDP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">TCP / UDP ?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/springboot/dtovsdao-post/" rel="permalink">[스프링부트] DAO VS DTO(VO)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">DAO
+DAO : Data Access Object
+Database data 접근을 위한 객체
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/java/hashmap-post/" rel="permalink">[자바] HashMap
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">HashMap?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/etc/distribution-post/" rel="permalink">[기타] 배포 전략의 종류 3가지
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.
+개인 학습용으로 해당 공간에 재생성하였습니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

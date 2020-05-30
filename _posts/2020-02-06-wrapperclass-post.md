@@ -1,10 +1,14 @@
 ---
-layout: post
-title:  "[자바 기본] int와 Integer의 차이에 대해서 아시나요?"
-date:   2020-02-06
-description: 
----
-
+title: "[자바 기본] int와 Integer의 차이에 대해서 아시나요?"
+categories:
+  - Java
+tags:
+  - java
+  - int
+  - Integer
+--- 
+  
+  
 ## int와 Integer의 차이에 대해서 아시나요?
 
 ### wrapper class(래퍼 클래스) 

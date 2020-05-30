@@ -1,10 +1,14 @@
 ---
-layout: post
-title:  "[기타] 배포 전략의 종류 3가지"
-date:   2020-05-14
-description: 롤링, 블루그린, 카나리 배포
+title: "[기타] 배포 전략의 종류 3가지"
+categories:
+  - Etc
+tags:
+  - rolling
+  - blue green
+  - canary
 ---
-
+  
+  
 해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.  
 개인 학습용으로 해당 공간에 재생성하였습니다.  
 

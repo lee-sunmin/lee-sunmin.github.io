@@ -1,10 +1,13 @@
 ---
-layout: post
-title:  "[알고리즘] B-Tree에 대해 알아보자"
-date:   2020-02-09
-description: B-Tree 에 대한 간단한 정리
+title: "[알고리즘] B-Tree에 대해 알아보자"
+categories:
+  - Algorithm
+tags:
+  - algorithm
+  - b-tree
 ---
-
+  
+  
 ## B-tree
 데이터베이스와 파일시스템에서 B-Tree를 많이 사용하며, 
 rdb 인덱스에서도 일반적으로 B-Tree , B+-Tree 자료구조를 사용한다.  

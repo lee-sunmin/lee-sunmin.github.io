@@ -1,10 +1,14 @@
 ---
-layout: post
-title:  "[자바 기본] 자바 class와 Object, 참조변수"
-date:   2020-01-19
-description: 자바 class와 object 에 대한 간단 정리
----
-
+title: "[자바 기본] 자바 class와 Object, 참조변수"
+categories:
+  - Java
+tags:
+  - class
+  - object
+  - java
+---  
+  
+  
 
 ## Class, Object
 

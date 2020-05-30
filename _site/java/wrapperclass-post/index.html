@@ -1,0 +1,615 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[자바 기본] int와 Integer의 차이에 대해서 아시나요? - Site Title</title>
+<meta name="description" content="int와 Integer의 차이에 대해서 아시나요?  ">
+
+
+  <meta name="author" content="Your Name">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="[자바 기본] int와 Integer의 차이에 대해서 아시나요?">
+<meta property="og:url" content="http://localhost:4000/java/wrapperclass-post/">
+
+
+  <meta property="og:description" content="int와 Integer의 차이에 대해서 아시나요?  ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-06T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/wrapperclass-post/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[자바 기본] int와 Integer의 차이에 대해서 아시나요?">
+    <meta itemprop="description" content="int와 Integer의 차이에 대해서 아시나요?">
+    <meta itemprop="datePublished" content="2020-02-06T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[자바 기본] int와 Integer의 차이에 대해서 아시나요?
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="int와-integer의-차이에-대해서-아시나요">int와 Integer의 차이에 대해서 아시나요?</h2>
+
+<h3 id="wrapper-class래퍼-클래스">wrapper class(래퍼 클래스)</h3>
+<p>기본타입 8개를 객체로 포장해주는 클래스이다.<br />
+즉, <strong><em>기본 자료형을 클래스화 한 객체</em></strong><br />
+각 타입에 해당하는 데이토를 인수로 전달받아 해당값을 가지는 객체를 생성한다.</p>
+
+<p>기본(int, double, char)<br />
+[Unboxing] =&gt;<br />
+래퍼클래스(Integer, Double, Character)</p>
+
+<p><img width="621" alt="스크린샷 2020-02-06 오전 6 21 04" src="https://user-images.githubusercontent.com/17976251/73884343-05129c00-48a9-11ea-8240-97427c096b0d.png" /><br />
+이미지 출처 : https://qkrrudtjr954.github.io/java/2017/11/03/wrapper-class.html</p>
+
+<p>자료형을 선언하는 것 뿐만 아니라 클래스가 제공하는 메소드를 활용하여 일반 자료형보다 폭넓은 활용을 보일 수 있지만 일반 자료형보다 더 많은 메모리 공간을 차지하게 된다.<br />
+따라서 무분별한 사용을 삼가하는 것이 좋다.</p>
+
+<p>1) int<br />
+자료형(long, float, double ..)<br />
+산술 연산 가능<br />
+null로 초기화 불가능</p>
+
+<p>2) Integer<br />
+래퍼클래스(객체)<br />
+unboxing을 하지 않으면 산술 연산이 불가능
+null값 처리 가능<br />
+-&gt; SQL과 연동할 경우 처리 용이<br />
+-&gt; DB에서 자료형이 정수지만 null값이 필요한 경우 VO에서 Integer 사용 가능</p>
+
+<h3 id="다양한-메소드">다양한 메소드</h3>
+<p>.equal(), parseInt(), toString() 등 다양한 메소드를 제공해준다.<br />
+(wrapper 클래스 내부의 값을 비교하고 싶을 때는 꼭 .equals() 를 사용해야 한다.)</p>
+
+<p>문자열을 숫자로 변환하거나, 숫자를 문자로 변환하는 상황에서 주로 사용된다. :)<br />
+따라서 위의 메소드들이 익숙할 것이라 생각한다.</p>
+
+<h3 id="auto-boxing--unboxing">Auto boxing / unboxing</h3>
+
+<p>자바에서는 boxing(자료형-&gt;래퍼클래스)와 unboxing(래퍼클래스-&gt;자료형)을 거의 자동으로 변환해준다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+<span class="nc">Integer</span> <span class="n">integer</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// auto boxing</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">integer</span><span class="o">;</span> <span class="c1">// auto unboxing</span>
+</code></pre></div></div>
+
+<p>출처 : https://jjunii486.tistory.com/49</p>
+
+<p>https://qkrrudtjr954.github.io/java/2017/11/03/wrapper-class.html</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#integer" class="page__taxonomy-item" rel="tag">Integer</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#int" class="page__taxonomy-item" rel="tag">int</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#java" class="page__taxonomy-item" rel="tag">Java</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-02-06T00:00:00+09:00">February 6, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9E%90%EB%B0%94+%EA%B8%B0%EB%B3%B8%5D+int%EC%99%80+Integer%EC%9D%98+%EC%B0%A8%EC%9D%B4%EC%97%90+%EB%8C%80%ED%95%B4%EC%84%9C+%EC%95%84%EC%8B%9C%EB%82%98%EC%9A%94%3F%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fwrapperclass-post%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fwrapperclass-post%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fwrapperclass-post%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/spring%20boot/jpa-post/" class="pagination--pager" title="[스프링 부트] JPA에 대해 알아보자
+">Previous</a>
+    
+    
+      <a href="/java/interface-post/" class="pagination--pager" title="[자바 기본] 자바 interface에 대해 알아보자
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/network/tcpudp-post/" rel="permalink">[통신] TCP VS UDP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">TCP / UDP ?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/springboot/dtovsdao-post/" rel="permalink">[스프링부트] DAO VS DTO(VO)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">DAO
+DAO : Data Access Object
+Database data 접근을 위한 객체
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/java/hashmap-post/" rel="permalink">[자바] HashMap
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">HashMap?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/etc/distribution-post/" rel="permalink">[기타] 배포 전략의 종류 3가지
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.
+개인 학습용으로 해당 공간에 재생성하였습니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

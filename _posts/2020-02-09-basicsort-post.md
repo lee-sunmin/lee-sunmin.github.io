@@ -1,10 +1,17 @@
 ---
-layout: post
-title:  "[알고리즘] 정렬 알고리즘에 대해 알아보자"
-date:   2020-02-09
-description: 기본 정렬(Insertion sort, Selection sort, Bubble sort)
+title: "[알고리즘] 정렬 알고리즘에 대해 알아보자"
+categories:
+  - Algorithm
+tags:
+  - algorithm
+  - sort
+  - insertion
+  - selection
+  - bubble
 ---
 
+  
+  
 ## Insertion sort(삽입 정렬)
 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교 하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘  
 매 순서마다 해당 원소를 삽입할 수 있는 위치를 찾아 해당 위치에 넣는다.  

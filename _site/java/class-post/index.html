@@ -1,0 +1,657 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[자바 기본] 자바 class와 Object, 참조변수 - Site Title</title>
+<meta name="description" content="Class, Object  ">
+
+
+  <meta name="author" content="Your Name">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="[자바 기본] 자바 class와 Object, 참조변수">
+<meta property="og:url" content="http://localhost:4000/java/class-post/">
+
+
+  <meta property="og:description" content="Class, Object  ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-01-19T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/class-post/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[자바 기본] 자바 class와 Object, 참조변수">
+    <meta itemprop="description" content="Class, Object">
+    <meta itemprop="datePublished" content="2020-01-19T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[자바 기본] 자바 class와 Object, 참조변수
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="class-object">Class, Object</h2>
+
+<p>클래스는 틀, 객체는 실체가 있는 <strong>인스턴스</strong> 라고도 부른다.<br />
+그리고 객체를 생성하는 행위를 ‘인스턴스화(instantiation)’ 한다고 표현한다.</p>
+
+<p>클래스에 존재하는 변수와 메소드는 메모리 공간에 할당된 형태로 존재하지 않는다.<br />
+따라서 접근도 호출도 불가능한 하나의 틀로서만 역할을 한다.</p>
+
+<p>반면 객체는 메모리 공간에 할당이 이뤄진다.<br />
+객체를 구성하는 모든 변수는 그 크기대로 메모리 공간에 할당되고, 메소드도 호출할 수 있는 형태로 메모리 공간에 존재하게 된다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitSeller</span> <span class="n">seller</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitSeller</span><span class="o">();</span>
+</code></pre></div></div>
+<p>위 코드에서 seller와 같은 변수를 가리켜 <strong>‘참조변수’</strong> 라고 한다.<br />
+참조변수에 대한 설명은 아래에서 계속 하기로 한다.</p>
+
+<h3 id="object-class">Object class?</h3>
+<p>최근 class와 object의 차이를 묻는 질문에서 object(객체)를 object class로 착각해서 대답하는 바람에 낭패를 본 적이 있다.<br />
+따라서 정리하는김에 object class도 같이 정리해보자 ~</p>
+
+<p>Object class는 모든 클래스의 부모이다.<br />
+모든 클래스는 Object class를 상속한다.<br />
+클래스를 정의할 때 다른 어떤 클래스도 상속하지 않으면 해당 클래스는 java.lang 패키지에 묶여있는 Object 클래스를 상속하게 된다.</p>
+
+<p>그런 점에서 Object는 모든 클래스의 조상이라고 할 수 있는데, 그 이유는 모든 클래스가 공통으로 포함하고 있어야 하는 기능을 제공하기 위해서다. 
+(자바의 모든 인스턴스에 공통된 기준을 적용하기 위함)</p>
+
+<p>[API 문서 - Object class의 메소드 목록]<br />
+<img src="https://user-images.githubusercontent.com/17976251/73885152-a64e2200-48aa-11ea-9175-612ae49e90b7.png" alt="2123" />
+이미지 출처 : https://www.opentutorials.org/module/2495/14150</p>
+
+<p>위의 그림은 Object 클래스가 가지고 있는 메소드를 보여준다.<br />
+다시 말해서 자바의 객체는 위의 메소드들을 반드시 가지고 있다고 할 수 있다.<br />
+특히, 객체를 문자로 포현하는 toString()의 경우 많은 분들이 봤을 것이라 생각한다.</p>
+
+<h2 id="참조변수">참조변수</h2>
+
+<p><img width="595" alt="스크린샷 2020-01-19 오후 3 02 20" src="https://user-images.githubusercontent.com/17976251/72675787-c4efa300-3acc-11ea-80dd-0cb54d8c2f1e.png" /></p>
+
+<p>위 이미지가 가장 이해하기 쉬운 것 같아서 그려보았다.<br />
+new 에 의한 객체 생성시 생성된 객체는 메모리에 저장되고,<br />
+저장된 메모리의 주소 값이 반환되어 참조변수에 저장된다.</p>
+
+<p>때문에 참조변수에 의한 객체 접근이 가능하며, 주소값이 저장됐기 때문에 아래와 같은 코드도 가능하다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">FruitSeller</span> <span class="n">seller1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FruitSeller</span><span class="o">();</span>
+<span class="nc">FruitSeller</span> <span class="n">seller2</span> <span class="o">=</span> <span class="n">seller1</span><span class="o">;</span> <span class="c1">// seller2에 seller1에 저장된 주소값 저장</span>
+</code></pre></div></div>
+
+<p>두 참조변수가 하나의 객체를 참조하게 되며, 아래와 같다.</p>
+
+<p><img width="583" alt="스크린샷 2020-01-19 오후 3 13 31" src="https://user-images.githubusercontent.com/17976251/72675884-44ca3d00-3ace-11ea-9088-88164ada37c0.png" /></p>
+
+<h3 id="new에-의해-반환되는-주소-값">new에 의해 반환되는 주소 값</h3>
+
+<p>자바에서는 new에 의해 반환되는 주소 값(참조변수가 저장하고 있는 값)을 ‘참조’ 또는 reference라고 한다.</p>
+
+<h2 id="객체간의-대화-방법message-passing-방법">객체간의 대화 방법(Message Passing 방법)</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">buyApple</span><span class="o">(</span><span class="nc">FruitSeller</span> <span class="n">seller</span><span class="o">,</span> <span class="kt">int</span> <span class="n">money</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="n">numberOfApple</span> <span class="o">+=</span> <span class="n">seller</span><span class="o">.</span><span class="na">saleApple</span><span class="o">(</span><span class="n">money</span><span class="o">);</span> <span class="c1">// point!!</span>
+    <span class="n">myMoney</span> <span class="o">-=</span> <span class="n">money</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>하나의 객체가 다른 객체에게 메시지를 전달하는 방법은 메소드 호출을 기반으로 한다.<br />
+그래서 객체지향에서는 이러한 형태의 메소드 호출을 <strong>‘메시지 전달(Message Passing)’</strong> 이라 한다.</p>
+
+<h2 id="객체-인스턴스">객체? 인스턴스?</h2>
+
+<p>인스턴스는 클래스라는 틀을 기반으로 실체화 된 대상이라는 뜻을 담고 있다.<br />
+<strong>클래스라는 틀을 기반으로 실체화되었음을 강조할 때에는 인스턴스라는 단어를 사용한다.</strong></p>
+
+<p>객체는 현실 세계의 사물이나 ㄷ상을 프로그램상에서 표현되었음을 강조할 때 사용한다.</p>
+
+<p>결국, 인스턴스와 객체는 자바에서 동일한 의미로 사용된다.<br />
+각각의 단어가 더 어울리는 경우가 있긴 하다.<br />
+예) 과일장수를 하시는 옆집 철수 아버님을 의미하는 객체를 생성한다.<br />
+클래스 FruitSeller의 인스턴스를 두 개 생성한다.</p>
+
+<h3 id="인스턴스-변수와-인스턴스-메소드">인스턴스 변수와 인스턴스 메소드</h3>
+<p>인스턴스 메소드는 인스턴스의 행위 및 행동을 표현하는 방법<br />
+인스턴스 변수를 가리켜 인스턴스 필드라고 하기도 한다.</p>
+
+<p>그러니까 객체 안에 있는 변수와 메소드를 인스턴스를 붙여서 말한다는 것 같음.</p>
+
+<p>References<br />
+Object class<br />
+https://www.opentutorials.org/module/2495/14150<br />
+난 정말 JAVA를 공부한 적이 없다구요!</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#class" class="page__taxonomy-item" rel="tag">class</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#java" class="page__taxonomy-item" rel="tag">java</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#object" class="page__taxonomy-item" rel="tag">object</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#java" class="page__taxonomy-item" rel="tag">Java</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2020-01-19T00:00:00+09:00">January 19, 2020</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9E%90%EB%B0%94+%EA%B8%B0%EB%B3%B8%5D+%EC%9E%90%EB%B0%94+class%EC%99%80+Object%2C+%EC%B0%B8%EC%A1%B0%EB%B3%80%EC%88%98%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fclass-post%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fclass-post%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Fclass-post%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/final-post/" class="pagination--pager" title="[자바 기본] final
+">Previous</a>
+    
+    
+      <a href="/network/http-post/" class="pagination--pager" title="[통신] HTTP, TCP
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/network/tcpudp-post/" rel="permalink">[통신] TCP VS UDP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">TCP / UDP ?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/springboot/dtovsdao-post/" rel="permalink">[스프링부트] DAO VS DTO(VO)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">DAO
+DAO : Data Access Object
+Database data 접근을 위한 객체
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/java/hashmap-post/" rel="permalink">[자바] HashMap
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">HashMap?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/etc/distribution-post/" rel="permalink">[기타] 배포 전략의 종류 3가지
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.
+개인 학습용으로 해당 공간에 재생성하였습니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,640 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[자바기본] 상수와 형 변환(Type casting) - Site Title</title>
+<meta name="description" content="상수도 메모리 공간에 저장 된다고?  ">
+
+
+  <meta name="author" content="Your Name">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Site Title">
+<meta property="og:title" content="[자바기본] 상수와 형 변환(Type casting)">
+<meta property="og:url" content="http://localhost:4000/java/typecasting-post/">
+
+
+  <meta property="og:description" content="상수도 메모리 공간에 저장 된다고?  ">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2019-11-27T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/java/typecasting-post/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Your Name",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Site Title Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Site Title
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am an <strong>amazing</strong> person.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[자바기본] 상수와 형 변환(Type casting)">
+    <meta itemprop="description" content="상수도 메모리 공간에 저장 된다고?">
+    <meta itemprop="datePublished" content="2019-11-27T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[자바기본] 상수와 형 변환(Type casting)
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h4 id="상수도-메모리-공간에-저장-된다고">상수도 메모리 공간에 저장 된다고?</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">5</span><span class="o">;</span>
+</code></pre></div></div>
+<p>위와 같은 코드에서 1과 5의 합을 계산하기 위해서는 상수 1,5가 메모리 공간에 저장되어야 한다.</p>
+
+<h4 id="상수도-자로형을-기반으로-저장이-된다">상수도 자로형을 기반으로 저장이 된다.</h4>
+
+<p>상수의 메모리 저장을너무나 당연하게 생각하는 경향이 있는데,<br />
+위 코드에서 1과 5는 자료형인 byte, short, int, long 중 하나로 저장되어야 하며,
+2.4나 7.5와 같은 값은 실수 자료형인 float, double 중 하나의 형태로 표현 및 저장되어야 한다.</p>
+
+<p>하지만!</p>
+<blockquote>
+  <p>기본적으로 모든 정수형 상수는 int 형으로 표현 및 저장된다.</p>
+</blockquote>
+
+<blockquote>
+  <p>기본적으로 모든 실수형 상수는 double 형으로 표현 및 저장한다.</p>
+</blockquote>
+
+<p>따라서, 앞의 1과 5는 4바이트씩 할당되어 저장되고, 2.7과 7.5는 8바이트씩 할당되어 저장된다.</p>
+
+<h4 id="그럼-10000000000-은-어떻게-표현해-">그럼 10000000000 은 어떻게 표현해 ?</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10000000000</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>위 코드는 int 형의 표현 범위를 넘어서기 때문에 에러 발생!</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">10000000000</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>위 코드는 long 형이고, 10000000000 값이 표현 되니까 당연히 가능하겠지?<br />
+NO! 에러 발생!</p>
+
+<p>왜????????????????????????????????????????</p>
+
+<p>정수형 상수는 무조건 int 형으로 표현된다고 했잖아<br />
+따라서 큰 수 역시 int 형으로 표현이 가능한지를 먼저 판단해본다!<br />
+이 값을 저장할 변수가 long형인지 아닌지는 그 다음의 문제 일 뿐 !!!@@</p>
+
+<p>*따라서 이러한 경우에는 큰 수를 int 형이 아닌 long 형으로 표현해 달라고 명시적으로 선언을 해야 함</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">10000000000L</span><span class="o">;</span> <span class="c1">// 소문자 l 도 가능 </span>
+</code></pre></div></div>
+
+<h4 id="다음-문제도-살펴보자">다음 문제도 살펴보자</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">num2</span> <span class="o">=</span> <span class="mf">12.45</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>12.45는 double 형으로 표현이 가능하니까 당연히 가능하겠지.</p>
+
+<p>NO! 에러 발생!</p>
+
+<p>왜????????????????????????????????????<br />
+아니 12.45는 float형 변수에도 저장이 가능한 값이잖아??</p>
+
+<p><em>자바 컴파일러는 값의 크기를 기준으로 판단하지 않고, 값의 표현에 사용되는 바이트 크기를 기준으로 판단한다.<br />
+따라서 8바이트 double형 상수의 값을 4바이트 float형 변수에 저장하는 문장에서는 컴파일 에러가 발생한다!! 값이 손상 될 수 있기 때문에 *^^</em></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">num2</span> <span class="o">=</span> <span class="mf">12.45</span><span class="no">F</span>
+</code></pre></div></div>
+
+<h4 id="참고-btye와-short형-상수의-표현을-위한-접미사는-없음">[참고] btye와 short형 상수의 표현을 위한 접미사는 없음</h4>
+
+<p>자바는 정수에 대한 산술 연산을 int 형 기반으로 처리하는데,
+byte 와 short 형 변수들은 int 형 상수 기반의 초기화를 허용하기 때문에 필요없음.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// OK ~! </span>
+<span class="kt">byte</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+<span class="kt">short</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">50</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>references<br />
+난 정말 JAVA를 공부한 적이 없다구요</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#type-casting" class="page__taxonomy-item" rel="tag">type casting</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#type" class="page__taxonomy-item" rel="tag">type</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#java" class="page__taxonomy-item" rel="tag">Java</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-11-27T00:00:00+09:00">November 27, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9E%90%EB%B0%94%EA%B8%B0%EB%B3%B8%5D+%EC%83%81%EC%88%98%EC%99%80+%ED%98%95+%EB%B3%80%ED%99%98%28Type+casting%29%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2Ftypecasting-post%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Ftypecasting-post%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2Ftypecasting-post%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/java/javaetc-post/" class="pagination--pager" title="[자바기본] ETC
+">Previous</a>
+    
+    
+      <a href="/java/prefix-postfix-post/" class="pagination--pager" title="[자바기본] ++,– 연산자의 prefix/postfix
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/network/tcpudp-post/" rel="permalink">[통신] TCP VS UDP
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">TCP / UDP ?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/springboot/dtovsdao-post/" rel="permalink">[스프링부트] DAO VS DTO(VO)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">DAO
+DAO : Data Access Object
+Database data 접근을 위한 객체
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/java/hashmap-post/" rel="permalink">[자바] HashMap
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">HashMap?
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/etc/distribution-post/" rel="permalink">[기타] 배포 전략의 종류 3가지
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.
+개인 학습용으로 해당 공간에 재생성하였습니다.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Your Name. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

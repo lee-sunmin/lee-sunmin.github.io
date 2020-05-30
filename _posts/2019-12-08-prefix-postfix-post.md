@@ -1,10 +1,13 @@
 ---
-layout: post
-title:  "[자바기본] ++,-- 연산자의 prefix/postfix"
-date:   2019-12-08
-description: 은근히 헷갈리는 증가/감소연산자 prefix/postfix 정리
----
-
+title: "[자바기본] ++,-- 연산자의 prefix/postfix"
+categories:
+  - Java
+tags:
+  - prefix
+  - postfix
+  - java
+---  
+  
 증가, 감소 연산자가 앞에 붙는지 뒤에 붙는지에 따라 값이 바뀌는 것은 잘 알고 있을 것이다.  
 하지만 결과가 어떻게 출력되는지 혼동되는 경우가 꽤 있기 때문에 한번 쭉 정리해보려고 한다.  
 

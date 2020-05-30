@@ -1,10 +1,14 @@
 ---
-layout: post
-title:  "[통신] TCP VS UDP"
-date:   2020-05-26
-description: 
+title: "[통신] TCP VS UDP"
+categories:
+  - Network
+tags:
+  - network
+  - tcp
+  - udp
 ---
-
+  
+  
 ### TCP / UDP ?  
 
 전송계층에서 사용하는 프로토콜로써, 목적지 장비까지 전송한 패킷을 상위의 특정 응용 프로토콜에게 전달하는 것에 목적이 있음  

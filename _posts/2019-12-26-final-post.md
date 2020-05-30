@@ -1,9 +1,12 @@
 ---
-layout: post
-title:  "[자바 기본] final"
-date:   2019-12-26
-description: 자바 기본 문법 중 final 에 대한 간단 정리
----
+title: "[자바 기본] final"
+categories:
+  - Java
+tags:
+  - final
+  - java
+---  
+  
 
 
 ## final 변수 ?
