@@ -78,9 +78,9 @@ var store = [{
         "teaser": null
       },{
         "title": "[스프링 부트] JPA에 대해 알아보자",
-        "excerpt":"JPA JPA를 사용한다는건 ORM(Object Relational Mapping : 객체의 관계를 연결)형태를 쓴다고 한다. JPA의 대표적인 것중에 Hibernate가 있다. DB에 테이블 생성 쿼리를 직접 날리지 않고 Entity 클래스를 생성해서 DB 테이블을 만드는 등 객체형태의 데이터를 데이터베이스 컬럼에 하나씩 파싱해서 넘기지 않고 객체에 저장된 데이터를 쉽게 데이터베이스에 적재 할 수 있도록 도와준다. ORM...","categories": ["Spring boot"],
+        "excerpt":"JPA JPA를 사용한다는건 ORM(Object Relational Mapping : 객체의 관계를 연결)형태를 쓴다고 한다. JPA의 대표적인 것중에 Hibernate가 있다. DB에 테이블 생성 쿼리를 직접 날리지 않고 Entity 클래스를 생성해서 DB 테이블을 만드는 등 객체형태의 데이터를 데이터베이스 컬럼에 하나씩 파싱해서 넘기지 않고 객체에 저장된 데이터를 쉽게 데이터베이스에 적재 할 수 있도록 도와준다. ORM...","categories": ["Springboot"],
         "tags": ["springboot","jpa"],
-        "url": "http://localhost:4000/spring%20boot/jpa-post/",
+        "url": "http://localhost:4000/springboot/jpa-post/",
         "teaser": null
       },{
         "title": "[자바 기본] int와 Integer의 차이에 대해서 아시나요?",
