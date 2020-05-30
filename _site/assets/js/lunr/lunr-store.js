@@ -1,4 +1,10 @@
 var store = [{
+        "title": "Edge Case: Nested and Mixed Lists",
+        "excerpt":"Nested and mixed lists are an interesting beast. It’s a corner case to make sure that Lists within lists do not break the ordered list numbering order Your list styles go deep enough. Ordered – Unordered – Ordered ordered item ordered item unordered unordered ordered item ordered item ordered item...","categories": ["Edge Case"],
+        "tags": ["content","css","edge case","lists","markup"],
+        "url": "http://localhost:4000/edge%20case/edge-case-nested-and-mixed-lists/",
+        "teaser": null
+      },{
         "title": "[자바 기본] 자바 Static 에 대해서 알아보자!",
         "excerpt":"자바 - Static 이란 ? 자바를 사용하면서도 기본적인 내용을 놓치는 경우가 많았다. 최근 자바 Static 이 무엇인가? 에 대한 질문을 받았는데 이런 기본 문법도 모르는 사실에 충격을 먹고 여기에 간단히라도 정리해 보려고 한다. 개인 공부를 위한 공간 Static 변수 변수나 함수 앞에 붙여서 사용하는 것이 기본. public class HousePark {...","categories": [],
         "tags": [],
