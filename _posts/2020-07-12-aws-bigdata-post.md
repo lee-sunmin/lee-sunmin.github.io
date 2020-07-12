@@ -39,8 +39,7 @@ AWS Kinesis가 존재 하는 이유는 **다양한 데이터들을 수집하고,
   
 > AWS Kinesis는 다양한 데이터들을 빠르게 가공해준다. 그리고 이러한 데이터들은 다양한 포맷으로 출력줌으로써 다양한 소프트웨어서 사용해주게 해준다.  
   
-
-![다운로드](https://user-images.githubusercontent.com/17976251/87239227-9cc37a00-c447-11ea-9873-b81fba44d15c.png)  
+ 
 <br/>
 Amazon Kinesis Data Streams는 빅데이터 솔루션의 게이트웨이로 사용되고 있다.  
 <br/>
