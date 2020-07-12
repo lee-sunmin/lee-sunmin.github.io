@@ -166,4 +166,10 @@ var store = [{
         "tags": ["network","tcp","udp"],
         "url": "http://localhost:4000/network/tcpudp-post/",
         "teaser": null
+      },{
+        "title": "[bigdata] Big Data on AWS",
+        "excerpt":"3일 교육 -&gt; Amazon EMR을 사용하여 Hive 및 Hue와 같은 광범위한 하둡 도구 에코시스템을 통해 데이터를 처리하고, 빅 데이터 환경 생성을 생성하고, Amazon DynamoDB, Amazon Redshift, Amazon QuickSight, Amazon Athena 및 Amazon Kinesis 로 작업하고, 빅 데이터 환경 설계를 위한 방법 학습 예습 1. Amazon EMR ? Amazon EMR은 Apache...","categories": ["bigdata"],
+        "tags": ["aws","bigdata"],
+        "url": "http://localhost:4000/bigdata/aws-bigdata-post/",
+        "teaser": null
       }]

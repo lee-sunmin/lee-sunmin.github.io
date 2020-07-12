@@ -1,8 +1,219 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-30T17:20:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Site Title</title><subtitle>An amazing website.</subtitle><author><name>Your Name</name></author><entry><title type="html">[스프링부트] DAO VS DTO(VO)</title><link href="http://localhost:4000/springboot/dtovsdao-post/" rel="alternate" type="text/html" title="[스프링부트] DAO VS DTO(VO)" /><published>2020-05-26T00:00:00+09:00</published><updated>2020-05-26T00:00:00+09:00</updated><id>http://localhost:4000/springboot/dtovsdao-post</id><content type="html" xml:base="http://localhost:4000/springboot/dtovsdao-post/">&lt;h3 id=&quot;dao&quot;&gt;DAO&lt;/h3&gt;
-&lt;p&gt;DAO : Data Access Object
-Database data 접근을 위한 객체&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-12T16:05:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ming Study Blog</title><subtitle>Study Java, Springboot(Server), CS, ETC :)</subtitle><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><entry><title type="html">[bigdata] Big Data on AWS</title><link href="http://localhost:4000/bigdata/aws-bigdata-post/" rel="alternate" type="text/html" title="[bigdata] Big Data on AWS" /><published>2020-07-12T00:00:00+09:00</published><updated>2020-07-12T00:00:00+09:00</updated><id>http://localhost:4000/bigdata/aws-bigdata-post</id><content type="html" xml:base="http://localhost:4000/bigdata/aws-bigdata-post/">&lt;p&gt;3일 교육&lt;br /&gt;
+&lt;strong&gt;-&amp;gt; Amazon EMR을 사용하여 Hive 및 Hue와 같은 광범위한 하둡 도구 에코시스템을 통해 데이터를 처리하고, 빅 데이터 환경 생성을 생성하고, Amazon DynamoDB, Amazon Redshift, Amazon QuickSight, Amazon Athena 및 Amazon Kinesis 로 작업하고, 빅 데이터 환경 설계를 위한 방법 학습&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;.. .. .. .. 작성 중&lt;/p&gt;</content><author><name>Your Name</name></author><category term="springboot" /><category term="dto" /><category term="vo" /><category term="dao" /><summary type="html">DAO DAO : Data Access Object Database data 접근을 위한 객체</summary></entry><entry><title type="html">[통신] TCP VS UDP</title><link href="http://localhost:4000/network/tcpudp-post/" rel="alternate" type="text/html" title="[통신] TCP VS UDP" /><published>2020-05-26T00:00:00+09:00</published><updated>2020-05-26T00:00:00+09:00</updated><id>http://localhost:4000/network/tcpudp-post</id><content type="html" xml:base="http://localhost:4000/network/tcpudp-post/">&lt;h3 id=&quot;tcp--udp-&quot;&gt;TCP / UDP ?&lt;/h3&gt;
+&lt;h1 id=&quot;예습&quot;&gt;예습&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-amazon-emr-&quot;&gt;1. Amazon EMR ?&lt;/h2&gt;
+&lt;p&gt;Amazon EMR은 Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi 및 Presto와 같은 오픈 소스 도구를 사용하여 방대한 양의 데이터를 처리하기 위한 업계 최고의 클라우드 빅 데이터 플랫폼입니다.&lt;br /&gt;
+https://aws.amazon.com/ko/emr/&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;아마존 S3는 HDFS API를 만족시켜서 HDFS 대신 파일시스템으로 사용될 수 있고&lt;/em&gt;&lt;/strong&gt;, 아마존 EMR은 EC2인스턴스 클러스터를 구성하여 하둡 프레임워크로서 동작하여 분산처리가 가능하게 한다. 아마존 EMR은 스파크, HBase, Presto, Flink와 같은 분산처리 프레임워크를 실행할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apache Hadoop on Amazon EMR
+※ 하둡이라하면 보통 MapReduce, YARN(Resource Manager), HDFS를 함께 말한다.&lt;br /&gt;
+EC2 인스턴스 클러스터를 이용해서 하둡 프레임워크를 돌릴 수 있다. 하둡 에코시스템에 속한 Hive, Pig, Hue, Ganglia, Ozzie, HBase 등 다양한 어플리케이션 또한 물론 EMR 위에서 사용가능하다.&lt;br /&gt;
+Amazon EMR은 스토리지로 사용될 S3와 연결시켜주는 EMRFS(EMR File System)를 지원해준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-amazon-kinesis&quot;&gt;2. Amazon Kinesis&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;빅 데이터의 스트림 처리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;AWS Kinesis 란&lt;br /&gt;
+AWS Kinesis는 데이터 수집구간과 데이터 처리구간 중간에 위치한다. 즉. 대용량의 데이터를 안정적으로 수집구간에서 수집을 하고, 데이터 처리 구간인 AWS 플랫폼(EC2,S3,DB..등)에서 다양하게 소비 할수 있도록 환경을 제공 한다.&lt;/p&gt;
+
+&lt;p&gt;AWS Kinesis가 존재 하는 이유는 &lt;strong&gt;다양한 데이터들을 수집하고, 이것을 다양한 포맷으로 만들어 주기 위함&lt;/strong&gt;이다. Kinesis가 ‘스트리밍 데이터 처리’를 해준다는 것이다. 다양한 형태로 들어오는 방대한 데이터를 가공해서 소프트웨어가 사용 가능하도록 다양한 출력물을 만들어 주거나, 데이터 저장소에 저장하도록 해준다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Amazon은 Kinesis를 ‘완전 관리형 스트리밍 데이터 서비스’ 라고 한다. 수십만 개의 소스에서 클릭 스트림, 애플리케이션 로그, 소셜 미디어와 같은 &lt;em&gt;다양한 유형의 데이터를 Amazon Kinesis 스트림에 지속적으로 추가&lt;/em&gt;할 수 있습니다. 그러면 &lt;em&gt;몇 초안에 Amazon Kinesis 애플리케이션에서는 스트림의 해당 데이터를 읽고 처리 할 수 있습니다.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;AWS Kinesis는 다양한 데이터들을 빠르게 가공해준다. 그리고 이러한 데이터들은 다양한 포맷으로 출력줌으로써 다양한 소프트웨어서 사용해주게 해준다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87239227-9cc37a00-c447-11ea-9873-b81fba44d15c.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Amazon Kinesis Data Streams는 빅데이터 솔루션의 게이트웨이로 사용되고 있다.&lt;/p&gt;
+
+&lt;p&gt;[핵심] &lt;br /&gt;
+다양한 소스에서 데이터가 Amazon Kinesis 스트림에 추가되고, 스트림 데이터가 다양한 Amazon Kinesis 애플리 케이션에서 사용된다.&lt;br /&gt;
+&lt;br /&gt;
+위 이미지를 보면,&lt;br /&gt;
+1) Yellow Application - 스트리밍 데이터에 대해 실시간 대시보드 실행.&lt;br /&gt;
+2) Red Application - 간단한 집계를 수행하고 처리한 데이터를 Amazon S3로 내보낸다. S3의 데이터는 추가적인 처리 과정을 거친 후 복잡한 분석을 위해 Amazon Redshift에 저장된다.&lt;br /&gt;
+3) Green Application - Amazon S3로 원시 데이터를 내보내는데, 좀더 저렴한 장기 저장을 위해 Amazon Glacier에 보관한다.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;이러한 세가지 유형의 데이터 처리 파이프라인은 &lt;span style=&quot;color: green;&quot;&gt;모두 동시에 병렬로 발생&lt;/span&gt;한다.&lt;/strong&gt; 
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Amazon Kinesis를 사용하면 모든 데이터가 수집된 후에야 처리를 시작할 수 있는 것(배치같은것)이 아니라 데이터가 수신되는 대로 처리 및 분석하여 즉시 대응 할 수 있다.&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;--amazon-kinesis-data-firehose&quot;&gt;- Amazon Kinesis Data Firehose&lt;/h3&gt;
+&lt;p&gt;데이터 스트림을 AWS 데이터 스토어로 로드&lt;br /&gt;
+기존 인텔리전스 도구를 사용해 &lt;em&gt;거의 실시간 분석을 위해 데이터 스트림을 캡쳐 및 변환하여 AWS 데이터 스토어로 로드&lt;/em&gt;할 수 있는 가장 쉬운 방법이다.&lt;/p&gt;
+
+&lt;p&gt;:heavy_check_mark: 간단하게 전송 스트림을 생성 - 대상을 선택 - 수십만 개의 데이터를 원본에서 동시에 실시간으로 전송&lt;/p&gt;
+
+&lt;p&gt;전송 스트림 ?&lt;br /&gt;
+Amazon Kinesis Data Firehose의 기본 엔터티로 전송 스트림을 생성한 후, 데이터를 전송 스트림으로 보내어 Firehose를 사용한다.&lt;/p&gt;
+
+&lt;p&gt;대상 ?&lt;br /&gt;
+데이터가 전송 되는 데이터 스토어로 Firehose에서는 전송 대상으로 Amazon S3 , Amazon Redshift, Amazon Elasticsearch Service 및 Splunk를 지원한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;데이터-전송-흐름&quot;&gt;데이터 전송 흐름&lt;/h4&gt;
+
+&lt;p&gt;(1) Amazon S3 대상일 경우&lt;br /&gt;
+스트리밍 데이터가 S3 버킷으로 전송된다.&lt;br /&gt;
+데이터 변환이 활성화 되면, 선택적으로 소스 데이터를 다른 Amazon S3 버킷으로 백업할 수 있다.&lt;br /&gt;
+&lt;img width=&quot;315&quot; alt=&quot;다운로드 (1)&quot; src=&quot;https://user-images.githubusercontent.com/17976251/87239444-2d02be80-c44a-11ea-8a9b-60c22cfbe827.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(2) Amazon Redshift 대상일 경우&lt;br /&gt;
+먼저 스트리밍 데이터가 S3 버킷으로 전송된다.&lt;br /&gt;
+&lt;em&gt;이때 Firehose가 Amazon Redshift COPY 명령을 실행하여 데이터를 S3 버킷에서 Amazon Redshift 클러스터로 로드한다.&lt;/em&gt;&lt;br /&gt;
+데이터 변환이 활성화 되면 선택적으로 소스 데이터를 다른 Amazon S3 버킷으로 백업할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87239447-2f651880-c44a-11ea-9d81-2afb04fcedca.png&quot; alt=&quot;다운로드 (2)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(3) Amazon ES 대상일 경우&lt;br /&gt;
+스트리밍 데이터가 Amazon ES 클러스터로 전송되며, 동시에 선택적으로 S3 버킷에 백업할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87239665-abf8f680-c44c-11ea-8ba6-63f6426fd90f.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(최종) 작동 방식&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87239669-b74c2200-c44c-11ea-804b-c17469620a90.png&quot; alt=&quot;다운로드 (2)&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;--amazon-kinesis-video-streams&quot;&gt;- Amazon Kinesis Video Streams&lt;/h3&gt;
+&lt;p&gt;비디오 스트림을 캡처,처리 및 저장 용도&lt;br /&gt;
+Amazon Kinesis Video Streams를 사용하면 분석, 기계 학습 및 기타 처리를 위해 커넥티드 디바이스에서 AWS로 비디오를 쉽고 안전하게 스트리밍할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;작동 방식&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87239696-0f832400-c44d-11ea-9097-d4f239f6b802.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;--amazon-kinesis-data-analytics&quot;&gt;- Amazon Kinesis Data Analytics&lt;/h3&gt;
+&lt;p&gt;표준 SQL로 데이터 스트림을 분석&lt;br /&gt;
+Amazon Kinesis Data Analytics는 새로운 프로그래밍 언어 또는 처리 프레임워크를 배울 필요 없이 &lt;em&gt;표준 SQL을 통해 실시간으로 데이터 스트림을 처리&lt;/em&gt;할 수 있는 가장 쉬운 방법이다.&lt;/p&gt;
+
+&lt;p&gt;Kinesis Data Analytics 를 사용하려면 데이터를 지속적으로 읽고 처리하는 Kinesis 데이터 분석 애플리케이션이 필요하다&lt;br /&gt;
+Kinesis Data Streams / Kinesis Data Firehose 로 데이터 수집 하고 SQL 코드로 데이터를 읽고 처리해 결과를 전송한다&lt;br /&gt;
+전송 대상을 구성할 수도 있다 (s3,Redshift, Elasticsearch Service, Lambda, Kinesis Data Streams, Kinesis Data Firehose)  &lt;br /&gt;
+-&amp;gt; 거의 실시간으로 데이터를 지속적으로 읽고 처리하고 저장하는 SQL 코드를 신속하게 작성할 수 있다&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Analytics는 수신 데이터 스트림을 지정하고, SQL 쿼리를 작성하고, 결과를 로드할 위치를 지정하기만 하면 된다. 아주 간편하다. 그러면 데이터가 수신되는 동안 Analytics에서 데이터에 대해 SQL 쿼리를 지속적으로 실행하고 결과를 대상에 전송한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;예시&quot;&gt;예시&lt;/h4&gt;
+&lt;p&gt;예를 들어 게임의 경우 랭킹을 계산하여 이를 Amazon S3로 전송함으로써 실시간 라이브 순위표를 만들 수 있다. 또한 5분 간격으로 웹사이트의 고유 방문자 수를 계산하고 처리된 결과를 Amazon Redshift에 전송함으로써 웹 사이트에 대한 트래픽을 추척할 수 있다.&lt;/p&gt;
+
+&lt;h4 id=&quot;정리&quot;&gt;정리&lt;/h4&gt;
+&lt;p&gt;애플리케이션의 스트리밍 소스. 입력 구성에서 스트리밍 소스를 애플리케이션 입력 스트림에 매핑하면, 인애플리케이션 스트림은 지속적으로 업데이트 되는 테이블과 같다 이 테이블을 SELECT 나 INSERT 등 SQL 쿼리 작업을 수행할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;인애플리케이션 스트림 ?&lt;br /&gt;
+사용자가 SELECT 및 INSERT SQL 작업을 수행할 수 있도록 데이터를 애플리케이션에 지속적으로 저장하는 엔터티&lt;/p&gt;
+
+&lt;p&gt;(Analytics 다이어그램 아키텍처)&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87239804-34c46200-c44e-11ea-87a2-a9d960ee6b6d.png&quot; alt=&quot;다운로드&quot; /&gt;&lt;br /&gt;
+위 이미지를 보면 kinesis나 firehose를 통해 들어온 데이터를 analytics application에서 가공하고 가공된 데이터를 동일하게 kinesis나 firehose를 사용하여 s3 등 target 공간으로 전송하는 거라고 생각한다.&lt;/p&gt;
+
+&lt;p&gt;(작동방식)&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87239811-4574d800-c44e-11ea-9cdc-a7b4cfc9e5f1.png&quot; alt=&quot;다운로드 (1)&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-amazon-redshift&quot;&gt;3. Amazon RedShift&lt;/h2&gt;
+&lt;p&gt;AWS가 서비스하는 클라우드 데이터 웨어하우스 DB&lt;br /&gt;
+온프레미스에서 쿼리툴을 통해 레드프레스에 쿼리를 날리면, 레드프레스는 데이터를 분석, 가공해 기업에게 필요한 정보로 리턴해줌&lt;/p&gt;
+
+&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
+&lt;p&gt;1) 빠른 성능&lt;br /&gt;
+레드시프트는 기존의 데이터웨어 하우스보다 10배 빠른 성능을 자랑하는데, 기계학습, 대량 병렬 쿼리 실행, column 기반 스토리지, 결과 캐싱 때문이다.(기계학습 하는거 좀 신기)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;레드시프트는 기계학습을 통해 프로세스들의 부하량을 계산하고 가장 빠른 처리가 가능하게 대기열을 구성한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;수천 개의 인스턴트를 사용해 대량 병렬 쿼리를 실행한다. 클러스터는 쿼리를 통합해 리턴하는 리더노드, 병합쿼리를 실행하는 컴퓨팅 노드로 구성되어 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;고성능 디스크의 column 기반 스토리지 및 데이터 압축, 영역 매핑을 사용하여 쿼리 수행에 필요한 I/O 수를 줄이고-&amp;gt;??, &lt;em&gt;쿼리 결과를 캐싱&lt;/em&gt;해두어서 같은 쿼리를 반복적으로 사용할 경우 데이터가 변경되지 않았으면 캐시된 결과를 가져온다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2) 간단신속한 확장과 백업&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;클라우드 기반이며 S3와 연결되어 확장성이 뛰어납니다. 주로 큰 데이터는 S3에, 중요한 데이터나 소규모 데이터는 레드시프트에 저장하면 효율적이라 합니다. 또한 레드시프트는 확장 관리 작업 대부분을 자동화하여 편리한 확장이 가능합니다.&lt;/li&gt;
+  &lt;li&gt;자동으로 &lt;em&gt;스냅샷을 S3에 저장해 백업&lt;/em&gt;합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 데이터 레이크 쿼리&lt;/p&gt;
+
+&lt;p&gt;레드시프트는 레드시프트가 가진 페타바이트 규모의 데이터와 S3에 구축된 데이터 레이크에 있는 엑사바이트 규모의 데이터에 대해 쿼리를 실행할 수 있습니다.(wow !!)&lt;/p&gt;
+
+&lt;p&gt;레드시프트는 PostgreSQL을 기반으로 만들어졌기 때문에 쿼리를 통한 실행이 가능하다. &lt;em&gt;데이터 레이크인 S3에 바로 접근할 수 있기에 데이터를 로딩하는 시간이 없어 시간이 절약&lt;/em&gt;된다.&lt;/p&gt;
+
+&lt;p&gt;(단점)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;레드시프트는 PregreSQL을 바탕으로 하고 있지만 분석에 초점을 두었기에 소규모 OLTP 처리에 적합한 기능, index나 PK, FK 등 분석과 무관한 기능들은 약하거나 제외되었습니다.&lt;br /&gt;
+또한 column 기반 스토리지이기에 OLTP 시간은 느립니다.&lt;br /&gt;
+▶OLTP는 Oracle이 나음.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;4-amazon-quicksight&quot;&gt;4. Amazon QuickSight&lt;/h2&gt;
+&lt;p&gt;Amazon QuickSight는 데이터를 사용하여 시각적 객체를 구축하고, 애드혹 분석을 수행하고, 사업과 관련된 통찰을 얻는 데 사용할 수 있는 비즈니스 분석 서비스입니다. AWS 데이터 원본을 자동으로 검색하고 사용자의 데이터 원본에도 작동합니다.&lt;/p&gt;
+
+&lt;p&gt;(작동방식)&lt;br /&gt;
+&lt;img src=&quot;https://user-images.githubusercontent.com/17976251/87240190-43147d00-c452-11ea-9b30-723330b44546.png&quot; alt=&quot;quicksight-workflow-overview&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-amazon-athena&quot;&gt;5. Amazon Athena&lt;/h2&gt;
+&lt;p&gt;Amazon Athena은(는) Amazon Simple Storage Service(Amazon S3)에서 표준 SQL을 사용하여 데이터를 쉽게 바로 분석할 수 있는 대화형 쿼리 서비스입니다.&lt;br /&gt;
+AWS Management Console에서 몇 가지 작업을 수행하면 Amazon S3에 저장된 데이터에서 Athena을(를) 가리키고, 표준 SQL을 사용하여 임시 쿼리를 실행하고, 몇 초 안에 결과를 얻을 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;Athena은(는) 서버리스 서비스이므로 설정하거나 관리할 인프라가 없으며, 실행한 쿼리에 대해서만 비용을 지불합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;6-amazon-dynamodb다이나모-db&quot;&gt;6. Amazon DynamoDB(다이나모 DB)&lt;/h2&gt;
+&lt;p&gt;NoSQL Database&lt;/p&gt;
+
+&lt;h2 id=&quot;7-streaming&quot;&gt;7. Streaming&lt;/h2&gt;
+
+&lt;h2 id=&quot;8-aws-glue&quot;&gt;8. AWS Glue&lt;/h2&gt;
+&lt;p&gt;AWS Glue는 완전 관리형 추출, 변환 및 로드(ETL) 서비스로, 효율적인 비용으로 간단하게 여러 데이터 스토어 및 데이터 스트림 간에 원하는 데이터를 분류, 정리, 보강, 이동합니다.&lt;/p&gt;
+
+&lt;p&gt;[데이터 원본] - AWS Glue에서 지원되는 데이터 원본&lt;br /&gt;
+1) 데이터 스토어&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Amazon S3&lt;/li&gt;
+  &lt;li&gt;Amazon Relational Database Service (Amazon RDS)&lt;/li&gt;
+  &lt;li&gt;타사 JDBC에서 액세스할 수 있는 데이터베이스-&amp;gt; ??&lt;/li&gt;
+  &lt;li&gt;Amazon DynamoDB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2) 데이터 스트림&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Amazon Kinesis Data Streams&lt;/li&gt;
+  &lt;li&gt;Apache Kafka&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[데이터 대상] - AWS Glue에서 지원되는 데이터 대상
+1) 데이터 스토어&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Amazon S3&lt;/li&gt;
+  &lt;li&gt;Amazon Relational Database Service (Amazon RDS)&lt;/li&gt;
+  &lt;li&gt;타사 JDBC에서 액세스할 수 있는 데이터베이스&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;References&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=kbh3983&amp;amp;logNo=221084176372&amp;amp;proxyReferer=https:%2F%2Fwww.google.com%2F&quot;&gt;Amazon EMR이란?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://itjava.tistory.com/99&quot;&gt;[ AWS ] Amazon Kinesis 란? 개념 정리&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://itjava.tistory.com/117&quot;&gt;[ AWS ] AWS RedShift 아마존 웹서비스 레드시프트 란?&lt;/a&gt;&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="aws" /><category term="bigdata" /><summary type="html">3일 교육 -&amp;gt; Amazon EMR을 사용하여 Hive 및 Hue와 같은 광범위한 하둡 도구 에코시스템을 통해 데이터를 처리하고, 빅 데이터 환경 생성을 생성하고, Amazon DynamoDB, Amazon Redshift, Amazon QuickSight, Amazon Athena 및 Amazon Kinesis 로 작업하고, 빅 데이터 환경 설계를 위한 방법 학습</summary></entry><entry><title type="html">[통신] TCP VS UDP</title><link href="http://localhost:4000/network/tcpudp-post/" rel="alternate" type="text/html" title="[통신] TCP VS UDP" /><published>2020-05-26T00:00:00+09:00</published><updated>2020-05-26T00:00:00+09:00</updated><id>http://localhost:4000/network/tcpudp-post</id><content type="html" xml:base="http://localhost:4000/network/tcpudp-post/">&lt;h3 id=&quot;tcp--udp-&quot;&gt;TCP / UDP ?&lt;/h3&gt;
 
 &lt;p&gt;전송계층에서 사용하는 프로토콜로써, 목적지 장비까지 전송한 패킷을 상위의 특정 응용 프로토콜에게 전달하는 것에 목적이 있음&lt;/p&gt;
 
@@ -57,7 +268,11 @@ UDP는 TCP보다 속도가 빠르며 네트워크 부하가 적다는 장점이 
 &lt;p&gt;그렇기 때문에 신뢰성보다는 연속성(어떠한 상태가 계속 유지되는 것)이 중요한 실시간 서비스(streaming)같은 곳에 자주 사용됨&lt;/p&gt;
 
 &lt;p&gt;References&lt;br /&gt;
-https://choseongho93.tistory.com/3 [⊂코딩 5분전⊃]&lt;/p&gt;</content><author><name>Your Name</name></author><category term="network" /><category term="tcp" /><category term="udp" /><summary type="html">TCP / UDP ?</summary></entry><entry><title type="html">[자바] HashMap</title><link href="http://localhost:4000/java/hashmap-post/" rel="alternate" type="text/html" title="[자바] HashMap" /><published>2020-05-24T00:00:00+09:00</published><updated>2020-05-24T00:00:00+09:00</updated><id>http://localhost:4000/java/hashmap-post</id><content type="html" xml:base="http://localhost:4000/java/hashmap-post/">&lt;h3 id=&quot;hashmap&quot;&gt;HashMap?&lt;/h3&gt;
+https://choseongho93.tistory.com/3 [⊂코딩 5분전⊃]&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="network" /><category term="tcp" /><category term="udp" /><summary type="html">TCP / UDP ?</summary></entry><entry><title type="html">[스프링부트] DAO VS DTO(VO)</title><link href="http://localhost:4000/springboot/dtovsdao-post/" rel="alternate" type="text/html" title="[스프링부트] DAO VS DTO(VO)" /><published>2020-05-26T00:00:00+09:00</published><updated>2020-05-26T00:00:00+09:00</updated><id>http://localhost:4000/springboot/dtovsdao-post</id><content type="html" xml:base="http://localhost:4000/springboot/dtovsdao-post/">&lt;h3 id=&quot;dao&quot;&gt;DAO&lt;/h3&gt;
+&lt;p&gt;DAO : Data Access Object
+Database data 접근을 위한 객체&lt;/p&gt;
+
+&lt;p&gt;.. .. .. .. 작성 중&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="springboot" /><category term="dto" /><category term="vo" /><category term="dao" /><summary type="html">DAO DAO : Data Access Object Database data 접근을 위한 객체</summary></entry><entry><title type="html">[자바] HashMap</title><link href="http://localhost:4000/java/hashmap-post/" rel="alternate" type="text/html" title="[자바] HashMap" /><published>2020-05-24T00:00:00+09:00</published><updated>2020-05-24T00:00:00+09:00</updated><id>http://localhost:4000/java/hashmap-post</id><content type="html" xml:base="http://localhost:4000/java/hashmap-post/">&lt;h3 id=&quot;hashmap&quot;&gt;HashMap?&lt;/h3&gt;
 
 &lt;p&gt;Hashmap은 고정시간을 제공하는 Key-value 데이터 구조이다.&lt;br /&gt;
 &lt;strong&gt;시간복잡도 : O(1)&lt;/strong&gt;&lt;/p&gt;
@@ -138,7 +353,7 @@ To successfully store and retrieve objects from a HashTable, the objects used as
 http://tech.javacafe.io/2018/12/03/HashMap/&lt;br /&gt;
 정리를 너무 잘 해주셔서 해당 내용 참고하면서 교육 목적으로 재정리 했습니다. 감사합니다 :)&lt;br /&gt;
 [Haspmap vs Hasptable]&lt;br /&gt;
-https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/&lt;/p&gt;</content><author><name>Your Name</name></author><category term="java" /><category term="hash" /><category term="hashmap" /><summary type="html">HashMap?</summary></entry><entry><title type="html">[기타] 배포 전략의 종류 3가지</title><link href="http://localhost:4000/etc/distribution-post/" rel="alternate" type="text/html" title="[기타] 배포 전략의 종류 3가지" /><published>2020-05-14T00:00:00+09:00</published><updated>2020-05-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/distribution-post</id><content type="html" xml:base="http://localhost:4000/etc/distribution-post/">&lt;p&gt;해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.&lt;br /&gt;
+https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="java" /><category term="hash" /><category term="hashmap" /><summary type="html">HashMap?</summary></entry><entry><title type="html">[기타] 배포 전략의 종류 3가지</title><link href="http://localhost:4000/etc/distribution-post/" rel="alternate" type="text/html" title="[기타] 배포 전략의 종류 3가지" /><published>2020-05-14T00:00:00+09:00</published><updated>2020-05-14T00:00:00+09:00</updated><id>http://localhost:4000/etc/distribution-post</id><content type="html" xml:base="http://localhost:4000/etc/distribution-post/">&lt;p&gt;해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다.&lt;br /&gt;
 개인 학습용으로 해당 공간에 재생성하였습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-롤링-배포-rolling&quot;&gt;1. 롤링 배포 (Rolling)&lt;/h3&gt;
@@ -171,7 +386,7 @@ https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/
 
 &lt;h3 id=&quot;출처&quot;&gt;출처&lt;/h3&gt;
 &lt;p&gt;https://reference-m1.tistory.com/211&lt;br /&gt;
-모든 자료는 위 링크를 참고했습니다. 깔끔한 정리 감사합니다 ^^&lt;/p&gt;</content><author><name>Your Name</name></author><category term="rolling" /><category term="blue green" /><category term="canary" /><summary type="html">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다. 개인 학습용으로 해당 공간에 재생성하였습니다.</summary></entry><entry><title type="html">[알고리즘] 정렬 알고리즘에 대해 알아보자</title><link href="http://localhost:4000/algorithm/basicsort-post/" rel="alternate" type="text/html" title="[알고리즘] 정렬 알고리즘에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/basicsort-post</id><content type="html" xml:base="http://localhost:4000/algorithm/basicsort-post/">&lt;h2 id=&quot;insertion-sort삽입-정렬&quot;&gt;Insertion sort(삽입 정렬)&lt;/h2&gt;
+모든 자료는 위 링크를 참고했습니다. 깔끔한 정리 감사합니다 ^^&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="rolling" /><category term="blue green" /><category term="canary" /><summary type="html">해당 게시글의 모든 내용은 아래 출처에서 가져왔습니다. 개인 학습용으로 해당 공간에 재생성하였습니다.</summary></entry><entry><title type="html">[알고리즘] 정렬 알고리즘에 대해 알아보자</title><link href="http://localhost:4000/algorithm/basicsort-post/" rel="alternate" type="text/html" title="[알고리즘] 정렬 알고리즘에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/basicsort-post</id><content type="html" xml:base="http://localhost:4000/algorithm/basicsort-post/">&lt;h2 id=&quot;insertion-sort삽입-정렬&quot;&gt;Insertion sort(삽입 정렬)&lt;/h2&gt;
 &lt;p&gt;자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교 하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘&lt;br /&gt;
 매 순서마다 해당 원소를 삽입할 수 있는 위치를 찾아 해당 위치에 넣는다.&lt;/p&gt;
 
@@ -254,7 +469,7 @@ https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/
 &lt;p&gt;References&lt;br /&gt;
 [알고리즘] 합병 정렬(merge sort)이란  &lt;br /&gt;
 https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html&lt;br /&gt;
-정리 정말 잘해주시는 개발자님 :) 모든 내용은 위 블로그에서 참고했습니다.&lt;/p&gt;</content><author><name>Your Name</name></author><category term="algorithm" /><category term="sort" /><category term="insertion" /><category term="selection" /><category term="bubble" /><summary type="html">Insertion sort(삽입 정렬) 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교 하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘 매 순서마다 해당 원소를 삽입할 수 있는 위치를 찾아 해당 위치에 넣는다.</summary></entry><entry><title type="html">[알고리즘] B-Tree에 대해 알아보자</title><link href="http://localhost:4000/algorithm/Btree-post/" rel="alternate" type="text/html" title="[알고리즘] B-Tree에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/Btree-post</id><content type="html" xml:base="http://localhost:4000/algorithm/Btree-post/">&lt;h2 id=&quot;b-tree&quot;&gt;B-tree&lt;/h2&gt;
+정리 정말 잘해주시는 개발자님 :) 모든 내용은 위 블로그에서 참고했습니다.&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="algorithm" /><category term="sort" /><category term="insertion" /><category term="selection" /><category term="bubble" /><summary type="html">Insertion sort(삽입 정렬) 자료 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교 하여, 자신의 위치를 찾아 삽입함으로써 정렬을 완성하는 알고리즘 매 순서마다 해당 원소를 삽입할 수 있는 위치를 찾아 해당 위치에 넣는다.</summary></entry><entry><title type="html">[알고리즘] B-Tree에 대해 알아보자</title><link href="http://localhost:4000/algorithm/Btree-post/" rel="alternate" type="text/html" title="[알고리즘] B-Tree에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/Btree-post</id><content type="html" xml:base="http://localhost:4000/algorithm/Btree-post/">&lt;h2 id=&quot;b-tree&quot;&gt;B-tree&lt;/h2&gt;
 &lt;p&gt;데이터베이스와 파일시스템에서 B-Tree를 많이 사용하며, 
 rdb 인덱스에서도 일반적으로 B-Tree , B+-Tree 자료구조를 사용한다.&lt;/p&gt;
 
@@ -293,7 +508,7 @@ btree조건 root 노드의 데이터가 1, 2, 3 3개이므로 자식 노드의 �
 &lt;p&gt;삭제는 케이스에 따라 달라지는 것 같아서 추후 추가 할 예정이다 :)&lt;/p&gt;
 
 &lt;p&gt;References&lt;br /&gt;
-https://hyungjoon6876.github.io/jlog/2018/07/20/btree.html&lt;/p&gt;</content><author><name>Your Name</name></author><category term="algorithm" /><category term="b-tree" /><summary type="html">B-tree 데이터베이스와 파일시스템에서 B-Tree를 많이 사용하며, rdb 인덱스에서도 일반적으로 B-Tree , B+-Tree 자료구조를 사용한다.</summary></entry><entry><title type="html">[자바 기본] Thread에 대해 알아보자</title><link href="http://localhost:4000/java/thread-post/" rel="alternate" type="text/html" title="[자바 기본] Thread에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/java/thread-post</id><content type="html" xml:base="http://localhost:4000/java/thread-post/">&lt;h2 id=&quot;thread&quot;&gt;Thread&lt;/h2&gt;
+https://hyungjoon6876.github.io/jlog/2018/07/20/btree.html&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="algorithm" /><category term="b-tree" /><summary type="html">B-tree 데이터베이스와 파일시스템에서 B-Tree를 많이 사용하며, rdb 인덱스에서도 일반적으로 B-Tree , B+-Tree 자료구조를 사용한다.</summary></entry><entry><title type="html">[자바 기본] Thread에 대해 알아보자</title><link href="http://localhost:4000/java/thread-post/" rel="alternate" type="text/html" title="[자바 기본] Thread에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/java/thread-post</id><content type="html" xml:base="http://localhost:4000/java/thread-post/">&lt;h2 id=&quot;thread&quot;&gt;Thread&lt;/h2&gt;
 
 &lt;p&gt;할당된 메모리 공간을 기반으로 실행 중에 있는 프로그램을 가리켜 ‘프로세스(Process)’라 한다. 따라서 프로세스를 간단히 ‘실행중인 프로그램’ 으로 설명하기도 한다.&lt;/p&gt;
 
@@ -565,7 +780,7 @@ num1을 사용하는 함수와 num2를 사용하는 함수는 동기화를 위�
 즉, 다른 쓰레드에 의해서 wait 메소드는 또 다시 호출이 가능하다.&lt;/p&gt;
 
 &lt;p&gt;References&lt;br /&gt;
-난 정말 JAVA를 공부한 적이 없다구요&lt;/p&gt;</content><author><name>Your Name</name></author><category term="java" /><category term="thread" /><summary type="html">Thread</summary></entry><entry><title type="html">[알고리즘] 분할 정복 알고리즘(정렬)에 대해 알아보자</title><link href="http://localhost:4000/algorithm/sort-post/" rel="alternate" type="text/html" title="[알고리즘] 분할 정복 알고리즘(정렬)에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/sort-post</id><content type="html" xml:base="http://localhost:4000/algorithm/sort-post/">&lt;p&gt;아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.&lt;/p&gt;
+난 정말 JAVA를 공부한 적이 없다구요&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="java" /><category term="thread" /><summary type="html">Thread</summary></entry><entry><title type="html">[알고리즘] 분할 정복 알고리즘(정렬)에 대해 알아보자</title><link href="http://localhost:4000/algorithm/sort-post/" rel="alternate" type="text/html" title="[알고리즘] 분할 정복 알고리즘(정렬)에 대해 알아보자" /><published>2020-02-09T00:00:00+09:00</published><updated>2020-02-09T00:00:00+09:00</updated><id>http://localhost:4000/algorithm/sort-post</id><content type="html" xml:base="http://localhost:4000/algorithm/sort-post/">&lt;p&gt;아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.&lt;/p&gt;
 
 &lt;h2 id=&quot;합병정렬merge-sort&quot;&gt;합병정렬(Merge sort)&lt;/h2&gt;
 &lt;ul&gt;
@@ -934,7 +1149,7 @@ EX) 리스트 내의 몇 개의 데이터 중에서 크기순으로 중간 값(m
 &lt;p&gt;References&lt;br /&gt;
 [알고리즘] 합병 정렬(merge sort)이란  &lt;br /&gt;
 https://gmlwjd9405.github.io/2018/05/08/algorithm-merge-sort.html&lt;br /&gt;
-정리 정말 잘해주시는 개발자님 :) 모든 내용은 위 블로그에서 참고했습니다.&lt;/p&gt;</content><author><name>Your Name</name></author><category term="algorithm" /><category term="sort" /><category term="merge" /><category term="quick" /><category term="heap" /><summary type="html">아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.</summary></entry><entry><title type="html">[자바 기본] String, StringBuilder, StringBuffer</title><link href="http://localhost:4000/java/string-post/" rel="alternate" type="text/html" title="[자바 기본] String, StringBuilder, StringBuffer" /><published>2020-02-08T00:00:00+09:00</published><updated>2020-02-08T00:00:00+09:00</updated><id>http://localhost:4000/java/string-post</id><content type="html" xml:base="http://localhost:4000/java/string-post/">&lt;p&gt;크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)&lt;/p&gt;
+정리 정말 잘해주시는 개발자님 :) 모든 내용은 위 블로그에서 참고했습니다.&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="algorithm" /><category term="sort" /><category term="merge" /><category term="quick" /><category term="heap" /><summary type="html">아래 출처에 있는 게시글을 재정리하며 스스로 공부함이 목적인 게시글입니다.</summary></entry><entry><title type="html">[자바 기본] String, StringBuilder, StringBuffer</title><link href="http://localhost:4000/java/string-post/" rel="alternate" type="text/html" title="[자바 기본] String, StringBuilder, StringBuffer" /><published>2020-02-08T00:00:00+09:00</published><updated>2020-02-08T00:00:00+09:00</updated><id>http://localhost:4000/java/string-post</id><content type="html" xml:base="http://localhost:4000/java/string-post/">&lt;p&gt;크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)&lt;/p&gt;
 
 &lt;h2 id=&quot;string&quot;&gt;String&lt;/h2&gt;
 
@@ -1088,49 +1303,4 @@ ABfalse25YtrueZ
 난 정말 JAVA를 공부한 적이 없다구요!&lt;/p&gt;
 
 &lt;p&gt;[[JAVA] String = “ “ vs new String(“ “) 의 차이&lt;br /&gt;
-https://ict-nroo.tistory.com/18 [개발자의 기록습관]&lt;/p&gt;</content><author><name>Your Name</name></author><category term="java" /><category term="string" /><category term="stringbuffer" /><category term="stringbuilder" /><summary type="html">크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)</summary></entry><entry><title type="html">[통신] 쿠키와 세션에 대한 간단한 정리</title><link href="http://localhost:4000/network/cookie-post/" rel="alternate" type="text/html" title="[통신] 쿠키와 세션에 대한 간단한 정리" /><published>2020-02-08T00:00:00+09:00</published><updated>2020-02-08T00:00:00+09:00</updated><id>http://localhost:4000/network/cookie-post</id><content type="html" xml:base="http://localhost:4000/network/cookie-post/">&lt;h2 id=&quot;cookie와-session&quot;&gt;Cookie와 Session&lt;/h2&gt;
-
-&lt;h3 id=&quot;cookie와-session-사용-이유&quot;&gt;Cookie와 Session 사용 이유&lt;/h3&gt;
-&lt;p&gt;현재 우리가 인터넷에서 사용하고 있는 HTTP 프로토콜은 연결 지향적인 성격을 버렸기 때문에 &lt;strong&gt;새로운 페이지를 요청할 때마다 새로운 접속&lt;/strong&gt;이 이루어지며 이전 페이지와 현재 페이지 간의 &lt;em&gt;관계가 지속되지 않는다.&lt;/em&gt;&lt;br /&gt;
-이에 따라 HTTP프로토콜을 이용하게 되는 웹 사이트에서는 웹 페이지에 특정 방문자가 머무르고 있는 동안에 그 방문자의 상태를 지속시키기 위해 쿠키와 세션을 이용한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;쿠키cookie&quot;&gt;쿠키(Cookie)&lt;/h3&gt;
-&lt;p&gt;브라우저를 사용하는 환경 (로컬 컴퓨터)에 서버에서 받은 데이터를 저장한 파일&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용자 정보를 유지할 수 없는 HTTP의 한계를 극복할 수 있는 방법&lt;/li&gt;
-  &lt;li&gt;인터넷 웹 사이트의 방문 기록을 남겨 사용자와 웹 사이트 사이를 매개해주는 정보이다.&lt;/li&gt;
-  &lt;li&gt;Cookie는 인터넷 사용자가 특정 웹서버에 접속할 때, 생성되는 개인 아이디와 비밀번호, 방문한 사이트의 정보를 담은 임시파일로써, Client에 텍스트 파일로 저장되어 다음에 해당 웹서버를 찾을 경우 웹서버에서는 그가 누구인지 어떤 정보를 주로 찾았는지 등을 파악할 때 사용된다.&lt;/li&gt;
-  &lt;li&gt;다시 서버에 request 할 필요가 없기 때문에 속도가 빠르다.&lt;/li&gt;
-  &lt;li&gt;브라우저를 닫을 때 사라진다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Cookie는 Client PC에 저장되는 정보이기 때문에, 다른 사용자에 의해서 임의로 변경이 가능하다.&lt;/strong&gt; (정보유출 가능, Session보다 보안성이 낮은 이유)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(사용 예) 자동로그인 , 오늘그만보기 팝업창 등&lt;/p&gt;
-
-&lt;h3 id=&quot;세션session&quot;&gt;세션(Session)&lt;/h3&gt;
-&lt;p&gt;서버에서 유저의 인증상태 (로그인 여부 등) 을 임시로 저장한 파일&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;서버에 저장해두기 때문에 쿠키보다 보안이 우수하다.&lt;/li&gt;
-  &lt;li&gt;서버에 저장되어있어서 쿠키보다 다소 느리고 유저정보가 많으면 메모리 과부하가 생길 수 있음.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;(사용 예) 로그인 한 정보들&lt;/p&gt;
-
-&lt;h4 id=&quot;보안성이-낮은-cookie대신-session을-사용하면-되는데-안하는-이유&quot;&gt;보안성이 낮은 Cookie대신 Session을 사용하면 되는데 안하는 이유?&lt;/h4&gt;
-
-&lt;p&gt;A. 모든 정보를 Session에 저장하면 Server의 메모리를 과도하게 사용하게 되어 Server에 무리가 가게 된다.&lt;/p&gt;
-
-&lt;h3 id=&quot;캐시cache&quot;&gt;캐시(cache)&lt;/h3&gt;
-&lt;p&gt;홈페이지를 접속하면 css, js, 이미지 파일이 사용자의 브라우저에 저장이 되고, 다시 같은 홈페이지를 접속하게 되면 css, js, 이미지 파일을 서버가 아닌 사용자의 PC에서 가져온다.&lt;/p&gt;
-
-&lt;p&gt;브라우저를 사용하는 환경 (로컬 컴퓨터)에 서버에서 받은 데이터를 저장한 파일 (쿠키와 동일)&lt;br /&gt;
-이미지같은 재사용될 것 같거나 &lt;em&gt;용량이 큰 리소스를 임시로 저장&lt;/em&gt;해두어서 렌더링 속도를 높이는 것이 목적!&lt;br /&gt;
-쿠키와는 비슷하지만 목적성에 차이가 있다 :)&lt;/p&gt;
-
-&lt;p&gt;References&lt;br /&gt;
-https://sas-study.tistory.com/54?category=774876&lt;/p&gt;
-
-&lt;p&gt;쿠키(cookie), 세션(session) 과 캐시(cache) - 네트워크 study3&lt;br /&gt;
-https://velog.io/@kimtaeeeny/%EC%BF%A0%ED%82%A4cookie-%EC%84%B8%EC%85%98session-%EA%B3%BC-%EC%BA%90%EC%8B%9Ccache-FE-study9&lt;/p&gt;</content><author><name>Your Name</name></author><category term="network" /><category term="cookie" /><category term="session" /><summary type="html">Cookie와 Session</summary></entry></feed>
+https://ict-nroo.tistory.com/18 [개발자의 기록습관]&lt;/p&gt;</content><author><name>Ming</name><email>lee.sunmin1303@gmail.com</email></author><category term="java" /><category term="string" /><category term="stringbuffer" /><category term="stringbuilder" /><summary type="html">크게 생각해보지 않았던 String이 알고보니 생각보다 새로운 것이 많아서 재밌었다 :)</summary></entry></feed>
