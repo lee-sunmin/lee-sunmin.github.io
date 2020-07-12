@@ -41,20 +41,23 @@ AWS Kinesis가 존재 하는 이유는 **다양한 데이터들을 수집하고,
   
 
 ![다운로드](https://user-images.githubusercontent.com/17976251/87239227-9cc37a00-c447-11ea-9873-b81fba44d15c.png)  
+<br/>
 Amazon Kinesis Data Streams는 빅데이터 솔루션의 게이트웨이로 사용되고 있다.  
+<br/>
 <핵심>  
 다양한 소스에서 데이터가 Amazon Kinesis 스트림에 추가되고, 스트림 데이터가 다양한 Amazon Kinesis 애플리 케이션에서 사용된다.  
-    
-위 이미지를 보면,
-1) Yellow Application - 스트리밍 데이터에 대해 실시간 대시보드 실행.
+<br/>
+위 이미지를 보면,  
+1) Yellow Application - 스트리밍 데이터에 대해 실시간 대시보드 실행.  
 2) Red Application - 간단한 집계를 수행하고 처리한 데이터를 Amazon S3로 내보낸다. S3의 데이터는 추가적인 처리 과정을 거친 후 복잡한 분석을 위해 Amazon Redshift에 저장된다.  
 3) Green Application - Amazon S3로 원시 데이터를 내보내는데, 좀더 저렴한 장기 저장을 위해 Amazon Glacier에 보관한다.  
-
+<br/>
 **이러한 세가지 유형의 데이터 처리 파이프라인은 <span style="color: green;">모두 동시에 병렬로 발생</span>한다.** 
-
+<br/>
   
 > Amazon Kinesis를 사용하면 모든 데이터가 수집된 후에야 처리를 시작할 수 있는 것(배치같은것)이 아니라 데이터가 수신되는 대로 처리 및 분석하여 즉시 대응 할 수 있다.  
-  
+<br/>
+<br/>
 
 ### - Amazon Kinesis Data Firehose  
 데이터 스트림을 AWS 데이터 스토어로 로드  
@@ -129,7 +132,7 @@ Kinesis Data Streams / Kinesis Data Firehose 로 데이터 수집 하고 SQL 코
   
 
 
-(Analytics 다이어그램 아키텍처)    
+(Analytics 다이어그램 아키텍처)  
 ![다운로드](https://user-images.githubusercontent.com/17976251/87239804-34c46200-c44e-11ea-87a2-a9d960ee6b6d.png)  
 위 이미지를 보면 kinesis나 firehose를 통해 들어온 데이터를 analytics application에서 가공하고 가공된 데이터를 동일하게 kinesis나 firehose를 사용하여 s3 등 target 공간으로 전송하는 거라고 생각한다.  
   
