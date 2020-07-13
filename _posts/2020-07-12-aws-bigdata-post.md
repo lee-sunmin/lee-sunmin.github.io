@@ -180,7 +180,7 @@ Amazon QuickSight는 데이터를 사용하여 시각적 객체를 구축하고,
 ![quicksight-workflow-overview](https://user-images.githubusercontent.com/17976251/87240190-43147d00-c452-11ea-9b30-723330b44546.png)  
   
   
-## 5. Amazon Athena  
+## 5. Amazon Athena (아테나)
 Amazon Athena은(는) Amazon Simple Storage Service(Amazon S3)에서 표준 SQL을 사용하여 데이터를 쉽게 바로 분석할 수 있는 대화형 쿼리 서비스입니다.  
 AWS Management Console에서 몇 가지 작업을 수행하면 Amazon S3에 저장된 데이터에서 Athena을(를) 가리키고, 표준 SQL을 사용하여 임시 쿼리를 실행하고, 몇 초 안에 결과를 얻을 수 있습니다.  
 
