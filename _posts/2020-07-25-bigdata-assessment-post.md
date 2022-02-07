@@ -5,6 +5,12 @@ categories:
 tags:
   - bigdata
 ---
+
+Data Hub : 사용자가 필요한 분석을 원활하게 할 수 있도록 여러 곳에 산재하여 있는 데이터를 한 곳으로 모아 데이터를 표준화하여 일관된 흐름으로 제공 할 수 있는 인프라  
+
+
+
+
 # 평가 항목
 
 ## 필수영역
@@ -281,7 +287,7 @@ dfs.namenode.shared.edits.dir - the URI which identifies the group of JNs where 
   <name>dfs.namenode.shared.edits.dir</name>
   <value>qjournal://node1.example.com:8485;node2.example.com:8485;node3.example.com:8485/mycluster</value>
 </property>
-~~~
+ 
 
 
 *JournalNode*  
