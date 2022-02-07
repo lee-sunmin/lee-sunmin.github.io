@@ -123,13 +123,13 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "lee.sunmin1303@gmail.com"
+      #url: "lee.sunmin1303@gmail.com"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/lee-sunmin"
+      #url: "https://github.com/lee-sunmin"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
