@@ -20,7 +20,7 @@ title                    : "Ming Study Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Seonmin"
-description              : "Study Java, Springboot(Server), CS, ETC :)"
+description              : "Study Java, Bigdata, etc"
 url                      : "https://lee-sunmin.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -95,8 +95,8 @@ analytics:
 author:
   name             : "Ming"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Studying junior programmer"
-  location         : "Somewhere :P"
+  bio              : "공부 기록"
+  location         : "Korea"
   email            : "lee.sunmin1303@gmail.com"
   links:
     - label: "Email"
