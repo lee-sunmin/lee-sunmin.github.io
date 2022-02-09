@@ -136,4 +136,3 @@ dns server 0.0.0.0
 172 -> B class 라서 subnet mask가 이전과 약간 다름  
 
 fast ethernet / serial  
-
